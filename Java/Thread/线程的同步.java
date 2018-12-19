@@ -13,7 +13,7 @@ public class ThreadTest implements Runnable {
     public void run() {
         while (true) {
             synchronized (this) {
-
+                System.out.println("I'm locked");
             }
         }
     }
