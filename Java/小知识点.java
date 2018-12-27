@@ -31,6 +31,11 @@ public class Main {
      *      当某个wait的线程被唤醒后，会紧接着wait后边的代码执行程序，需要通过while重新判断是否
      *      符合运行条件。
      *
-     * 7.
+     * 7. hashcode() equals()
+     *      一般情况下 equals相等，hashcode一定相等。
+     *                hashcode相等，equals不一定相等
+     *      在集合中时，首先判断hashcode是否相等，相等则查看equals是否相等
+     *      所以当new一个对象，并需要判断通过其内容是否相等时，需要重写equals，当重写equals时必须
+     *      重写hashcode，否则会造成相同的对象，不同的hashcode，在存入到set集合中时，会造成出现两个相同的对象。
      */
 }
