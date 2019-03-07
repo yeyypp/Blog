@@ -6,6 +6,11 @@ public class ComparableComparator {
             this.name = name;
         }
 
+        /**
+         * return -1 代表第一个元素放在前面
+         * @param item
+         * @return
+         */
         @Override
         public int compareTo(Item item) {
             if (this.name > item.name) {
@@ -19,6 +24,8 @@ public class ComparableComparator {
             }
         }
     }
+
+
 
     class ItemComparator implements Comparator<Item> {
         public int compare(Item i1, Item i2) {
