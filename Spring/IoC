@@ -42,8 +42,7 @@ public class Main {
      * 模型就是java ben 或者dao， 视图就是jsp，控制器就是controller负责把模型传递到视图中
      * 通过视图展现出来
      *
-     * 访问某个url时，先由dispatchservlet转发，由handlerMapping根据url找到相应的handler，通过handleradapter执行handler即controller
-     * handler执行后返回ModelAndView对象到dispathcservlet，再将其传递给viewresolver返回具体view，进行渲染，响应客户。
+     *
      *
      *
      * ---------------------

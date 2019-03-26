@@ -35,6 +35,43 @@ public class Main {
     }
 
     /**
+     *
+     * select sort
+     */
+
+    public static void select(int[] nums) {
+        for (int i = 0; i < nums.length; i++){
+            int min = i;
+            for (int j = i+ 1; j < nums.length - 1; j++) {
+                if (nums[min] > nums[j]) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                swap(nums, min, i);
+            }
+        }
+    }
+
+
+    /**
+     * insert
+     * @param nums
+     */
+    public static void insert(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            int j = i + 1;
+            while (j > 0) {
+                if (nums[j] < nums[j - 1]) {
+                    swap(nums, j, j - 1);
+                    j--;
+                }
+            }
+
+        }
+    }
+
+    /**
      * 全排列
      * @param nums
      * @param start

@@ -14,6 +14,7 @@ public class Main {
      * spring ioc 控制反转，采用了依赖倒置的设计思路，通过依赖注入的方式实现
      * 在spring中通过反射的方式，通过解析xml配置文件中bean的信息，获得类名，及对象名，利用反射创建对象
      * 所谓依赖注入，就是把底层类作为参数传入上层类，实现上层类对下层类的“控制
+     * 由ioc容器来实现对象的创建，
      *
      *
      * Spring AOP
@@ -35,6 +36,23 @@ public class Main {
      */
 
     /**
+     * BeanFactory 和 ApplicationContext 有什么区别
+     * context继承factory，在原有功能上添加了别的功能
+     * 创建bean工厂类，创建bean实例对象
+     * 提供了支持国际化的文本消息
+     * 统一的资源文件读取方式
+     */
+
+    /**
+     * bean作用域
+     * 通过scope属性来设置
+     * singleto容器中只会有一个bean
+     * prototype每次请求该bean时都会创建一个新的bean
+     * request 创建的bean只在request中有效
+     *
+     */
+
+    /**
      *Spring MVC是一个基于MVC架构的用来简化web应用程序开发的应用开发框架，它是Spring的一个模块,
      * web模型中，通过把Model，View，Controller分离，把较为复杂的web应用分成逻辑清晰的几部分，简化开发，减少出错
      *
@@ -50,6 +68,8 @@ public class Main {
      * （10）DispatcherServlet对View进行渲染视图（即将模型数据填充至视图中）
      * （11）DispatcherServlet响应用户。
      *
+     * spring事务
      *
+     * spring拦截器
      */
 }
