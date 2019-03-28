@@ -72,4 +72,11 @@ public class Main {
      *
      * spring拦截器
      */
+
+
+    /**
+     * post不支持
+     * 表单如何提交数据
+     *
+     */
 }

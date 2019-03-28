@@ -948,6 +948,54 @@ public class Main {
         }
     }
 
+    /**
+     * 最长回文子串
+     */
+
+    class Solution {
+        public int longestPalindrome(String s) {
+            Set<Character> set = new HashSet<>();
+            int ans = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (!set.contains(s.charAt(i))) {
+                    set.add(s.charAt(i));
+                } else {
+                    set.remove(s.charAt(i));
+                    ans += 2;
+                }
+            }
+            if (set.size() != 0) {
+                ans += 1;
+            }
+            return ans;
+        }
+    }
+
+    /**
+     * 最长连续递增序列
+     */
+
+    class Solution {
+        public int longest(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int ans = 1;
+            int tem = 1;
+            for (int i = 1; i < nums.length; i++) {
+                if (nums[i] > nums[i - 1]) {
+                    tem++;
+                } else {
+                    tem = 1;
+                }
+                ans = Math.max(ans, tem);
+            }
+            return ans;
+        }
+    }
+
+
+
 
 
 
