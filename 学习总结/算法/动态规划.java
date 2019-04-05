@@ -139,4 +139,37 @@ public class Main {
             return ans;
         }
     }
+
+    /**
+     * 硬币组合
+     * 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。
+     * 如果没有任何一种硬币组合能组成总金额，返回 -1
+     * int[] memo ，memo[11]代表组合成11的最小硬币数
+     * 加入有 1，2，5那么memo[11] = Math.min(memo[11 - 5], memo[11 - 1], memo[11 - 2]) + 1;
+     */
+
+    class Solution {
+        public int coinChange(int[] coins, int amount) {
+
+        }
+        // res代表剩下的数
+        private int helper(int[] coins, int res, int[] memo) {
+            if (res < 0) {
+                return -1;
+            }
+            if (res == 0) {
+                return 0;
+            }
+            if (memo[res - 1] != 0) {
+                return memo[res - 1];
+            }
+            int min = Integer.MIN_VALUE;
+            for (int coin : coins) {
+                int number = helper(coins, res - coin, memo);
+                if (number >= 0) {
+                    min = Math.min(number, min);
+                }
+            }
+        }
+    }
 }

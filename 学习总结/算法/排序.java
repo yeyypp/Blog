@@ -1,4 +1,11 @@
 public class Main {
+    /**
+     * 稳定的排序算法
+     * 冒泡 n^2, 插入 n^2,归并nlogn
+     *
+     * 不稳定
+     * 堆排 nlogn, 快排 nlogn, 选择 n^2;
+     */
 
     /**
      * 快排
@@ -41,4 +48,24 @@ public class Main {
         nums[i] = nums[j];
         nums[j] = tem;
     }
+
+    /**
+     * 归并
+     * 稳定
+     * nlogn
+     */
+
+    public static void mergeSort(int[] nums) {
+
+    }
+
+    private static void merge(int[] nums, int L, int M, int R) {
+        int[] tem = new int[R - L + 1];
+        int i = L;
+        int j = M + 1;
+        int k = 0;
+
+    }
+
+
 }

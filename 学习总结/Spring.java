@@ -71,6 +71,14 @@ public class Main {
      * spring事务
      *
      * spring拦截器
+     * 通过继承handlerinterprectoradapter
+     * 重写prehandle posthandle afterhandle
+     * 在xml配置中通过
+     * Join Point，表示“连接点”，它是程序运行中的某个阶段点，比如方法的调用、异常的抛出等；
+     * Advice，表示“通知”，它是某个连接点所采用的处理逻辑，也就是向连接点注入的代码；
+     * Pointcut，表示“切入点”，它是“连接点”的集合，是程序中需要注入Advice的位置的集合，指明Advice要在什么样的条件下才能被触发；
+     * Advisor，它是Pointcut和Advice的配置器，包括Pointcut和Advice，是将Advice注入程序中Pointcut位置的代码
+     *
      */
 
 
