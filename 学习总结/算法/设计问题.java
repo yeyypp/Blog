@@ -116,6 +116,12 @@ public class Main {
 
     /**
      * All O(1) operation data structure
+     * 通过两个map
+     * Map<Intger, Node> valMap
+     * Map<String, Integer> keyMap
+     * 4   {a, b, c}
+     * 3   {z,x}
+     * 1   {q}
      */
 
     public class AllOne {

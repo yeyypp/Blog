@@ -54,7 +54,7 @@ public class Main {
      *
      * synchronized与lock区别
      * synchronized 是java关键字，lock是java内的接口
-     * 都是可重入锁
+     * 都是可重入锁：在子类改写父类synchronized时，并执行super.synchron方法，如果不是可重入，则会产生死锁
      * lock可以实现公平锁,synch不行
      * syn在发生异常时会自动释放锁,而lock不会,必须在finally中显示释放
      * syn在没有获取到锁时会发生阻塞,而lock可以立即返回,不会发生阻塞
