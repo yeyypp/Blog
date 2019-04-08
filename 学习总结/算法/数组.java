@@ -30,5 +30,62 @@ public class Main {
      * 无需数组，找中位数
      */
 
+    /**
+     * 240.搜索二维数组
+     * 左至右依次递增
+     * 上至下依次递增
+     * 所以右上角matrix[i][j]是第一行最大值，是这一列的最小值。
+     * 如果target大于matrix[i][j]，则肯定大于第一行所有元素，则删掉第一行
+     * 如果target小于matrix[i][j]，则肯定小于这一列所有元素，则删掉这一列
+     */
 
+    class Solution {
+        public boolean searchMatrix(int[][] matrix, int target) {
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+                return false;
+            }
+            int m = matrix.length;
+            int n = matrix[0].length;
+            int i = 0;
+            int j = n - 1;
+            while (i < m && j >= 0) {
+                if (target < matrix[i][j]) {
+                    j--;
+                } else if (target > matrix[i][j]) {
+                    i++;
+                } else {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    /**
+     * 88.合并两个有序数组
+     */
+
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int[] tem = new int[m + n];
+            int k = 0;
+            int i = 0;
+            int j = 0;
+            while (i < m && j < n) {
+                if (nums1[i] < nums2[j]) {
+                    tem[k++] = nums1[i++];
+                } else {
+                    tem[k++] = nums2[j++];
+                }
+            }
+            while (i < m) {
+                tem[k++] = nums1[i++];
+            }
+            while (j < n) {
+                tem[k++] = nums2[j++];
+            }
+            System.arraycopy(tem, 0, nums1, 0, m + n);
+            return;
+        }
+    }
 }
