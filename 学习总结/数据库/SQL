@@ -1,0 +1,20 @@
+public class Main {
+    /**
+     * 176 第二高薪水
+     */
+
+    select max(Salary) from Employee where Salary < (select max(Salary) from Employee);
+
+    /**
+     * 182 查找重复电子邮箱
+     */
+
+    select Email from Person group by Email having(count(Email)) > 1;
+
+    /**
+     * 596 超过五名学生的课
+     * 用distinct 防止重修的学生数算上
+     */
+
+    select class from courses group by having(count(distinct student)) >= 5;
+}
