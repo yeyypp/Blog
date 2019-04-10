@@ -17,4 +17,30 @@ public class Main {
      */
 
     select class from courses group by having(count(distinct student)) >= 5;
+
+    /**
+     * 197 上升的温度
+     * 可以将同一个表变成两个表
+     */
+
+    select w1.Id from Weather w1 join Weather w2 where datediff(w1.RecordDate, w2.RecordDate) = 1 and w1.Temperature > w2.Temperature;
+
+    /**
+     * 183 从不订购的客户
+     */
+
+    select Name as Customers from Customers where Id not in (select Customers.Id from Customers join Orders where Customers.Id = Orders.CustomerId);
+
+    /**
+     * 181 超过经理收入的员工
+     */
+
+    select e1.Name as Employee from Employee e1 join Employee e2 where e1.Salary > e2.Salary and e1.ManagerId = e2.Id;
+
+    /**
+     * 196 删除重复邮件
+     * 同样用到将1一个表变成两个表的方式
+     */
+
+    delete p1 from person p1, person p2 where p1.Email = p2.Email and p1.Id > p2.Id;
 }
