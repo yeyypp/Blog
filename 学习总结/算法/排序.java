@@ -14,6 +14,28 @@ public class Main {
      */
 
     /**
+     * Binary Search
+     */
+
+    public static int binarySearch(int[] nums, int target) {
+        Arrays.sort(nums);
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * 快排
      * 不稳定
      * nlogn
