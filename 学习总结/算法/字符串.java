@@ -100,5 +100,15 @@ public class Main {
         }
     }
 
+    /**
+     * 43 字符串乘
+     */
+
+    class Solution {
+        public String multiply(String num1, String num2) {
+            
+        }
+    }
+
 
 }
