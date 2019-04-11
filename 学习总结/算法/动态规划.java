@@ -1,6 +1,8 @@
 public class Main {
     /**
-     * 最大子数组和
+     * 53 最大子数组和
+     * dp[i]代表以i结尾的子序列的最大值
+     * 则dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
      */
 
     class Solution {
@@ -60,7 +62,7 @@ public class Main {
     }
 
     /**
-     * 三角形最小路径和
+     * 120 三角形最小路径和
      */
 
     class Solution {
@@ -70,6 +72,21 @@ public class Main {
              * 代表从dp[i]到最底层的路径和等于自身加加上，下边两个相邻中最小的路径和
              * 最后一行的dp[i]等于他们自身，依次往上计算
              * 最底层个数为n，在计算上一层时，个数为n - 1， 所以只需要一个一维数组用来计算
+             *
+             * class Solution {
+             *     public int minimumTotal(List<List<Integer>> triangle) {
+             *         int[] dp = new int[triangle.size()];
+             *         for (int i = 0; i < dp.length; i++) {
+             *             dp[i] = triangle.get(dp.length - 1).get(i);
+             *         }
+             *         for (int i = triangle.size() - 2; i >= 0; i--) {
+             *             for (int j = 0; j < triangle.get(i).size(); j++) {
+             *                 dp[j] = Math.min(dp[j], dp[j + 1]) + triangle.get(i).get(j);
+             *             }
+             *         }
+             *         return dp[0];
+             *     }
+             * }
              */
 
             if (triangle == null || triangle.size() == 0) {
@@ -202,6 +219,63 @@ public class Main {
                 }
             }
             return memo[m - 1][n - 1];
+        }
+    }
+
+    /**
+     * 121 买股票最佳时机
+     * 只能买卖一次
+     * profit[i]代表到这个元素能获得的最多利润
+     */
+
+    class Solution {
+        public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) {
+                return 0;
+            }
+            int[] profit = new int[prices.length];
+            profit[0] = 0;
+            int min = prices[0];
+            for (int i = 1; i < prices.length; i++) {
+                // 每一次都获得之前的最小值，然后用当下元素减最小值得到profit[i]，在与之前的profit[i - 1]相比
+                min = Math.min(min, prices[i]);
+                profit[i] = prices[i] - min > profit[i - 1] ? prices[i] - min : profit[i - 1];
+            }
+            return profit[prices.length - 1];
+        }
+    }
+
+    /**
+     * 221 最大正方形
+     * dp[i][j]代表以此为右下角的正方形的边长
+     * 等于左，上，左斜上的最小边长加1
+     *
+     */
+
+    class Solution {
+        public int maximalSquare(char[][] matrix) {
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+                return 0;
+            }
+            int ans = 0;
+            int m = matrix.length;
+            int n = matrix[0].length;
+            int[][] dp = new int[m][n];
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i == 0 || j == 0) {
+                        dp[i][j] = matrix[i][j] == '0' ? 0 : 1;
+                    } else {
+                        if (matrix[i][j] == '0') {
+                            dp[i][j] = 0;
+                        } else {
+                            dp[i][j] = Math.min(Math.min(dp[i][j - 1], dp[i - 1][j]), dp[i - 1][j - 1]) + 1;
+                        }
+                    }
+                    ans = Math.max(ans, dp[i][j]);
+                }
+            }
+            return ans * ans;
         }
     }
 

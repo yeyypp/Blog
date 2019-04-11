@@ -102,11 +102,32 @@ public class Main {
 
     /**
      * 43 字符串乘
+     * i * j位的数会影响i + j位与i + j + 1位的数
+     * 在转换成字符串时，第一位是0的话则不要
      */
 
     class Solution {
         public String multiply(String num1, String num2) {
-            
+            if (num1.equals("0") || num2.equals("0")) {
+                return "0";
+            }
+            int[] result = new int[num1.length() + num2.length()];
+            for (int i = num1.length() - 1; i >= 0; i--) {
+                for (int j = num2.length() - 1; j >= 0; j--) {
+                    int sum = (num1.charAt(i) - '0') * (num2.charAt(j) - '0') + result[i + j + 1];
+                    result[i + j] += sum / 10;
+                    result[i + j + 1] = sum % 10;
+                }
+            }
+
+
+            StringBuilder sb = new StringBuilder();
+            for (Integer p : result) {
+                if (!(sb.length() == 0 && p == 0)) {
+                    sb.append(p);
+                }
+            }
+            return sb.toString();
         }
     }
 
