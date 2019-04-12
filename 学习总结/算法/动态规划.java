@@ -1,5 +1,36 @@
 public class Main {
     /**
+     * 303. Range Sum Query - Immutable
+     * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
+     * 可以用数组把前n项合存起来，用的时候再拿出来
+     */
+    class NumArray {
+        private int[] nums;
+        private int[] sum;
+
+        public NumArray(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return;
+            }
+            this.nums = nums;
+            sum = new int[nums.length];
+            sum[0] = nums[0];
+            for (int i = 1; i < nums.length; i++) {
+                sum[i] = sum[i - 1] + nums[i];
+            }
+        }
+
+        public int sumRange(int i, int j) {
+            if (i == 0) {
+                return sum[j];
+            } else {
+                return sum[j] - sum[i - 1];
+            }
+        }
+    }
+
+
+    /**
      * 53 最大子数组和
      * dp[i]代表以i结尾的子序列的最大值
      * 则dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
@@ -26,7 +57,7 @@ public class Main {
     }
 
     /**
-     * 最长递增子序列
+     * 300 最长递增子序列
      * 注意：序列是可以不连续的，子串是连续的
      * dp[i] represents the length of the longest increasing subsequence possible considering the array
      * elements upto the ith index only, including ith element;
@@ -223,6 +254,26 @@ public class Main {
     }
 
     /**
+     * 70 climbing stairs
+     */
+
+    class Solution {
+        public int climbStairs(int n) {
+            if (n == 1) {
+                return 1;
+            }
+
+            int[] dp = new int[n + 1];
+            dp[1] = 1;
+            dp[2] = 2;
+            for (int i = 3; i <= n; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2];
+            }
+            return dp[n];
+        }
+    }
+
+    /**
      * 121 买股票最佳时机
      * 只能买卖一次
      * profit[i]代表到这个元素能获得的最多利润
@@ -244,6 +295,39 @@ public class Main {
             return profit[prices.length - 1];
         }
     }
+
+    /**
+     * 198  House Robber
+     * 抢劫必须相隔
+     * 所以dp[i]表示到这个房子时所抢的最大值
+     * dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i])
+     * 等于抢i房子，加上前一个相隔的，或者等于抢到前一个的最大值
+     * 注意nums长度为1时，最大为nums[0]
+     * 长度为2时最大为Math.max(nums[0], nums[1])
+     */
+
+    class Solution {
+        public int rob(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int[] dp = new int[nums.length];
+            if (nums.length == 1) {
+                return nums[0];
+            }
+            dp[0] = nums[0];
+            dp[1] = Math.max(nums[0], nums[1]);
+            for (int i = 2; i < nums.length; i++) {
+                dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+
+            }
+            return dp[nums.length - 1];
+        }
+    }
+
+
+
+
 
     /**
      * 221 最大正方形
@@ -276,6 +360,31 @@ public class Main {
                 }
             }
             return ans * ans;
+        }
+    }
+
+    /**
+     * 746 Min Cost Climbing Stairs
+     * On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
+     *
+     * Once you pay the cost, you can either climb one or two steps.
+     * You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0,
+     * or the step with index 1.
+     *
+     * dp[i]表示到第i层的最少花费 = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
+     * 所以到达顶层的花费等于Math.min(dp[cost.length - 1] + cost[cost.length - 1], dp[cost.length - 2] + cost[cost.length - 2])
+     */
+
+    class Solution {
+        public int minCostClimbingStairs(int[] cost) {
+            int[] dp = new int[cost.length];
+            dp[0] = 0;
+            dp[1] = 0;
+            for (int i = 2; i < dp.length; i++) {
+                dp[i] = Math.min(dp[i - 2] + cost[i - 2], dp[i - 1] + cost[i - 1]);
+            }
+            int ans = Math.min(dp[cost.length - 1] + cost[cost.length - 1], dp[cost.length - 2] + cost[cost.length - 2]);
+            return ans;
         }
     }
 
