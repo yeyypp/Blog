@@ -15,4 +15,8 @@ public class Main {
      * You should depend only on spring-web if you don't use Spring MVC but want to
      * take advantage of other web-related technologies that Spring supports.
      */
+
+    /**
+     * 配置是需要配置dtd解析
+     */
 }

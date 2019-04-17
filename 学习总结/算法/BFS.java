@@ -1,5 +1,63 @@
 public class Main {
     /**
+     * check if there is a path between two nodes.
+     * bfs ues queue
+     */
+
+    public static void bfs(Node start) {
+        Queue<Node> queue;
+        Set<Node> set;
+
+        queue.offer(start);
+        while (!queue.isEmpty()) {
+            Node cur = queue.poll();
+            if (!set.contains(cur)) {
+                set.add(cur);
+                System.out.print(cur.val);
+            }
+            for (Node node : cur.adj) {
+                if (!set.contains(node)) {
+                    queue.offer(node);
+                }
+            }
+        }
+    }
+
+    /**
+     * 104. Maximum Depth of Binary Tree
+     */
+
+    class Solution {
+        public int maxDepth(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        }
+    }
+
+    /**
+     * 559 Maximum Depth of N-ary Tree
+     */
+
+    class Solution {
+        public int maxDepth(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int ans = 0;
+            if (root.children == null) {
+                return 1;
+            } else {
+                for (Node node : root.children) {
+                    ans = Math.max(ans, maxDepth(node));
+                }
+            }
+            return 1 + ans;
+        }
+    }
+
+    /**
      * 863 All Nodes Distance K in Binary Tree
      * We are given a binary tree (with root node root), a target node, and an integer value K.
      * Return a list of the values of all nodes that have a distance K from the target node.

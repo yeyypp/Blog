@@ -264,6 +264,49 @@ public class Main {
     }
 
     /**
+     * 174 Dungeon Game
+     * 设initialHealth[i][j] 为到dungeon[i][j]最少需要的hp
+     * 则在右下角需要的最少hp为initialHealth[i][j] = 1 - dungeon[i][j]
+     * 因为hp必须大于等于1，所以initialHealth[i][j] + dungeon[i][j] >= 1;
+     * 知道右下角的initHP后就可以求从最右列元素，最下行元素，到右下角所需的hp
+     * 当元素在最右列时
+     * 因为initialHealth[i][j] + dungeon[i][j] >= initialHealth[i + 1][j];
+     * 所以 initialHealth[i][j] = initialHealth[i + 1][j] - dungeon[i][j]
+     * 考虑到dungeon[i][j]可能为正数
+     * 所以initialHealth[i][j] = Math.max(1, initialHealth[i + 1][j] - dungeon[i][j]);
+     * 同理可求得最下行元素
+     * 则普通元素的initialHealth[i][j] =
+     *  Math.max(1, Math.min(initialHealth[i + 1][j], initialHealth[i][j + 1]) - dungeon[i][j])
+     *  则initialHealth[0][0]为所求初始值
+     * @author lensbo2
+     */
+
+    class Solution {
+        public int calculateMinimumHP(int[][] dungeon) {
+            int m = dungeon.length;
+            int n = dungeon[0].length;
+            int[][] initialHealth = new int[m][n];
+
+            for (int i = m - 1; i >= 0; i--) {
+                for (int j = n - 1; j >= 0; j--) {
+                    if (i == m - 1 && j == n - 1) {
+                        initialHealth[i][j] = Math.max(1, 1 - dungeon[i][j]);
+                    } else if (i == m - 1) {
+                        initialHealth[i][j] = Math.max(1, initialHealth[i][j + 1] - dungeon[i][j]);
+                    } else if (j == n - 1) {
+                        initialHealth[i][j] = Math.max(1, initialHealth[i + 1][j] - dungeon[i][j]);
+                    } else {
+                        initialHealth[i][j] =
+                                Math.max(1, Math.min(initialHealth[i + 1][j], initialHealth[i][j + 1]) - dungeon[i][j]);
+                    }
+
+                }
+            }
+            return initialHealth[0][0];
+        }
+    }
+
+    /**
      * 198  House Robber
      * 抢劫必须相隔
      * 所以dp[i]表示到这个房子时所抢的最大值
