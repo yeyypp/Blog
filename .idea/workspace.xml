@@ -12,19 +12,32 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
+            <state relative-caret-position="92">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/学习总结/Language/word.java">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/学习总结/Java/JVM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2668">
+              <caret line="116" column="59" selection-start-line="116" selection-start-column="59" selection-end-line="116" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/学习总结/Java/线程池.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -35,12 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/面试/线程" />
-        <option value="$PROJECT_DIR$/面试/java线程.java" />
-        <option value="$PROJECT_DIR$/面试/算法/排序.java" />
-        <option value="$PROJECT_DIR$/面试/就是干!!!.java" />
-        <option value="$PROJECT_DIR$/面试/算法/字符串.java" />
-        <option value="$PROJECT_DIR$/面试/算法/动态规划.java" />
         <option value="$PROJECT_DIR$/面试/算法/数学.java" />
         <option value="$PROJECT_DIR$/面试/数据结构.java" />
         <option value="$PROJECT_DIR$/面试/待整理.java" />
@@ -49,7 +56,6 @@
         <option value="$PROJECT_DIR$/学习总结/就是干!!!.java" />
         <option value="$PROJECT_DIR$/学习总结/Spring.java" />
         <option value="$PROJECT_DIR$/学习总结/JavaIO.java" />
-        <option value="$PROJECT_DIR$/学习总结/待整理.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/数组.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/设计问题.java" />
         <option value="$PROJECT_DIR$/学习总结/数据库/SQL" />
@@ -66,26 +72,33 @@
         <option value="$PROJECT_DIR$/学习总结/Linux/文件权限.java" />
         <option value="$PROJECT_DIR$/学习总结/网络/http.java" />
         <option value="$PROJECT_DIR$/学习总结/Spring/Bean.java" />
-        <option value="$PROJECT_DIR$/学习总结/Spring/SprintMVC.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/字符串.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/贪心.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/深度优先.java" />
         <option value="$PROJECT_DIR$/学习总结/网络/网络.java" />
         <option value="$PROJECT_DIR$/学习总结/Java/JavaIO.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/回溯算法.java" />
-        <option value="$PROJECT_DIR$/学习总结/Java/多线程.java" />
-        <option value="$PROJECT_DIR$/学习总结/数据库/数据库.java" />
-        <option value="$PROJECT_DIR$/学习总结/Java/Java基础.java" />
         <option value="$PROJECT_DIR$/学习总结/字节笔试.java" />
         <option value="$PROJECT_DIR$/学习总结/设计模式/mybatis" />
         <option value="$PROJECT_DIR$/学习总结/Spring/Spring.java" />
         <option value="$PROJECT_DIR$/学习总结/操作系统/操作系统.java" />
-        <option value="$PROJECT_DIR$/学习总结/Java/JVM.java" />
         <option value="$PROJECT_DIR$/学习总结/Java/异常.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/BFS.java" />
-        <option value="$PROJECT_DIR$/学习总结/算法/树.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/DFS.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/动态规划.java" />
+        <option value="$PROJECT_DIR$/学习总结/Spring/SprintMVC.java" />
+        <option value="$PROJECT_DIR$/Java/Spring.java" />
+        <option value="$PROJECT_DIR$/学习总结/Spring/AOP" />
+        <option value="$PROJECT_DIR$/DataStructure/二叉树.java" />
+        <option value="$PROJECT_DIR$/学习总结/算法/树.java" />
+        <option value="$PROJECT_DIR$/学习总结/数据库/数据库.java" />
+        <option value="$PROJECT_DIR$/学习总结/待整理.java" />
+        <option value="$PROJECT_DIR$/学习总结/Java/生产者消费者.java" />
+        <option value="$PROJECT_DIR$/学习总结/Java/Java基础.java" />
+        <option value="$PROJECT_DIR$/学习总结/设计模式/单例模式.java" />
+        <option value="$PROJECT_DIR$/学习总结/Java/JVM.java" />
+        <option value="$PROJECT_DIR$/学习总结/Java/线程池.java" />
+        <option value="$PROJECT_DIR$/学习总结/Java/多线程.java" />
       </list>
     </option>
   </component>
@@ -99,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,32 +124,45 @@
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
               <item name="学习总结" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="学习总结" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="学习总结" type="462c0819:PsiDirectoryNode" />
+              <item name="设计模式" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\Java" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\操作系统" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\算法" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\数据库" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\网络" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,7 +193,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10554371" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -197,29 +222,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/学习总结/java线程.java" />
-    <entry file="file://$PROJECT_DIR$/Java/Thread/线程的启动.java" />
-    <entry file="file://$PROJECT_DIR$/Java/Thread/线程的同步.java" />
-    <entry file="file://$PROJECT_DIR$/Java/Thread/waitAndNotify.java" />
-    <entry file="file://$PROJECT_DIR$/Java/Java_IO/File.java" />
-    <entry file="file://$PROJECT_DIR$/Java/Java_IO/几种IO" />
-    <entry file="file://$PROJECT_DIR$/Java/JVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/mybatis.java" />
-    <entry file="file://$PROJECT_DIR$/学习总结/redis.java" />
     <entry file="file://$PROJECT_DIR$/学习总结/消息队列.java" />
-    <entry file="file://$PROJECT_DIR$/学习总结/待整理.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/数据结构.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -241,12 +244,6 @@
     <entry file="file://$PROJECT_DIR$/学习总结/数据结构/Tree.java" />
     <entry file="file://$PROJECT_DIR$/学习总结/数据结构/Graph.java" />
     <entry file="file://$PROJECT_DIR$/学习总结/数据结构/Set.java" />
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/生产者消费者.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/线程池.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/Java/JUC.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -261,13 +258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Spring/SprintMVC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -316,25 +306,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/数据库/数据库.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2990">
-          <caret line="131" column="58" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/算法/海量数据.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/字节笔试.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -343,13 +316,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/设计模式/mybatis">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -366,20 +332,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Spring/Spring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/JVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -411,13 +363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/Java基础.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6394">
-          <caret line="278" column="41" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/算法/BFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -425,10 +370,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/JVM.java" />
+    <entry file="file://$PROJECT_DIR$/学习总结/Spring/SprintMVC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Spring/Spring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Spring.java" />
+    <entry file="file://$PROJECT_DIR$/学习总结/Spring/AOP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataStructure/二叉树.java" />
+    <entry file="file://$PROJECT_DIR$/DataStructure/Set.java" />
+    <entry file="file://$PROJECT_DIR$/DataStructure/List.java" />
+    <entry file="file://$PROJECT_DIR$/DataStructure/HashMap.java" />
+    <entry file="file://$PROJECT_DIR$/学习总结/Language/word.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/算法/树.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="506">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding>
             <element signature="e#266#267#0" expanded="true" />
             <element signature="e#329#330#0" expanded="true" />
@@ -436,15 +418,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
+    <entry file="file://$PROJECT_DIR$/学习总结/秒少项目总结/Dao层">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/数据库/数据库.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
+        <state relative-caret-position="866">
+          <caret line="169" column="7" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Language/word.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/学习总结/设计模式/mybatis">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/待整理.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/Java基础.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/生产者消费者.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/设计模式/单例模式.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+          <folding>
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/JVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2668">
+          <caret line="116" column="59" selection-start-line="116" selection-start-column="59" selection-end-line="116" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/线程池.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
