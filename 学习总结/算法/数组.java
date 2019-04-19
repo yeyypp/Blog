@@ -31,6 +31,34 @@ public class Main {
      */
 
     /**
+     * 88.合并两个有序数组
+     */
+
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int[] tem = new int[m + n];
+            int k = 0;
+            int i = 0;
+            int j = 0;
+            while (i < m && j < n) {
+                if (nums1[i] < nums2[j]) {
+                    tem[k++] = nums1[i++];
+                } else {
+                    tem[k++] = nums2[j++];
+                }
+            }
+            while (i < m) {
+                tem[k++] = nums1[i++];
+            }
+            while (j < n) {
+                tem[k++] = nums2[j++];
+            }
+            System.arraycopy(tem, 0, nums1, 0, m + n);
+            return;
+        }
+    }
+
+    /**
      * 240.搜索二维数组
      * 左至右依次递增
      * 上至下依次递增
@@ -62,30 +90,23 @@ public class Main {
     }
 
     /**
-     * 88.合并两个有序数组
+     * 509 Fibonacci Number
      */
 
     class Solution {
-        public void merge(int[] nums1, int m, int[] nums2, int n) {
-            int[] tem = new int[m + n];
-            int k = 0;
-            int i = 0;
-            int j = 0;
-            while (i < m && j < n) {
-                if (nums1[i] < nums2[j]) {
-                    tem[k++] = nums1[i++];
-                } else {
-                    tem[k++] = nums2[j++];
-                }
+        public int fib(int N) {
+            if (N < 2) {
+                return N;
             }
-            while (i < m) {
-                tem[k++] = nums1[i++];
+            int[] dp = new int[N + 1];
+            dp[0] = 0;
+            dp[1] = 1;
+            for (int i = 2; i < dp.length; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2];
             }
-            while (j < n) {
-                tem[k++] = nums2[j++];
-            }
-            System.arraycopy(tem, 0, nums1, 0, m + n);
-            return;
+            return dp[N];
         }
     }
+
+
 }

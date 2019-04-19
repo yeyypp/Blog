@@ -48,6 +48,102 @@ public class Main {
     }
 
     /**
+     * 226 Invert Binary Tree
+     * 递归思想时，注意不能 TreeNode left = root.left
+     * 必须直接使用root.left
+     * 因为改变left时不会改变原有root.left
+     * (值传递概念）
+     */
+
+    class Solution {
+        public TreeNode invertTree(TreeNode root) {
+            if (root == null) {
+                return null;
+            }
+            TreeNode tem = root.left;
+            root.left = root.right;
+            root.right = tem;
+            invertTree(root.left);
+            invertTree(root.right);
+            return root;
+        }
+    }
+
+    /**
+     * 非递归
+     */
+
+    class Solution {
+        public TreeNode invertTree(TreeNode root) {
+            if (root == null) {
+                return null;
+            }
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                TreeNode tem = queue.poll();
+                TreeNode tem2 = tem.left;
+                tem.left = tem.right;
+                tem.right = tem2;
+                if (tem.left != null) {
+                    queue.offer(tem.left);
+                }
+                if (tem.right != null) {
+                    queue.offer(tem.right);
+                }
+            }
+            return root;
+        }
+    }
+
+    /**
+     * 429 N 叉树，层次遍历
+     */
+
+    class Solution {
+        public List<List<Integer>> levelOrder(Node root) {
+            List<List<Integer>> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            Queue<Node> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                List<Integer> list = new LinkedList<>();
+                for (int i = 0; i < size; i++) {
+                    Node node = queue.poll();
+                    list.add(node.val);
+                    for (Node child : node.children) {
+                        queue.offer(child);
+                    }
+                }
+                ans.add(list);
+            }
+            return ans;
+        }
+    }
+
+    /**
+     * 617 Merge two Binary Tree
+     */
+
+    class Solution {
+        public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+            if (t1 == null) {
+                return t2;
+            }
+            if (t2 == null) {
+                return t1;
+            }
+            TreeNode node = new TreeNode(t1.val + t2.val);
+            node.left = mergeTrees(t1.left, t2.left);
+            node.right = mergeTrees(t1.right,t2.right);
+            return node;
+        }
+    }
+
+    /**
      * 700.二叉搜索树中的搜索
      */
 
@@ -82,4 +178,6 @@ public class Main {
             }
         }
     }
+
+
 }
