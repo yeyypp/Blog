@@ -5,49 +5,13 @@ public class Main {
      * 依赖注入就是将底层的类作为参数传入上层类
      * 在创建这些底层对象时仍然需要new很多东西，此时通过IoC容器就可以对自动对这些对象初始化
      * 只需要维护一段xml代码就可以
-     *
-     * Bean
-     * 通过scope标签设定是否为单例或者原型，
-     * 所有属性为private
-     * 2、提供默认构造方法
-     * 3、提供getter和setter
-     * 4、实现serializable接口
-     *
-     * ApplicationContext是spring中的全局容器,翻译过来是"应用上下文"的意思,它用来负责读取bean的配置文档,
-     * 管理bean的加载,维护bean之间的依赖关系,可以说是负责bean的整个生命周期,再通俗一点就是我们平时所说的IOC容器.　
-     *
-     * 可以通过注释进行依赖注入
-     * <?xml version="1.0" encoding="UTF-8"?>
-     * <beans xmlns="http://www.springframework.org/schema/beans"
-     *        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     *        xmlns:context="http://www.springframework.org/schema/context"
-     *        xsi:schemaLocation="http://www.springframework.org/schema/beans
-     *            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-     *            http://www.springframework.org/schema/context
-     *            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-     *
-     * 1.<context:annotation-config/>
-     *     需要进行设置,否则注解没用
-     * 2.需要扫描bean的包，否则会出现autowired 注入null的情况
-     * 3.404 查看jsp存放目录是否正确，注解是否有用
-     * d
-     *
      */
-
 
     /**
-     * MVC
-     * 将整个web分成三个模块，将Web层进行指责解耦
-     * 模型，视图，控制器
-     * 模型就是java ben 或者dao， 视图就是jsp，控制器就是controller负责把模型传递到视图中
-     * 通过视图展现出来
-     *
-     *
-     *
-     *
-     * ---------------------
-     *
-     *
+     * applicationContext解析xml得到bean,并注入到容器中
      *
      */
+
+
+
 }

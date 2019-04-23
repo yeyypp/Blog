@@ -36,6 +36,17 @@ public class Main {
         }
 
         private TreeNode helper(int[] nums, int low, int high) {
+            /**
+             * if (low <= high) {
+             *  int mid = low + (high - low) / 2;
+             *             TreeNode node = new TreeNode(nums[mid]);
+             *             node.left = helper(nums, low, mid - 1);
+             *             node.right = helper(nums, mid + 1, high);
+             *             return node;
+             *             }
+             *             return null;
+             *             }
+             */
             if (low > high) {
                 return null;
             }
@@ -44,6 +55,29 @@ public class Main {
             node.left = helper(nums, low, mid - 1);
             node.right = helper(nums, mid + 1, high);
             return node;
+        }
+    }
+
+    /**
+     * 110 Balanced binary tree
+     * 先计算出左右树的高度
+     * 注意平衡树的子树也是平衡树
+     */
+
+    class Solution {
+        public boolean isBalanced(TreeNode root) {
+            if (root == null) {
+                return true;
+            }
+            return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+        }
+
+        private int height(TreeNode node) {
+            if (node == null) {
+                return 0;
+            } else {
+                return 1 + Math.max(height(node.left), height(node.right));
+            }
         }
     }
 
@@ -97,6 +131,27 @@ public class Main {
     }
 
     /**
+     * 235 Lowest common ancestor of binary search tree
+     * 利用bst性质，p，q值都小于root则在左，都大于则在右，否则返回root
+     */
+
+    class Solution {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            TreeNode node = root;
+            while (node != null) {
+                if (q.val < node.val && p.val < node.val) {
+                    node = node.left;
+                } else if (q.val > node.val && p.val > node.val) {
+                    node = node.right;
+                } else {
+                    return node;
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
      * 429 N 叉树，层次遍历
      */
 
@@ -125,6 +180,31 @@ public class Main {
     }
 
     /**
+     * 563 binary tree tilt
+     * 左数的和等于left.val + left.left + left.right
+     * 所以 traverse(node) = left + right + node.val
+     * 而坡度等于 Math.abs(left - right);
+     */
+
+    class Solution {
+        int tilt = 0;
+        public int findTilt(TreeNode root) {
+            traverse(root);
+            return tilt;
+        }
+
+        private int traverse(TreeNode node) {
+            if (node == null) {
+                return 0;
+            }
+            int left = traverse(node.left);
+            int right = traverse(node.right);
+            tilt += Math.abs(left - right);
+            return left + right + node.val;
+        }
+    }
+
+    /**
      * 617 Merge two Binary Tree
      */
 
@@ -140,6 +220,29 @@ public class Main {
             node.left = mergeTrees(t1.left, t2.left);
             node.right = mergeTrees(t1.right,t2.right);
             return node;
+        }
+    }
+
+    /**
+     * 669 Trim a BST
+     * 当root小于最小值则root等于从root.right开始，反之大于R时从root.left开始
+     * 如果在中间则返回这个节点，再依次递归左边与右边。
+     */
+
+    class Solution {
+        public TreeNode trimBST(TreeNode root, int L, int R) {
+            if (root == null) {
+                return null;
+            }
+            if (root.val < L) {
+                return trimBST(root.right, L, R);
+            }
+            if (root.val > R) {
+                return trimBST(root.left, L, R);
+            }
+            root.left = trimBST(root.left, L, R);
+            root.right = trimBST(root.right, L, R);
+            return root;
         }
     }
 
@@ -176,6 +279,35 @@ public class Main {
             } else {
                 return searchBST(root.left, val);
             }
+        }
+    }
+
+    /**
+     * 965 univalued binary tree
+     * 层次遍历即可
+     */
+
+    class Solution {
+        public boolean isUnivalTree(TreeNode root) {
+            if (root == null) {
+                return false;
+            }
+            int ans = root.val;
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                TreeNode node = queue.poll();
+                if (node.val != ans) {
+                    return false;
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            return true;
         }
     }
 

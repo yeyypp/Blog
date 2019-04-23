@@ -34,7 +34,35 @@ public class Main {
      * 对于实例化Bean的逻辑比较复杂，则比较适合用基于Java类配置的方式
      *
      * 在日常的开发中我们主要是使用XML配置和注解配置方式向结合的开发方式，一般不推荐使用基于Java类的配置方式。
+     */
 
+    /**
+     * 通过component scan 将扫描到的注解的类自动注册到spring容器中，就不需要在xml中配置
+     *
+     * annotation-config, annotation-driven, compont-scan 区别
+     * https://blog.csdn.net/catoop/article/details/50068573
+     *
+     * <context:annotation-config/>
+     * 隐式地向Spring容器中注册AutowiredAnnotationBeanPostProcessor等
+     * 如果需要使用@Autowired @Resource
+     *
+     * <context:component-scan/>
+     * <context:component-scan/> 配置项不但启用了对类包进行扫描以实施注释驱动 Bean 定义的功能，
+     * 同时还启用了注释驱动自动注入的功能
+     * （即还隐式地在内部注册了 AutowiredAnnotationBeanPostProcessor 和 CommonAnnotationBeanPostProcessor）
+     *
+     * <mvc:annotation-driven/>
+     * 相当于注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，
+     * 配置一些messageconverter。即解决了@Controller注解的使用前提配置
+     *
+     * <context:annotation-config/>
+     * Looks for annotations on beans in the same application context
+     * it is defined and declares support for all the general annotations like @Autowired, @Resource,
+     * @Required, @PostConstruct etc etc.
+     * <context:annotation-config> does NOT search for @Component, @Controller, etc.
+     * <context:component-scan> DOES search for those @Component annotations,
+     * as well as the annotations that <context:annotation-config/> does.
+     *
      */
 
     /**

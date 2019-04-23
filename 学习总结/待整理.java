@@ -2,7 +2,6 @@ public class Main {
     /**
 
      mybatis
-     synchron原理 volatile原理
      nio
      linux常用
      redis
@@ -13,16 +12,16 @@ public class Main {
      hashmap linkedhashmap
      数据结构set list map
      juc
-     lru
+     lru lfu
      java 8 新特性
      设计模式
      线程池，优化
-
+    avl tree
 
 
      python
      go
-     scala
+
 
 
      mysql引擎

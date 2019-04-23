@@ -1,5 +1,30 @@
 public class Main {
     /**
+     * 3 最长无重复子串
+     * set 滑动窗口
+     */
+
+    class Solution {
+        public int lengthOfLongestSubstring(String s) {
+            Set<Character> set = new HashSet<>();
+            int ans = 0, i = 0, j = 0;
+            while (i < s.length() && j < s.length()) {
+                if (!set.contains(s.charAt(j))) {
+                    set.add(s.charAt(j));
+                    j++;
+                    ans = Math.max(ans, set.size());
+                } else {
+                    //移除窗口的第一个数，直到不包含重复
+                    set.remove(s.charAt(i));
+                    i++;
+                }
+            }
+            return ans;
+        }
+    }
+
+
+    /**
      * 14 最长共同前缀
      */
     class Solution {
@@ -20,28 +45,7 @@ public class Main {
         }
     }
 
-    /**
-     * 3 最长无重复子串
-     * set 滑动窗口
-     */
 
-    class Solution {
-        public int lengthOfLongestSubstring(String s) {
-            Set<Character> set = new HashSet<>();
-            int ans = 0, i = 0, j = 0;
-            while (i < s.length() && j < s.length()) {
-                if (!set.contains(s.charAt(j))) {
-                    set.add(s.charAt(j));
-                    j++;
-                    ans = Math.max(ans, set.size());
-                } else {
-                    set.remove(s.charAt(i));
-                    i++;
-                }
-            }
-            return ans;
-        }
-    }
 
     /**
      * 567 判断字符串s1的排列是否存在s2里

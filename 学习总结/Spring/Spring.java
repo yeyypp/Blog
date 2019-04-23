@@ -32,7 +32,6 @@ public class Main {
      * <mvc:annotation-driven/>
      * 相当于注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，
      * 配置一些messageconverter。即解决了@Controller注解的使用前提配置
-
      *
      * <context:annotation-config/>
      * Looks for annotations on beans in the same application context
