@@ -54,4 +54,13 @@ public class Main {
      *
      *
      */
+
+    /**
+     * 过滤器 filter 拦截器 interceptor
+     * filter是由服务器启动，并初始化
+     * interceptor是由spring 容器管理
+     *
+     * filter 在请求到达前对请求进行过滤
+     * interceptor在请求经过dispathservlet后进行处理
+     */
 }

@@ -1,4 +1,4 @@
-import java.util.Arrays;
+ import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -230,64 +230,7 @@ public class Main {
      * merge sort
      * @param nums
      */
-    public static void mergeSort(int[] nums) {
-        split(nums, 0, nums.length - 1);
-    }
 
-    private static void split(int[] nums, int L, int R) {
-        // 当位置相等时，说明只有一个数
-        if (L == R) {
-            return;
-        }
-        int M = (L + R) / 2;
-        //拆分左右
-        split(nums, L, M);
-        split(nums, M + 1, R);
-        //合并
-        merge(nums, L, M, R);
-    }
-
-    private static void merge(int[] nums, int L, int M, int R) {
-        // 创建一个临时数组
-        int[] tem = new int[R - L + 1];
-        //左指针
-        int i = L;
-        //右指针
-        int j = M + 1;
-        //新数组坐标
-        int k = 0;
-
-        while (i <= M && j <= R) {
-            if (nums[i] < nums[j]) {
-                tem[k] = nums[i];
-                k++;
-                i++;
-            } else {
-                tem[k] = nums[j];
-                k++;
-                j++;
-            }
-        }
-
-        //若此时左边还有剩的，则放进tem中
-        while (i <= M) {
-            tem[k] = nums[i];
-            k++;
-            i++;
-        }
-
-        //右边有剩的
-        while (j <= R) {
-            tem[k] = nums[j];
-            k++;
-            j++;
-        }
-
-        //把临时数组中的元素覆盖原数组
-        for (int a = 0; a < tem.length; a++) {
-            nums[a + L] = tem[a];
-        }
-    }
 
     /**
      * 前序
