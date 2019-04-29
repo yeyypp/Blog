@@ -152,6 +152,68 @@ public class Main {
     }
 
     /**
+     * 236 二叉树最近公共祖先
+     * 当左右均不为null时，说明root为祖先
+     * 否则返回不为null的节点
+     */
+
+    class Solution {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            if (root == null || root == p || root == q) {
+                return root;
+            }
+            TreeNode left = lowestCommonAncestor(root.left, p, q);
+            TreeNode right = lowestCommonAncestor(root.right, p, q);
+            if (left != null && right != null) {
+                return root;
+            } else if (left != null) {
+                return left;
+            } else if (right != null) {
+                return right;
+            }
+        }
+    }
+
+    class Solution {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            if (root == null || root == p || root == q) {
+                return root;
+            }
+            TreeNode left = lowestCommonAncestor(root.left, p, q);
+            TreeNode right = lowestCommonAncestor(root.right, p, q);
+            return left == null ? right : right == null ? left : root;
+        }
+    }
+
+    /**
+     * 257 二叉树所有路径
+     * 注意不能直接传递String
+     */
+
+    class Solution {
+        public List<String> binaryTreePaths(TreeNode root) {
+            List<String> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            dfs(ans, root, "");
+            return ans;
+        }
+
+        private void dfs(List<String> ans, TreeNode node, String s) {
+            if (node.left == null && node.right == null) {
+                ans.add(s + node.val);
+            }
+            if (node.left != null) {
+                dfs(ans, node.left, s + node.val + "->");
+            }
+            if (node.right != null) {
+                dfs(ans, node.right, s + node.val + "->");
+            }
+        }
+    }
+
+    /**
      * 429 N 叉树，层次遍历
      */
 
@@ -279,6 +341,29 @@ public class Main {
             } else {
                 return searchBST(root.left, val);
             }
+        }
+    }
+
+    /**
+     * 938 BST搜索范围
+     * 递归
+     */
+
+    class Solution {
+        public int rangeSumBST(TreeNode root, int L, int R) {
+            if (root == null) {
+                return 0;
+            }
+            if (root.val >= L && root.val <= R) {
+                return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);
+            }
+            if (root.val > R) {
+                return rangeSumBST(root.left, L, R);
+            }
+            if (root.val < L) {
+                return rangeSumBST(root.right, L, R);
+            }
+            return 0;
         }
     }
 
