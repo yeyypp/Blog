@@ -1,5 +1,4 @@
-public class Main {
-    /**
+d    /**
      * 双重校验单例
      */
 

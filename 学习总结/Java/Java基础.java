@@ -272,6 +272,8 @@ public class Main {
  *      所以当new一个对象，并需要判断通过其内容是否相等时，需要重写equals，当重写equals时必须
  *      重写hashcode，否则会造成相同的对象，不同的hashcode，在存入到set集合中时，会造成出现两个相同的对象。
  *
+ *      在hashmap hashset中可能会出现有两个一样的key，而不一样的value
+ *
  * 8. 异常处理
  *     throw throws
  *     throws 出现在方法声明上，表示可能出现的异常。

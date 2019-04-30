@@ -21,6 +21,14 @@ public class Main {
      */
 
     /**
+     * BeanFactory 和 ApplicationContext 有什么区别
+     * context继承factory，在原有功能上添加了别的功能
+     * 创建bean工厂类，创建bean实例对象
+     * 提供了支持国际化的文本消息
+     * 统一的资源文件读取方式
+     */
+
+    /**
      * Bean：
      * Bean生命周期：
      * 实例化bean -> 注入属性 -> 如果实现了了BeanNameAware，BeanFactoryAware则调用setBeanName，setBeanFactory为了获得容器

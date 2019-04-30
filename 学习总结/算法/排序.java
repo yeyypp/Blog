@@ -147,7 +147,51 @@ public class Main {
      * nlogn
      * 不稳定
      * 建堆复杂度n
+     * 在top k 问题中，求最小的k个值，用最大堆，反之最小堆
+     * （也可以用类似快排的方法求）
+     * 例如：求最小k个数
+     * 先设一个k大小的数组存放结果，然后将元素依次放进数组中，并堆化
+     * 当元素小于堆顶时，替换堆顶元素，并堆化
+     * 最后数组中元素为所求元素
      */
+
+    private static void heapHelper(int[] nums, int node, int length) {
+        int leftNode = (node << 1) + 1;
+        int rightNode = leftNode + 1;
+
+        //如果左节点已经大于长度限制了，则返回
+        if (leftNode > length) {
+            return;
+        }
+
+        //先设最大节点为左节点
+        int maxNode = leftNode;
+        //如果右节点在长度里，且值大于左节点
+        if (rightNode <= length && nums[rightNode] > nums[maxNode]) {
+            maxNode = rightNode;
+        }
+
+        // 将左右节点中最大的，与根比较
+        if (nums[maxNode] > nums[node]) {
+            swap(nums, maxNode, node);
+            heapHelper(nums, maxNode, length);
+        }
+    }
+
+    public static void HeapSort(int[] nums) {
+        //从第一个非叶子节点开始，构造最大堆
+        int start = (nums.length - 2) / 2;
+        for (int i = start; i >= 0; i--) {
+            heapHelper(nums, i, nums.length - 1);
+        }
+
+        //然后依次交换最后一个元素与第一个元素，再使剩下的元素为最大堆
+        for (int i = nums.length - 1; i > 0; i--) {
+            swap(nums, 0, i);
+            heapHelper(nums, 0, i - 1);
+        }
+    }
+    }
 
 
 }

@@ -2,6 +2,7 @@ public class Main {
     /**
      * top k 问题
      * 最大的几个数用最小堆，反之最大堆
+     * 或者用类似快排的方法，找到K
      */
 
     public class Main {

@@ -1,6 +1,14 @@
 public class Main {
     /**
+     * 分为collection map
+     * collection下有list set queue
+     * map 下有hashmap hashtable linkedhashmap treemap
+     * list 下有 linkedlist ArrayList
+     * set 下有 hashset treeset
+     *
+     *
      * HashMap 1.7 1.8
+     * https://blog.csdn.net/qq_36520235/article/details/82417949
      * 相比hashtable，不同步，map的键值均可以为null
      * 放入的数据是无序的
      * 1.7采用头插法，在扩容时可能会造成死循环
@@ -60,6 +68,7 @@ public class Main {
      * HashSet,LinkedHashSet,TreeSet
      * 底层的实现是相应的map
      * set存储不相同的元素
+     * set中put是put 一个key 以及一个 Object
      *
      */
 
@@ -72,7 +81,9 @@ public class Main {
      * arraylist底层实现为数组，获取元素速度快
      *
      * ArrayList扩容
-     * 当数据大小 > 现在数组大小时，会扩容为现在大小的1.5倍
+     * 当size == elementData数组大小时，就会发生扩容
+     * 会扩容为现在大小的1.5倍
+     *
      *
      * 用的最多的为linkedlist，可以作为队列或者栈使用
      * 作为栈
@@ -87,4 +98,14 @@ public class Main {
      *         System.out.println(queue.poll());
      *         System.out.println(queue.pollLast());
      */
+
+    /****************************************************************************************************************************/
+
+    /**
+     * PriorityQueue
+     * 底层实现是一个最小堆
+     * 也可以在构造器中传入Comparator改变排序规则
+     */
+
+
 }
