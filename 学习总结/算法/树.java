@@ -286,6 +286,30 @@ public class Main {
     }
 
     /**
+     * 653 bst 两数之和
+     * 可以把bst转化为有序数组
+     * 也可以利用set
+     */
+
+    class Solution {
+        public boolean findTarget(TreeNode root, int k) {
+            Set<Integer> set = new HashSet<>();
+            return find(set, root, k);
+        }
+
+        private boolean find(Set<Integer> set, TreeNode node, int k) {
+            if (node == null) {
+                return false;
+            }
+            if (set.contains(k - node.val)) {
+                return true;
+            }
+            set.add(node.val);
+            return find(set, node.left, k) || find(set, node.right, k);
+        }
+    }
+
+    /**
      * 669 Trim a BST
      * 当root小于最小值则root等于从root.right开始，反之大于R时从root.left开始
      * 如果在中间则返回这个节点，再依次递归左边与右边。

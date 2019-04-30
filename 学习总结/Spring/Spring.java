@@ -21,6 +21,12 @@ public class Main {
      */
 
     /**
+     * AOP
+     * 面向切面编程
+     *
+     */
+
+    /**
      * BeanFactory 和 ApplicationContext 有什么区别
      * context继承factory，在原有功能上添加了别的功能
      * 创建bean工厂类，创建bean实例对象

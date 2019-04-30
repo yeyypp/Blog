@@ -1,5 +1,128 @@
 public class Main {
     /**
+     * 1.两数之和
+     * 可以排序后，用前后两个指针依次判断
+     * 也可以直接用map存储值和坐标
+     */
+
+    class Solution {
+        public int[] twoSum(int[] nums, int target) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < nums.length; i++) {
+
+                if (map.containsKey(target - nums[i]) && map.get(target - nums[i]) != i) {
+                    return new int[]{map.get(target - nums[i]), i};
+                }
+                map.put(nums[i], i);
+            }
+            return new int[0];
+        }
+    }
+
+    /**
+     * 15.三数之和
+     * 返回的数不能有重复如 1 0 1 -1， 只能返回一个 1 0 -1
+     *
+     */
+
+    class Solution {
+        public List<List<Integer>> threeSum(int[] nums) {
+            List<List<Integer>> ans = new LinkedList<>();
+            if (nums == null || nums.length == 0) {
+                return ans;
+            }
+            //先排序数组
+            Arrays.sort(nums);
+            for (int i = 0; i < nums.length - 2; i++) {
+                // 首先判断固定值，当下一个数与前一个数相等时，直接跳过
+                if (i != 0 && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                // 设定两端值
+                int start = i + 1;
+                int end = nums.length - 1;
+                while (start < end) {
+                    // sum 在循环里
+                    int sum = nums[i] + nums[start] + nums[end];
+                    if (sum == 0) {
+                        List<Integer> list = new LinkedList<>();
+                        list.add(nums[i]);
+                        list.add(nums[start]);
+                        list.add(nums[end]);
+                        ans.add(list);
+                        start++;
+                        end--;
+                        //当前后两个数相等时，直接跳过
+                        while (start < end && nums[start] == nums[start - 1]) {
+                            start++;
+                        }
+                        while (start < end && nums[end] == nums[end + 1]) {
+                            end--;
+                        }
+                    } else if (sum < 0) {
+                        start++;
+                    } else if (sum > 0) {
+                        end--;
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+
+    /**
+     * 18 四数之和
+     * 与三数之和类似
+     */
+
+    class Solution {
+        public List<List<Integer>> fourSum(int[] nums, int target) {
+            List<List<Integer>> ans = new LinkedList<>();
+            if (nums == null || nums.length == 0) {
+                return ans;
+            }
+            Arrays.sort(nums);
+            for (int i = 0; i < nums.length - 3; i++) {
+                if (i != 0 && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                for (int j = i + 1; j < nums.length - 2; j++) {
+                    if (j != i + 1 && nums[j] == nums[j - 1]) {
+                        continue;
+                    }
+                    int start = j + 1;
+                    int end = nums.length - 1;
+                    while (start < end) {
+                        int sum = nums[i] + nums[j] + nums[start] + nums[end];
+                        if (sum == target) {
+                            List<Integer> list = new LinkedList<>();
+                            list.add(nums[i]);
+                            list.add(nums[j]);
+                            list.add(nums[start]);
+                            list.add(nums[end]);
+                            ans.add(list);
+                            start++;
+                            end--;
+                            while (start < end && nums[start] == nums[start - 1]) {
+                                start++;
+                            }
+                            while (start < end && nums[end] == nums[end + 1]) {
+                                end--;
+                            }
+                        } else if (sum > target) {
+                            end--;
+                        } else {
+                            start++;
+                        }
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+
+
+    /**
      * 删除数组中重复元素
      * 返回不重复个数
      */
@@ -120,6 +243,41 @@ public class Main {
                 }
             }
             return false;
+        }
+    }
+
+    /**
+     * 454 四数相加
+     * 四个数组
+     * 两个数组为一组，求他们所有的和，存在map中
+     * 再在两个个数组的和中，找是否有相应的值
+     */
+
+    class Solution {
+        public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+            Map<Integer, Integer> map = new HashMap<>();
+            int count = 0;
+            for (int i = 0; i < A.length; i++) {
+                for (int j = 0; j < B.length; j++) {
+                    int sum = A[i] + B[j];
+                    if (map.containsKey(sum)) {
+                        map.put(sum, map.get(sum) + 1);
+                    } else {
+                        map.put(sum, 1);
+                    }
+
+                }
+            }
+
+            for (int i = 0; i < C.length; i++) {
+                for (int j = 0; j < D.length; j++) {
+                    int sum = C[i] + D[j];
+                    if (map.containsKey(-sum)) {
+                        count += map.get(-sum);
+                    }
+                }
+            }
+            return count;
         }
     }
 
