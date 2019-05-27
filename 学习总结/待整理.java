@@ -18,6 +18,8 @@ public class Main {
      线程池，优化,调度
     avl tree
      多线程写同一个文件
+     伪共享
+     主线程在其他线程执行完再执行
 
 
      python
@@ -35,5 +37,8 @@ public class Main {
      spring bean加载
      拦截器
      aop
+
+     最短路径
+     tsp
      */
 }

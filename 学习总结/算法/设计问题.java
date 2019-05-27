@@ -258,13 +258,127 @@ public class Main {
         }
     }
 
-/**
- * Your AllOne object will be instantiated and called as such:
- * AllOne obj = new AllOne();
- * obj.inc(key);
- * obj.dec(key);
- * String param_3 = obj.getMaxKey();
- * String param_4 = obj.getMinKey();
- */
+    /**
+     * 208 字典树
+     * 虽然hash table的查找速度为1，但当数据变多时，如果hash函数不够好，发生碰撞的几率也会变大，可能使查找的复杂度变为n
+     * 可字典树查找复杂度为m，m为单词的长度
+     * 插入的空间复杂度为m
+     */
+
+    class Trie {
+
+        private class Node {
+
+            private boolean isEnd;
+            private Node[] children;
+            private final int SIZE = 26;
+
+            public Node() {
+                children = new Node[SIZE];
+            }
+
+            public boolean contains(char c) {
+                return children[c - 'a'] != null;
+            }
+
+            public Node get(char c) {
+                return children[c - 'a'];
+            }
+
+            public void put(char c, Node node) {
+                children[c - 'a'] = node;
+            }
+
+            public void setEnd() {
+                isEnd = true;
+            }
+
+            public boolean isEnd() {
+                return isEnd;
+            }
+        }
+
+        private Node root;
+
+        /** Initialize your data structure here. */
+        public Trie() {
+            root = new Node();
+        }
+
+        /** Inserts a word into the trie. */
+        public void insert(String word) {
+            Node cur = root;
+            char c;
+            for (int i = 0; i < word.length(); i++) {
+                c = word.charAt(i);
+                if (!cur.contains(c)) {
+                    cur.put(c, new Node());
+                }
+                cur = cur.get(c);
+            }
+            cur.setEnd();
+        }
+
+        private Node searchPrefix(String prefix) {
+            Node cur = root;
+            char c;
+            for (int i = 0; i < prefix.length(); i++) {
+                c = prefix.charAt(i);
+                if (!cur.contains(c)) {
+                    return null;
+                }
+                cur = cur.get(c);
+            }
+            return cur;
+        }
+
+        /** Returns if the word is in the trie. */
+        public boolean search(String word) {
+            Node node = searchPrefix(word);
+            return node != null && node.isEnd();
+        }
+
+        /** Returns if there is any word in the trie that starts with the given prefix. */
+        public boolean startsWith(String prefix) {
+            Node node = searchPrefix(prefix);
+            return node != null;
+        }
+    }
+
+    /**
+     * 384 打乱数组
+     * 注意random.nextInt(i)取值范围为[0,i);
+     * 随即算法中应该包含当前元素
+     */
+
+    class Solution {
+        int[] nums;
+        Random random;
+
+        public Solution(int[] nums) {
+            this.nums = nums;
+            random = new Random();
+        }
+
+        /** Resets the array to its original configuration and return it. */
+        public int[] reset() {
+            return nums;
+        }
+
+        /** Returns a random shuffling of the array. */
+        public int[] shuffle() {
+            int[] tem = (int[]) nums.clone();
+            for (int i = tem.length - 1; i > 0; i--) {
+                swap(tem, i, random.nextInt(i + 1));
+            }
+            return tem;
+        }
+
+        private void swap(int[] nums, int i, int j) {
+            int tem = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tem;
+        }
+    }
 
 }

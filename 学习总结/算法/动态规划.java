@@ -57,38 +57,53 @@ public class Main {
     }
 
     /**
-     * 300 最长递增子序列
-     * 注意：序列是可以不连续的，子串是连续的
-     * dp[i] represents the length of the longest increasing subsequence possible considering the array
-     * elements upto the ith index only, including ith element;
-     * 为获得dp[i]，需要把nums[i]与前边每一个元素比较，如果大于，则记录这个元素的dp[j]
-     * maxval = 0；
-     * if (nums[i] > nums[j]) {
-     *     maxval = Math.max(maxval, dp[j])
-     * }
-     * 最后dp[i] = 前边最长的序列maxval + 自己本身 1；
-     * 在从所有dp元素中选出最大的，即为LIS
+     * 64.最小路径和
+     * 有向无环图
+     * dp[i] 可以表示从i开始的最长或最短路径，也可以表示到i的最长或最短路径，一般用后者
+     * 此题到dp[i]的值等于上边或者左边的最小值加上其本身，dp[i][[j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j];
+     * 记得用memo存储已经计算的值
      */
 
     class Solution {
-        public int LIS(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return 0;
+        public int minPathSum(int[][] grid) {
+            int m = grid.length;
+            int n = grid[0].length;
+            int[][] memo = new int[m][n];
+            //初始化第一行和第一列
+            memo[0][0] = grid[0][0];
+            for (int i = 1; i < m; i++) {
+                memo[i][0] = memo[i - 1][0] + grid[i][0];
             }
-            int ans = 1;
-            int[] dp = new int[nums.length];
-            dp[0] = 1;
-            for (int i = 1; i < nums.length; i++) {
-                int maxval = 0;
-                for (int j = 0; j < i; j++) {
-                    if (nums[i] > nums[j]) {
-                        maxval = Math.max(maxval, dp[j]);
-                    }
+            for (int j = 1; j < n; j++) {
+                memo[0][j] = memo[0][j - 1] + grid[0][j];
+            }
+            //依次遍历剩余元素
+            for (int i = 1; i < m; i++) {
+                for (int j = 1; j < n; j++) {
+                    memo[i][j] = Math.min(memo[i - 1][j], memo[i][j - 1]) + grid[i][j];
                 }
-                dp[i] = maxval + 1;
-                ans = Math.max(ans, dp[i]);
             }
-            return ans;
+            return memo[m - 1][n - 1];
+        }
+    }
+
+    /**
+     * 70 climbing stairs
+     */
+
+    class Solution {
+        public int climbStairs(int n) {
+            if (n == 1) {
+                return 1;
+            }
+
+            int[] dp = new int[n + 1];
+            dp[1] = 1;
+            dp[2] = 2;
+            for (int i = 3; i <= n; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2];
+            }
+            return dp[n];
         }
     }
 
@@ -146,101 +161,6 @@ public class Main {
     }
 
     /**
-     * 最长递增子序列的个数
-     */
-
-    class Solution {
-        public int findNumberOfLIS(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return 0;
-            }
-            int ans = 0;
-            int[] length = new int[nums.length];
-            int[] count = new int[nums.length];
-
-            for (int i = 1; i < nums.length; i++) {
-                for (int j = 0; j < i; j++) {
-                    if (nums[i] > nums[j]) {
-                        //如果length[j] + 1 >= length[i]，说明前边还没有相同长度的序列
-                        if (length[j] + 1 >= length[i]) {
-                            length[i] = length[j] + 1;
-                            count[i] = count[j];
-                        } else if (length[j] + 1 == length[i]) {
-                            //如果length[j] + 1 刚好等于length[i]，说明前边出现过长度相等的序列
-                            count[i] += count[j];
-                        }
-                    }
-                }
-            }
-
-            int longest = 0;
-            //找到最长的长度
-            for (Integer i : length) {
-                longest = Math.max(longest, i);
-            }
-
-            for (int i = 0; i < count.length; i++) {
-                if (length[i] == longest) {
-                    ans += count[i];
-                }
-            }
-            return ans;
-        }
-    }
-
-
-    /**
-     * 64.最小路径和
-     * 有向无环图
-     * dp[i] 可以表示从i开始的最长或最短路径，也可以表示到i的最长或最短路径，一般用后者
-     * 此题到dp[i]的值等于上边或者左边的最小值加上其本身，dp[i][[j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j];
-     * 记得用memo存储已经计算的值
-     */
-
-    class Solution {
-        public int minPathSum(int[][] grid) {
-            int m = grid.length;
-            int n = grid[0].length;
-            int[][] memo = new int[m][n];
-            //初始化第一行和第一列
-            memo[0][0] = grid[0][0];
-            for (int i = 1; i < m; i++) {
-                memo[i][0] = memo[i - 1][0] + grid[i][0];
-            }
-            for (int j = 1; j < n; j++) {
-                memo[0][j] = memo[0][j - 1] + grid[0][j];
-            }
-            //依次遍历剩余元素
-            for (int i = 1; i < m; i++) {
-                for (int j = 1; j < n; j++) {
-                    memo[i][j] = Math.min(memo[i - 1][j], memo[i][j - 1]) + grid[i][j];
-                }
-            }
-            return memo[m - 1][n - 1];
-        }
-    }
-
-    /**
-     * 70 climbing stairs
-     */
-
-    class Solution {
-        public int climbStairs(int n) {
-            if (n == 1) {
-                return 1;
-            }
-
-            int[] dp = new int[n + 1];
-            dp[1] = 1;
-            dp[2] = 2;
-            for (int i = 3; i <= n; i++) {
-                dp[i] = dp[i - 1] + dp[i - 2];
-            }
-            return dp[n];
-        }
-    }
-
-    /**
      * 121 买股票最佳时机
      * 只能买卖一次
      * profit[i]代表到这个元素能获得的最多利润
@@ -260,6 +180,112 @@ public class Main {
                 profit[i] = prices[i] - min > profit[i - 1] ? prices[i] - min : profit[i - 1];
             }
             return profit[prices.length - 1];
+        }
+    }
+
+    /**
+     * 139 单词拆分
+     * dp[i] 表示以i结尾的字符串是否可以拆分
+     * j从0开始到i，只要在中间有一个0-j的字符串以及j-i都出现在字典里，则dp[i]为true，可拆分
+     */
+
+    public class Solution {
+        public boolean wordBreak(String s, List<String> wordDict) {
+            boolean[] dp = new boolean[s.length() + 1];
+            dp[0] = true;
+            for (int i = 1; i < dp.length; i++) {
+                for (int j = 0; j < i; j++) {
+                    if (dp[j] && wordDict.contains(s.substring(j, i))) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+            return dp[s.length()];
+        }
+    }
+
+    /**
+     * 140 单词拆分2
+     * 注意先判断单词是否可拆，否则可能出现超时
+     */
+
+    public class Solution {
+        public List<String> wordBreak(String s, List<String> wordDict) {
+            List<String> ans = new LinkedList<>();
+            dfs(ans, new LinkedList<String>(), s, wordDict);
+            return ans;
+        }
+
+        private boolean isBreakable(String s, List<String> wordDict) {
+            boolean[] dp = new boolean[s.length() + 1];
+            dp[0] = true;
+            for (int i = 1; i < dp.length; i++) {
+                for (int j = 0; j < i; j++) {
+                    if (dp[j] && wordDict.contains(s.substring(j, i))) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+            return dp[s.length()];
+        }
+
+        private String convert(List<String> res) {
+            StringBuilder sb = new StringBuilder();
+            for (String s : res) {
+                sb.append(s + " ");
+            }
+            return sb.toString().trim();
+        }
+
+        private void dfs(List<String> ans, List<String> res, String s, List<String> wordDict) {
+            if (s == " ") {
+                ans.add(convert(res));
+                return;
+            } else {
+                if (isBreakable(s, wordDict)) {
+                    for (int i = 1; i <= s.length(); i++) {
+                        if (wordDict.contains(s.substring(0, i))) {
+                            res.add(s.substring(0, i));
+                            dfs(ans, res, s.substring(i), wordDict);
+                            res.remove(res.size() - 1);
+                        }
+                    }
+                } else {
+                    return;
+                }
+            }
+        }
+    }
+
+    /**
+     * 152 乘积最大子数组
+     * dp代表以此位置为末尾的子序列的最大值和最小值，因为要考虑到负数的情况
+     * 因为每次求这个dp只需要用到当下的元素和前一个元素，所以可以用四个元素表示当下和前一个的最大值，以及当下和前一个的最小值
+     */
+
+    class Solution {
+        public int maxProduct(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int min = nums[0];
+            int max = nums[0];
+            int minHere = 0;
+            int maxHere = 0;
+            int ans = nums[0];
+
+            for (int i = 1; i < nums.length; i++) {
+                minHere = nums[i];
+                maxHere = nums[i];
+                minHere = Math.min(minHere, Math.min(minHere * min, minHere * max));
+                maxHere = Math.max(maxHere, Math.max(maxHere * min, maxHere * max));
+                min = minHere;
+                max = maxHere;
+                ans = Math.max(ans, max);
+            }
+            return ans;
         }
     }
 
@@ -374,6 +400,92 @@ public class Main {
     }
 
     /**
+     * 300 最长递增子序列
+     * 注意：序列是可以不连续的，子串是连续的
+     * dp[i] represents the length of the longest increasing subsequence possible considering the array
+     * elements upto the ith index only, including ith element;
+     * 为获得dp[i]，需要把nums[i]与前边每一个元素比较，如果大于，则记录这个元素的dp[j]
+     * maxval = 0；
+     * if (nums[i] > nums[j]) {
+     *     maxval = Math.max(maxval, dp[j])
+     * }
+     * 最后dp[i] = 前边最长的序列maxval + 自己本身 1；
+     * 在从所有dp元素中选出最大的，即为LIS
+     */
+
+    class Solution {
+        public int LIS(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int ans = 1;
+            int[] dp = new int[nums.length];
+            dp[0] = 1;
+            for (int i = 1; i < nums.length; i++) {
+                int maxval = 0;
+                for (int j = 0; j < i; j++) {
+                    if (nums[i] > nums[j]) {
+                        maxval = Math.max(maxval, dp[j]);
+                    }
+                }
+                dp[i] = maxval + 1;
+                ans = Math.max(ans, dp[i]);
+            }
+            return ans;
+        }
+    }
+
+
+
+    /**
+     * 最长递增子序列的个数
+     */
+
+    class Solution {
+        public int findNumberOfLIS(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int ans = 0;
+            int[] length = new int[nums.length];
+            int[] count = new int[nums.length];
+
+            for (int i = 1; i < nums.length; i++) {
+                for (int j = 0; j < i; j++) {
+                    if (nums[i] > nums[j]) {
+                        //如果length[j] + 1 >= length[i]，说明前边还没有相同长度的序列
+                        if (length[j] + 1 >= length[i]) {
+                            length[i] = length[j] + 1;
+                            count[i] = count[j];
+                        } else if (length[j] + 1 == length[i]) {
+                            //如果length[j] + 1 刚好等于length[i]，说明前边出现过长度相等的序列
+                            count[i] += count[j];
+                        }
+                    }
+                }
+            }
+
+            int longest = 0;
+            //找到最长的长度
+            for (Integer i : length) {
+                longest = Math.max(longest, i);
+            }
+
+            for (int i = 0; i < count.length; i++) {
+                if (length[i] == longest) {
+                    ans += count[i];
+                }
+            }
+            return ans;
+        }
+    }
+
+
+
+
+
+
+    /**
      * 322 Coin Change
      * You are given coins of different denominations and a total amount of money amount.
      * Write a function to compute the fewest number of coins that you need to make up that amount.
@@ -384,6 +496,7 @@ public class Main {
         public int coinChange(int[] coins, int amount) {
             int[] dp = new int[amount + 1];
             Arrays.fill(dp, amount + 1);
+            //保证dp[i - c] + 1， i = c时 得1
             dp[0] = 0;
             for (int i = 1; i <= amount; i++) {
                 for (int j = 0; j < coins.length; i++) {
@@ -393,6 +506,30 @@ public class Main {
                 }
             }
             return dp[amount] == amount + 1 ? -1 : dp[amount];
+        }
+    }
+
+    /**
+     * 387 字符串中第一个无重复字符
+     * 用一个大小为26的数组记录字符出现次数
+     * 然后遍历单词字符，找到第一个次数为1的
+     */
+
+    class Solution {
+        public int firstUniqChar(String s) {
+            if (s == null || s.length() == 0) {
+                return -1;
+            }
+            int[] arr = new int[26];
+            for (int i = 0; i < s.length(); i++) {
+                arr[s.charAt(i) - 'a']++;
+            }
+            for (int i = 0; i < s.length(); i++) {
+                if (arr[s.charAt(i) - 'a'] == 1) {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 
@@ -418,6 +555,66 @@ public class Main {
             }
             int ans = Math.min(dp[cost.length - 1] + cost[cost.length - 1], dp[cost.length - 2] + cost[cost.length - 2]);
             return ans;
+        }
+    }
+
+    /**
+     * 887 egg drop
+     * 找到pivot floor,drop(totalEggs, totalFloors)代表N个鸡蛋，M层需要的最小move数，注意是M个层，不是第M层
+     * 先得出两个basic case
+     * drop(totalEggs, 1) drop(totalEggs, 0) 只有零个层或者一个层时，无论有多少个蛋，只需要1个move可得
+     * drop(1, totalFloors) 只有一个蛋时，无论有多少层，最坏情况就是层数个move
+     * 每一个drop(k, n) 都会有两种情况，蛋不碎，蛋碎
+     * 蛋不碎：drop(k, totalFloor - n) + 1
+     * 蛋碎：drop(k - 1, n - 1) + 1
+     *
+     * drop(2,2) = Math.max(drop(1,1),drop(2,0)) + 1
+     * dp[2][2] = Math.min(drop(2,1), drop(2,2));
+     *
+     * 注意，可能的临界层可能有多种可能，所以需要考虑到最坏情况的最小值
+     *
+     * https://juejin.im/post/5b98785de51d450e71250aab
+     * https://www.youtube.com/watch?v=iOaRjDT0vjc
+     *
+     * 二分思想找最大值
+     * 两个函数 蛋碎，蛋不碎，均随层数i变化，一个单增，一个单减，注意看图，因为我们求得是Max（up,down) + 1中的最小一个
+     * 就是上半部分中的最小值，所以当up == down 时我们求得想要的
+     * https://leetcode.com/problems/super-egg-drop/Figures/891/sketch.png
+     *
+     * https://leetcode.com/problems/super-egg-drop/discuss/159055/Java-DP-solution-from-O(KN2)-to-O(KNlogN)
+     */
+
+    class Solution {
+        public int superEggDrop(int K, int N) {
+            int[][] dp = new int[K + 1][N + 1];
+            return drop(K, N, dp);
+        }
+
+        private int drop(int k, int n, int[][] dp) {
+            if (k == 1 || n <= 1) {
+                return n;
+            }
+            if (dp[k][n] > 0) {
+                return dp[k][n];
+            }
+            int low = 1, high = n, tem = 0, result = n;
+            while (low < high) {
+                int mid = low + (high - low) / 2;
+                int up = drop(k, n - mid, dp);
+                int down = drop(k - 1, mid - 1, dp);
+                tem = Math.max(up, down) + 1;
+                result = Math.min(tem, result);
+                if (up == down) {
+                    break;
+                }
+                if (up < down) {
+                    high = mid;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            dp[k][n] = result;
+            return dp[k][n];
         }
     }
 

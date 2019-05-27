@@ -123,7 +123,7 @@ public class Main {
 
 
     /**
-     * 删除数组中重复元素
+     * 26 删除数组中重复元素
      * 返回不重复个数
      */
 
@@ -133,16 +133,12 @@ public class Main {
                 reutrn 0;
             }
             int i = 0;
-            int j = 1;
             int ans = 1;
-            while (j < nums.length) {
-                if (nums[i] == nums[j]) {
-                    j++;
-                } else {
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[i] != nums[j]) {
                     i++;
-                    ans++;
                     nums[i] = nums[j];
-                    j++;
+                    ans++;
                 }
             }
             return ans;
@@ -216,7 +212,94 @@ public class Main {
     }
 
     /**
+     * 169 求众数
+     * 每遇到一个相同的数，ans++，不同的数，ans--，为0时更换ans，最后的ans就是众数
+     */
+
+    class Solution {
+        public int majorityElement(int[] nums) {
+            int ans = nums[0];
+            int count = 0;
+            for (int i : nums) {
+                if (ans == i) {
+                    count++;
+                } else {
+                    count--;
+                    if (count == 0) {
+                        ans = i;
+                        count = 1;
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+
+    /**
+     * 189 旋转数组
+     */
+    class Solution {
+        public void rotate(int[] nums, int k) {
+            int[] tem = new int[nums.length];
+            for (int i = 0; i < nums.length; i++) {
+                tem[(i + k) % nums.length] = nums[i];
+            }
+            System.arraycopy(tem, 0, nums, 0, tem.length);
+        }
+    }
+
+    /**
+     * 238 除自身以外数组的乘积
+     * 不能用除法
+     * 则可以用两个数组int[] left, int[] right;
+     * 分别记录i元素左右的乘积，在把他们相乘得到i
+     * left[i] = left[i - 1] * nums[i - 1];
+     * right[i] = right[i + 1] * nums[i + 1];
+     *
+     * time N
+     * space N
+     */
+
+    class Solution {
+        public int[] productExceptSelf(int[] nums) {
+            int[] ans = new int[nums.length];
+            int[] left = new int[nums.length];
+            int[] right = new int[nums.length];
+            left[0] = 1;
+            right[nums.length - 1] = 1;
+            for (int i = 1; i < nums.length; i++) {
+                left[i] = left[i - 1] * nums[i - 1];
+            }
+            for (int i = nums.length - 2; i >= 0; i--) {
+                right[i] = right[i + 1] * nums[i + 1];
+            }
+            for (int i = 0; i < nums.length; i++) {
+                ans[i] = left[i] * right[i];
+            }
+            return ans;
+        }
+    }
+
+    class Solution {
+        //int[] ans先表示左边的，之后一个int表示右边的值，再依次相乘
+        public int[] productExceptSelf(int[] nums) {
+            int[] ans = new int[nums.length];
+            ans[0] = 1;
+            for (int i = 1; i < nums.length; i++) {
+                ans[i] = ans[i - 1] * nums[i - 1];
+            }
+            int right = 1;
+            for (int i = nums.length - 1; i >= 0; i--) {
+                ans[i] = right * ans[i];
+                right *= nums[i];
+            }
+            return ans;
+        }
+    }
+
+    /**
      * 240.搜索二维数组
+     * 注意必须每动一次就马上判断是否还在范围内，所以用if-else，行动一次，就进入下一个循环，判断是否还在范围内
      * 左至右依次递增
      * 上至下依次递增
      * 所以右上角matrix[i][j]是第一行最大值，是这一列的最小值。
@@ -245,6 +328,90 @@ public class Main {
             return false;
         }
     }
+
+    /**
+     * 283 移动零
+     * 两个指针，一个标志当前位置，一个标志不为0的元素的位置，当前位置依次递增，将不为零的元素全部移到左边
+     */
+
+    class Solution {
+        public void moveZero(int[] nums) {
+            int j = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != 0) {
+                    nums[j] = nums[i];
+                    j++;
+                }
+            }
+            while (j < nums.length) {
+                nums[j] = 0;
+                j++;
+            }
+        }
+    }
+
+    /**
+     * 334 递增三元子序列
+     * 可以用最长递增子序列判断
+     */
+
+    class Solution {
+        public boolean increasingTriplet(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return false;
+            }
+            int[] dp = new int[nums.length];
+            dp[0] = 1;
+            for (int i = 1; i < nums.length; i++) {
+                dp[i] = 1;
+                for (int j = 0; j < i; j++) {
+                    if (nums[j] < nums[i]) {
+                        dp[i] = Math.max(dp[i], dp[j] + 1);
+                        if (dp[i] >= 3) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
+    /**
+     * 350 两个数组的交集
+     */
+
+    class Solution {
+        public int[] intersect(int[] nums1, int[] nums2) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i : nums1) {
+                if (map.containsKey(i)) {
+                    map.put(i, map.get(i) + 1);
+                } else {
+                    map.put(i, 1);
+                }
+            }
+
+            List<Integer> ans = new ArrayList<>();
+            for (int i : nums2) {
+                if (map.containsKey(i)) {
+                    ans.add(i);
+                    map.put(i, map.get(i) - 1);
+                    if (map.get(i) == 0) {
+                        map.remove(i);
+                    }
+                }
+            }
+            int[] tem = new int[ans.size()];
+            for (int i = 0; i < ans.size(); i++) {
+                tem[i] = ans.get(i);
+            }
+            return tem;
+
+        }
+    }
+
+
 
     /**
      * 454 四数相加
