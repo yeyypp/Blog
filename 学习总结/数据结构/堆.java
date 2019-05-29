@@ -1,37 +1,13 @@
 public class Main {
     /**
+     * MinHeap MaxHeap
+     * 建堆的复杂度为n
      * top k 问题
      * 最大的几个数用最小堆，反之最大堆
      * 每次在头节点插入
      * 如最大堆，头节点为当前最大值，当新值比头节点小时，更换头节点为新值，再重新heapify化，最后得到的就是最小的k个数
      * 或者用类似快排的方法，找到K
      */
-
-    public class Main {
-        public static void main(String[] args) {
-            int[] data = new int[]{4, 6, 8,5,9};
-            int[] topK = topK(data, 3);
-            System.out.println(Arrays.toString(topK));
-        }
-        //topK方法
-        public static int[] topK(int[] data, int k) {
-            int[] topK = new int[k];
-
-            for (int i = 0; i < k; i++) {
-                topK[i] = data[i];
-            }
-
-            MinHeap minHeap = new MinHeap(topK);
-
-            for (int i = k; i < data.length; i++) {
-                int root = minHeap.getRoot();
-                if (data[i] > root) {
-                    minHeap.setRoot(data[i]);
-                }
-            }
-            return topK;
-        }
-    }
 
     class MinHeap {
         private int[] data;
@@ -80,5 +56,4 @@ public class Main {
             data[j] = tem;
         }
     }
-
 }

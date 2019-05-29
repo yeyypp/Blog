@@ -51,6 +51,12 @@ public class Main {
         }
     }
 
+    class Solution {
+        public ListNode mergeTwoListts(ListNode l1, ListNode l2) {
+
+        }
+    }
+
     /**
      * 109 有序链表转bst
      * 转换list，再求

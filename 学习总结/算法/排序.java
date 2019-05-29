@@ -6,6 +6,8 @@ public class Main {
      * 不稳定
      * 堆排 nlogn, 快排 nlogn, 选择 n^2;
      *
+     * 快排优化https://blog.csdn.net/insistGoGo/article/details/7785038
+     *
      * 为什么用快排不用堆排
      * 因为堆排中比较的都是不相邻的元素，而数据读取时，先从内存读到缓存，而一般读到缓存中会是需要的数据与其周围的数据，
      * 而堆排比较的是不相邻的元素，会造成多次从内存读取到缓存

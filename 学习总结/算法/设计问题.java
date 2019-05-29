@@ -17,6 +17,7 @@ public class Main {
 
         public void push(int x) {
             stack.push(x);
+            //注意这里要>=，因为可能会出现两个一样大的最小元素
             if (minStack.isEmpty() || minStack.peek() >= x) {
                 minStack.push(x);
             }
