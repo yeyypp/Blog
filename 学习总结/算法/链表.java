@@ -86,8 +86,53 @@ public class Main {
     }
 
     /**
+     * 138 深拷贝带有随机指针的链表
+     */
+    class Solution {
+        public Node copyRandomList(Node head) {
+            if (head == null) {
+                return null;
+            }
+            //先不管random指针，将每个节点后边依次添加当前节点的复制，入 1 - 2 - 3 变成 1 - 1' - 2 - 2' - 3 - 3'
+            Node tem = head;
+            while (tem != null) {
+                Node next = tem.next;
+                tem.next = new Node(tem.val, next, null);
+                tem = next;
+            }
+
+            //然后将复制的链表的random指针添加上
+            tem = head;
+            while (tem != null) {
+                if (tem.random != null) {
+                    tem.next.random = tem.random.next;
+                }
+                tem = tem.next.next;
+            }
+
+            //最后将复制的链表从原链表中拿走
+            tem = head;
+            Node copyHead = tem.next;
+            Node curCopy = copyHead;
+            while (curCopy != null) {
+                curCopy.next = curCopy.next.next;
+                curCopy = curCopy.next;
+                tem.next = tem.next.next;
+                tem = tem.next;
+            }
+            //最后还需要把最后一位原链表的next指向null
+            tem.next = tem.next.next;
+
+            return copyHead;
+        }
+    }
+
+
+
+    /**
      * 141 环形链表
      * 快慢
+     * 或者用set
      */
 
     public class Solution {
@@ -114,6 +159,9 @@ public class Main {
      * 148 排序链表
      * 类似归并的思想
      * 注意刚开始判断head以及head.next是否为null
+     * 一个merge方法
+     * 一个split方法
+     * split方法 return merge(split(l1), split(slow));
      */
     class Solution {
         public ListNode sortList(ListNode head) {
@@ -154,6 +202,26 @@ public class Main {
     }
 
     /**
+     * 160 相交链表
+     * 可以用set存储A，再依次遍历B，看有没有相同
+     * time O(m + n) space m
+     * 或者用两个指针，依次遍历，当到达结尾时，使指针指向另一个的头节点，继续遍历
+     * 注意在遍历中判断是否有相等，无论两个链表长度是否相等，两个指针最终走的距离都是一样的，相当于都走了两个链表
+     */
+
+    public class Solution {
+        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+            ListNode a = headA;
+            ListNode b = headB;
+            while (a != b) {
+                a = a == null ? headB : a.next;
+                b = b == null ? headA : b.next;
+            }
+            return a;
+        }
+    }
+
+    /**
      * 203 移除元素
      */
 
@@ -178,8 +246,31 @@ public class Main {
     }
 
     /**
+     * 206 反转链表
+     * 两个指针
+     * ListNode pre = null;
+     * ListNode tem = null;
+     */
+
+    class Solution {
+        public ListNode reverseList(ListNode head) {
+            ListNode tem = null;
+            ListNode pre = null;
+            while (head != null) {
+                tem = head.next;
+                head.next = pre;
+                pre = head;
+                head = tem;
+            }
+            return pre;
+        }
+    }
+
+    /**
      * 234 回文链表
      * 先求中点，然后翻转比较
+     * 注意原链表大小，奇数时slow还需要再往后移动一次
+     *
      */
 
     class Solution {
@@ -238,6 +329,17 @@ public class Main {
             tem.next = null;
         }
     }
+
+    /**
+     * 328 奇偶链表
+     * https://leetcode.com/problems/odd-even-linked-list/solution/
+     * 三个指针 头节点 odd = head 第二个元素 even = head.next 指向第二个元素的指针 cur = even，思路是分别得到奇数链表偶数链表
+     * 再连接。在这里让 odd.next = cur.next odd = odd.next这样得到奇数链表 cur.next = odd.next cur = cur.next
+     * 此时的odd就为第三个元素，所以它的下一个元素是偶数元素，得到偶数链表最后组合odd.next = even。
+     * 注意判断时，需要判断cur != null && cur.next != null;
+     */
+
+
 
     /**
      * 876 链表中间节点

@@ -347,6 +347,64 @@ public class Main {
     }
 
     /**
+     * 295 获得数据流中位数
+     * 可以采用最大堆与最小堆
+     * 最大堆存比中位数小的一半，最小堆存比中位数大的一半，当两边size一样时，中位数为堆顶两个元素 * 0.5
+     * 设最大堆可以比最小堆多存一个，这样当有奇数个元素时，中位数为最大堆堆顶
+     *
+     */
+
+    class MedianFinder {
+
+        private PriorityQueue<Integer> minHeap;
+        private PriorityQueue<Integer> maxHeap;
+
+
+        /** initialize your data structure here. */
+        public MedianFinder() {
+            this.minHeap = new PriorityQueue<>();
+            this.maxHeap = new PriorityQueue<>(10, new Comparator<Integer>() {
+                @Override
+                public int compare(Integer a, Integer b) {
+                    if (a < b) {
+                        return 1;
+                    }
+                    if (a > b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+        }
+
+        //注意这里必须先向最大堆增加元素，再添加到最小堆，否则会出现最大堆的堆顶元素比最小堆元素大的情况
+        public void addNum(int num) {
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+            while (minHeap.size() > maxHeap.size()) {
+                maxHeap.offer(minHeap.poll());
+            }
+        }
+
+        public double findMedian() {
+            if (minHeap.size() == maxHeap.size()) {
+                // 注意这里要除2.0，因为返回值要求是double类型
+                return  (minHeap.peek() + maxHeap.peek()) / 2.0;
+            } else {
+                return maxHeap.peek();
+            }
+        }
+    }
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder obj = new MedianFinder();
+ * obj.addNum(num);
+ * double param_2 = obj.findMedian();
+ */
+
+    /**
      * 384 打乱数组
      * 注意random.nextInt(i)取值范围为[0,i);
      * 随即算法中应该包含当前元素

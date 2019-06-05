@@ -9,6 +9,63 @@ public class Main {
      * 客户端收到后，connect返回，发送ack
      * 服务端收到后accept返回，连接建立
      */
+    public class Server {
+        public static void main(String[] args) {
+            int port = 9000;
+
+            try {
+                ServerSocket server = new ServerSocket(port);
+                System.out.println("start server and wait.....");
+                Socket client = server.accept();
+                System.out.println("connection success!");
+
+                PrintWriter pw = new PrintWriter(client.getOutputStream(), true);
+                BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+                String lines = null;
+                while (!(lines = br.readLine()).equals("")) {
+                    System.out.println(lines);
+                    pw.println(lines);
+                }
+                pw.close();
+                br.close();
+                client.close();
+                server.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+    }
+
+    public class Client {
+        public static void main(String[] args) {
+            String host = "127.0.0.1";
+            int port = 9000;
+
+            try {
+                System.out.println("make a connect...");
+                Socket client = new Socket(host, port);
+                System.out.println("connection success!");
+                PrintWriter pw = new PrintWriter(client.getOutputStream(), true);
+                BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                Scanner sc = new Scanner(System.in);
+                String in = null;
+                while (!(in = sc.nextLine()).equals("")) {
+                    pw.println(in);
+                    System.out.println(br.readLine());
+                }
+                pw.println("");
+                pw.close();
+                sc.close();
+                br.close();
+                client.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+    }
 
     /**
      * Client socket 创建时会自动绑定一个本地端口，在new Socket(address, port)中的port为目标端口

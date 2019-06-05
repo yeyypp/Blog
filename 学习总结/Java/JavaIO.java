@@ -1,7 +1,33 @@
 public class Main {
     /**
      * 流可以看作是数据的序列
+     * InPutStream:代表着从流中读取数据
+     * OutPutStream：代表将数据输出到流中
+     *
+     * 一般用BufferedInputStream，
+     * 当不用时，意味着每一次io都需要经过操作系统直接处理，
+     * 当使用了之后会在内存区域开辟一个缓冲区
+     * 当读数据时，会从buffer读，为空时才会触发系统调用，从硬盘中读取
+     * 当写数据时，只有buffer满时，才会写入硬盘
+     * PrintWriter pw = new PrintWriter(client.getOutputStream(), true); true代表autoflush
      */
+
+    // BufferedReader
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String lines = null;
+            while ((lines = br.readLine()) != null) {
+                if (lines.equals("quit")) {
+                    break;
+                }
+                System.out.println(lines);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
     /**
@@ -37,13 +63,31 @@ public class Main {
      * 代理 代理的对象是客户端 反向代理 代理的对象是服务器
      */
 
-    /**
-     * java nio
-     * 普通io 面向流，单向，阻塞
-     * nio 面向通道与缓冲，通道是双向的，既可以读也可以写，可以非阻塞
-     *
-     * 内存映射文件
-     * 内存映射文件是一种允许Java程序直接从内存访问的特殊文件。
-     * 通过将整个文件或者文件的一部分映射到内存中、操作系统负责获取页面请求和写入文件，应用程序就只需要处理内存数据，这样可以实现非常快速的IO操作。
-     */
+
+
+    public class Test {
+        public static void main(String[] args) {
+            try (FileInputStream fis = new FileInputStream("C:\\Users\\18610\\Desktop\\in.txt")) {
+                //字节时
+                byte[] buffer = new byte[1024];
+                int end = 0;
+                while ((end = fis.read(buffer)) != -1) {
+                    System.out.println(new String(buffer, 0, end));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try (FileReader fr = new FileReader("C:\\Users\\18610\\Desktop\\in.txt")) {
+                char[] buffer = new char[10];
+                int end = 0;
+                while ((end = fr.read(buffer)) != -1) {
+                    System.out.println(new String(buffer, 0, end));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        }
+    }
 }
