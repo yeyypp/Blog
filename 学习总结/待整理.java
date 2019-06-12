@@ -21,6 +21,8 @@ public class Main {
      多线程写同一个文件
      伪共享
      主线程在其他线程执行完再执行
+     restful
+     Jmeter
 
 
      python
@@ -41,5 +43,8 @@ public class Main {
 
      最短路径
      tsp 旅行推销员问题， 字节过河问题
+
+     push away app
+     波波赞
      */
 }

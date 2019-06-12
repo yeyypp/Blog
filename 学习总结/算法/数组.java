@@ -21,6 +21,7 @@ public class Main {
 
     /**
      * 15.三数之和
+     * 因为需要找到不重复的三元组，所以需要先给数组排序，在代码中注意判断前后数是否相等，因为需要不重复的三元组
      * 返回的数不能有重复如 1 0 1 -1， 只能返回一个 1 0 -1
      *
      */
@@ -38,6 +39,7 @@ public class Main {
                 if (i != 0 && nums[i] == nums[i - 1]) {
                     continue;
                 }
+                //第一个数为固定，然后依次判断从下一个数开始的两端的值
                 // 设定两端值
                 int start = i + 1;
                 int end = nums.length - 1;
@@ -208,6 +210,33 @@ public class Main {
             }
             System.arraycopy(tem, 0, nums1, 0, m + n);
             return;
+        }
+    }
+
+    /**
+     * 167 有序数组中的两数之和
+     */
+
+    class Solution {
+        public int[] twoSum(int[] numbers, int target) {
+            int[] ans = new int[2];
+            if (numbers == null || numbers.length == 0) {
+                return ans;
+            }
+            int left = 0, right = numbers.length - 1;
+            while (left < right) {
+                int tem = numbers[left] + numbers[right];
+                if (tem < target) {
+                    left++;
+                } else if (tem > target) {
+                    right--;
+                } else {
+                    ans[0] = left + 1;
+                    ans[1] = right + 1;
+                    break;
+                }
+            }
+            return ans;
         }
     }
 

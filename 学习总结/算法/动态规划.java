@@ -1,33 +1,5 @@
 public class Main {
-    /**
-     * 303. Range Sum Query - Immutable
-     * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
-     * 可以用数组把前n项合存起来，用的时候再拿出来
-     */
-    class NumArray {
-        private int[] nums;
-        private int[] sum;
 
-        public NumArray(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return;
-            }
-            this.nums = nums;
-            sum = new int[nums.length];
-            sum[0] = nums[0];
-            for (int i = 1; i < nums.length; i++) {
-                sum[i] = sum[i - 1] + nums[i];
-            }
-        }
-
-        public int sumRange(int i, int j) {
-            if (i == 0) {
-                return sum[j];
-            } else {
-                return sum[j] - sum[i - 1];
-            }
-        }
-    }
 
 
     /**
@@ -432,6 +404,36 @@ public class Main {
                 ans = Math.max(ans, dp[i]);
             }
             return ans;
+        }
+    }
+
+    /**
+     * 303. Range Sum Query - Immutable
+     * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
+     * 可以用数组把前n项合存起来，用的时候再拿出来
+     */
+    class NumArray {
+        private int[] nums;
+        private int[] sum;
+
+        public NumArray(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return;
+            }
+            this.nums = nums;
+            sum = new int[nums.length];
+            sum[0] = nums[0];
+            for (int i = 1; i < nums.length; i++) {
+                sum[i] = sum[i - 1] + nums[i];
+            }
+        }
+
+        public int sumRange(int i, int j) {
+            if (i == 0) {
+                return sum[j];
+            } else {
+                return sum[j] - sum[i - 1];
+            }
         }
     }
 

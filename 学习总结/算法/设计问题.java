@@ -356,6 +356,13 @@ public class Main {
 
     class MedianFinder {
 
+        /**
+         * Your MedianFinder object will be instantiated and called as such:
+         * MedianFinder obj = new MedianFinder();
+         * obj.addNum(num);
+         * double param_2 = obj.findMedian();
+         */
+
         private PriorityQueue<Integer> minHeap;
         private PriorityQueue<Integer> maxHeap;
 
@@ -397,12 +404,59 @@ public class Main {
         }
     }
 
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder obj = new MedianFinder();
- * obj.addNum(num);
- * double param_2 = obj.findMedian();
- */
+    /**
+     * 380 常数时间插入，删除，获取随机元素
+     * 利用ArrayList,HashMap,Random
+     * map存取元素，与它的位置，每一个新元素的位置都是list的大小的值,
+     * 当移除元素时，首先判断是否存在,不存在则直接返回false
+     * 存在，首先获得被移除元素的位置 int position = map.get(val)以及最后一个元素的值 int lastOne = list.get(list.size() - 1)
+     * 然后设置被移元素位置的值为lastOne list.set(position, lastOne)并修改map中lastOne元素的位置为position map.put(lastOne, position)
+     * 此时再移除map中的元素,以及list的最后一个元素
+     *
+     * 若设计可以包含重复元素的结构，则用一个map加set的方式,set存每个元素的多个位置
+     */
+    class RandomizedSet {
+        Map<Integer, Integer> map;
+        List<Integer> list;
+        Random random = new Random();
+
+        /** Initialize your data structure here. */
+        public RandomizedSet() {
+            this.map = new HashMap<>();
+            this.list = new ArrayList<>();
+        }
+
+        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+        public boolean insert(int val) {
+            if (map.containsKey(val)) {
+                return false;
+            }
+            map.put(val, list.size());
+            list.add(val);
+            return true;
+        }
+
+        /** Removes a value from the set. Returns true if the set contained the specified element. */
+        public boolean remove(int val) {
+            if (!map.containsKey(val)) {
+                return false;
+            }
+            int position = map.get(val);
+            int lastOne = list.get(list.size() - 1);
+            list.set(position, lastOne);
+            map.put(lastOne, position);
+            list.remove(list.size() - 1);
+            map.remove(val);
+            return true;
+        }
+
+        /** Get a random element from the set. */
+        public int getRandom() {
+            return list.get(random.nextInt(list.size()));
+        }
+    }
+
+
 
     /**
      * 384 打乱数组

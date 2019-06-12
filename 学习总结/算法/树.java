@@ -23,38 +23,157 @@ public class Main {
      */
 
     /**
+     * 94 二叉树中序
+     */
+
+    class Solution {
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            LinkedList<TreeNode> stack = new LinkedList<>();
+            while (root != null | !stack.isEmpty()) {
+                if (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                } else {
+                    root = stack.pop();
+                    ans.add(root.val);
+                    root = root.right;
+                }
+            }
+            return ans;
+        }
+    }
+
+    class Solution {
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            inorder(root, ans);
+            return ans;
+        }
+
+        private void inorder(TreeNode root, List<Integer> ans) {
+            if (root == null) {
+                return;
+            }
+            inorder(root.left, ans);
+            ans.add(root.val);
+            inorder(root.right, ans);
+        }
+    }
+
+
+    /**
+     * 101 对称二叉树
+     */
+    class Solution {
+        public boolean isSymmetric(TreeNode root) {
+            return is(root, root);
+        }
+
+        private boolean is(TreeNode a, TreeNode b) {
+            if (a == null && b == null) {
+                return true;
+            }
+            if (a == null || b == null) {
+                return false;
+            }
+            if (a.val == b.val) {
+                return is(a.left, b.right) && is(a.right, b.left);
+            }
+            return false;
+        }
+    }
+
+    class Solution {
+        public boolean isSymmetric(TreeNode root) {
+
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            queue.offer(root);
+            TreeNode a = null;
+            TreeNode b = null;
+            while (!queue.isEmpty()) {
+                a = queue.poll();
+                b = queue.poll();
+                if (a == null && b == null) {
+                    continue;
+                }
+                if (a == null || b == null) {
+                    return false;
+                }
+                if (a.val != b.val) {
+                    return false;
+                }
+                queue.offer(a.left);
+                queue.offer(b.right);
+                queue.offer(a.right);
+                queue.offer(b.left);
+            }
+            return true;
+        }
+    }
+    /**
      * 108 Convert a Sorted Array to a bst
      * 根据bst性质，左子树元素小于根节点，右子树元素大于根节点
      * 所以数组的中位数为根节点，依次递归
      * 注意mid边界
      * low，mid - 1   mid + 1， high
+     * 在判断时通过if (left <= high) 判断
+     *
      */
 
     class Solution {
         public TreeNode sortedArrayToBST(int[] nums) {
-            return helper(nums, 0, nums.length - 1);
+            return convert(nums, 0, nums.length - 1);
         }
 
-        private TreeNode helper(int[] nums, int low, int high) {
-            /**
-             * if (low <= high) {
-             *  int mid = low + (high - low) / 2;
-             *             TreeNode node = new TreeNode(nums[mid]);
-             *             node.left = helper(nums, low, mid - 1);
-             *             node.right = helper(nums, mid + 1, high);
-             *             return node;
-             *             }
-             *             return null;
-             *             }
-             */
-            if (low > high) {
+        private TreeNode convert(int[] nums, int left, int right) {
+            if (left <= right) {
+                int mid = (left + right) / 2;
+                TreeNode node = new TreeNode(nums[mid]);
+                node.left = convert(nums, left, mid - 1);
+                node.right = convert(nums, mid + 1, right);
+                return node;
+            }
+            return null;
+        }
+    }
+
+    /**
+     * 109 有序链表转换成bst
+     * 把链表变成list
+     * 再通过上边的方法转换
+     * 时间空间均为N
+     */
+
+    class Solution {
+        public TreeNode sortedListToBST(ListNode head) {
+            if (head == null) {
                 return null;
             }
-            int mid = low + (high - low) / 2;
-            TreeNode node = new TreeNode(nums[mid]);
-            node.left = helper(nums, low, mid - 1);
-            node.right = helper(nums, mid + 1, high);
-            return node;
+            List<Integer> list = new LinkedList<>();
+            while (head != null) {
+                list.add(head.val);
+                head = head.next;
+            }
+            return convert(list, 0, list.size() - 1);
+        }
+
+        private TreeNode convert(List<Integer> list, int left, int right) {
+            if (left <= right) {
+                int mid = (left + right) / 2;
+                TreeNode node = new TreeNode(list.get(mid));
+                node.left = convert(list, left, mid - 1);
+                node.right = convert(list, mid + 1, right);
+                return node;
+            }
+            return null;
         }
     }
 
@@ -78,6 +197,111 @@ public class Main {
             } else {
                 return 1 + Math.max(height(node.left), height(node.right));
             }
+        }
+    }
+
+
+    /**
+     * 144 二叉树前序遍历
+     */
+
+    //非递归
+    class Solution {
+        public List<Integer> preorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            LinkedList<TreeNode> stack = new LinkedList<>();
+            stack.push(root);
+            TreeNode tem = null;
+            while (!stack.isEmpty()) {
+                tem = stack.pop();
+                ans.add(tem.val);
+                if (tem.right != null) {
+                    stack.push(tem.right);
+                }
+                if (tem.left != null) {
+                    stack.push(tem.left);
+                }
+            }
+            return ans;
+        }
+    }
+    //递归
+    class Solution {
+        public List<Integer> preorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            preorder(root, ans);
+            return ans;
+        }
+
+        private void preorder(TreeNode root, List<Integer> ans) {
+            if (root == null) {
+                return;
+            }
+            ans.add(root.val);
+            preorder(root.left, ans);
+            preorder(root.right, ans);
+        }
+    }
+
+    /
+
+    /**
+     * 145 二叉树后序遍历
+     * 非递归时设一个last节点，存上一个遍历的节点
+     * 代码与中序类似
+     */
+
+    class Solution {
+        public List<Integer> postorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            LinkedList<TreeNode> stack = new LinkedList<>();
+            TreeNode tem = null;
+            TreeNode last = null;
+            while (root != null || !stack.isEmpty()) {
+                if (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                } else {
+                    tem = stack.peek();
+                    //判断当前节点右节点是否为空或者已经遍历过，没有则root = tem.right
+                    if (tem.right != null && tem.right != last) {
+                        root = tem.right;
+                    } else {
+                        //当没有右节点或已经遍历过，则pop出，然后设last为tem，并root = null
+                        stack.pop();
+                        ans.add(tem.val);
+                        last = tem;
+                        root = null;
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+
+    class Solution {
+        public List<Integer> postorderTraversal(TreeNode root) {
+            List<Integer> ans = new LinkedList<>();
+            postorder(root, ans);
+            return ans;
+        }
+
+        private void postorder(TreeNode root, List<Integer> ans) {
+            if (root == null) {
+                return;
+            }
+            postorder(root.left, ans);
+            postorder(root.right, ans);
+            ans.add(root.val);
         }
     }
 
@@ -153,6 +377,14 @@ public class Main {
 
     /**
      * 236 二叉树最近公共祖先
+     * 首先判断
+     * if (root == null || root == p || root == q) {
+     *     return root;
+     * }
+     * 出现上述情况则返回root
+     * 然后建立TreeNode left，right
+     * 当left，right都不为null时，则说明root是最近的祖先，返回root
+     * 若没有则返回不为null的
      * 当左右均不为null时，说明root为祖先
      * 否则返回不为null的节点
      */
@@ -188,6 +420,9 @@ public class Main {
     /**
      * 257 二叉树所有路径
      * 注意不能直接传递String
+     * 注意要判断if (node.left == null && node.right == null)
+     * 不能判断if (node == null)
+     * 因为要保证每次给s增加的是 s + node.val + "->"
      */
 
     class Solution {
