@@ -10,6 +10,8 @@ public class Main {
      * inner class cannot have static declarations
      * 静态变量是放在方法区中，但方法区是否在堆中要根据jvm实现判断
      *
+     * 构造函数不能是静态的
+     *
      * 静态内部类 非静态内部类
      * 前者创建不依赖于外在类，不需要外部对象的引用
      * 后者可以自由使用外部变量和方法
@@ -52,6 +54,11 @@ public class Main {
      *         return null;
      *     }
      * }
+     */
+
+    /**
+     * java String类
+     * 被final修饰，意味着不能被继承，方法被final修饰，意味着不能被重写
      */
 
 

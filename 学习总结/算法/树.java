@@ -1,28 +1,5 @@
 public class Main {
     /**
-     * n 总结点数
-     * n0 度为0的节点数（叶子）
-     * n1 度为1的节点（完全二叉树中只能有一个或两个）
-     * n2 度为2的节点
-     *
-     * n = n0 + n1 + n2;
-     * n0 = n2 + 1;
-     *
-     *
-     深度为k的二叉树最多有2的k次方减1个节点，(2^k) - 1
-     第i层最多有2^(i - 1)个节点
-     叶子节点个数为n0，度为2的节点个数为n2， n0 = n2 + 1
-     n个节点的完全二叉树，深度<= log2^n + 1
-
-     完全二叉树 只有最下面两层的节点的度数小于2，其余各层的度数都等于2，并且最下面一层的节点都集中在最左边的若干位置上
-     平衡二叉树 平衡二叉搜索树（Self-balancing binary search tree）又被称为AVL树（有别于AVL算法），
-     且具有以下性质：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1
-
-     二叉搜索树 左子树所有节点小于根节点，右子树大于，且左右子树均为二叉搜索树
-
-     */
-
-    /**
      * 94 二叉树中序
      */
 
@@ -444,6 +421,58 @@ public class Main {
             }
             if (node.right != null) {
                 dfs(ans, node.right, s + node.val + "->");
+            }
+        }
+    }
+
+    /**
+     * 297 二叉树的序列化，反序列化
+     * 序列化是指将一个对象或数据结构转换为比特的操作，从而可以存储在文件或者内存中，或者通过网络传输
+     */
+
+    public class Codec {
+        private String spliter = ",";
+        private String nil = "null";
+
+        // Encodes a tree to a single string.
+        public String serialize(TreeNode root) {
+            StringBuilder sb = new StringBuilder();
+            buildString(root, sb);
+            return sb.toString();
+        }
+
+        //通过先序遍历依次把节点以及为空的节点加入到string中
+        private void buildString(TreeNode node, StringBuilder sb) {
+            if (node == null) {
+                sb.append(nil).append(spliter);
+            } else {
+                sb.append(node.val).append(spliter);
+                buildString(node.left, sb);
+                buildString(node.right, sb);
+            }
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            String[] s = data.split(spliter);
+            Queue<String> queue = new LinkedList<>();
+            for (String tem : s) {
+                queue.offer(tem);
+            }
+            return buildTree(queue);
+
+        }
+
+        //在建树时用一个队列，通过递归，依次把队列前的元素加入到树中
+        private TreeNode buildTree(Queue<String> queue) {
+            String tem = queue.poll();
+            if (tem.equals(nil)) {
+                return null;
+            } else {
+                TreeNode node = new TreeNode(Integer.valueOf(tem));
+                node.left = buildTree(queue);
+                node.right = buildTree(queue);
+                return node;
             }
         }
     }

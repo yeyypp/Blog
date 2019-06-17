@@ -60,11 +60,12 @@ public class Main {
 
         int key = nums[low];
         while (low < high) {
-            while (low < high && key < nums[high]) {
+            //注意这里的大于等于和小于等于,不然会进入死循环
+            while (low < high && key <= nums[high]) {
                 high--;
             }
             nums[low] = nums[high];
-            while (low < high && key > nums[low]) {
+            while (low < high && key >= nums[low]) {
                 low++;
             }
             nums[high] = nums[low];
@@ -73,11 +74,7 @@ public class Main {
         return low;
     }
 
-    private void swap(int[] nums, int i, int j) {
-        int tem = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tem;
-    }
+
 
     /**
      * 归并
