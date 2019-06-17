@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/Linux/常用命令.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java基础.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Java/Java基础.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/待整理.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/待整理.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/AVL.java" beforeDir="false" afterPath="$PROJECT_DIR$/2019-06-17-RBTree.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/树.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/数据结构/树.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/排序.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/排序.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/树.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/树.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/网络.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/网络/网络.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_post/2019-06-17-RBTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-06-17-RBTree.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,16 +115,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\_post" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\Java" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\设计模式" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\操作系统" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\算法" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\数据库" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -502,7 +492,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2019-06-17-RBTree.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-06-17-RBTree.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="184">
