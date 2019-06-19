@@ -40,6 +40,67 @@ public class Main {
     }
 
     /**
+     * 218 天际线问题
+     * https://leetcode.com/problems/the-skyline-problem/discuss/61193/Short-Java-solution
+     * 首先将每一个给出的坐标变成两个小的坐标 比如 (2, 5, 3) 变成 (2, 3) (5, -3) 负的代表此时这个点下落
+     * 然后将所有小坐标按横坐标大小，从小到大依次排序，注意，如果横坐标一样，则按纵坐标从大到小排序，这样可以防止出现相同横坐标的
+     * 关键点出现，用一个最大堆存取当前最高的高度，注意，最大堆的最大高度意味着当某一个点下落时，它会下落到这个最高高度，首先将0添加到这个堆里
+     * 现在准备工作已经完成
+     * 依次遍历小坐标，纵坐标为正的，则添加到最大堆，负的，则将最大堆中相应的高度移除，然后判断最大高度和之前最大高度是否不一样
+     * 是，则添加此时小坐标的横坐标及最大高度到ans里，不是，则开始下一轮循环
+     */
+
+    class Solution {
+        public List<List<Integer>> getSkyline(int[][] buildings) {
+            List<int[]> height = new ArrayList<>(buildings.length * 2);
+            List<List<Integer>> ans = new LinkedList<>();
+            for (int[] tem : buildings) {
+                int[] start = new int[2];
+                start[0] = tem[0];
+                start[1] = tem[2];
+                int[] end = new int[2];
+                end[0] = tem[1];
+                end[1] = -tem[2];
+                height.add(start);
+                height.add(end);
+            }
+            Collections.sort(height, new Comparator<int[]>() {
+                @Override
+                //注意这里比较的写法
+                public int compare(int[] o1, int[] o2) {
+                    if (o1[0] == o2[0]) {
+                        return o2[1] - o1[1];
+                    }
+                    return o1[0] - o2[0];
+                }
+            });
+            PriorityQueue<Integer> maxHeight = new PriorityQueue<>(new Comparator<Integer>() {
+                @Override
+                public int compare(Integer o1, Integer o2) {
+                    return o2 - o1;
+                }
+            });
+            maxHeight.offer(0);
+            for (int[] tem : height) {
+                int curMaxHeight = maxHeight.peek();
+                if (tem[1] > 0) {
+                    maxHeight.offer(tem[1]);
+                } else {
+                    //注意这里移除 -tem[1]
+                    maxHeight.remove(-tem[1]);
+                }
+                if (curMaxHeight != maxHeight.peek()) {
+                    List<Integer> list = new ArrayList<>(2);
+                    list.add(tem[0]);
+                    list.add(maxHeight.peek());
+                    ans.add(list);
+                }
+            }
+            return ans;
+        }
+    }
+
+    /**
      * 227 基本计算器2
      * 用栈存储计算的元素，一个int num 存储当前值，一个sign存储当前运算符号
      * 如 123 + 2 * 4 可以看作 + 123 + 2 * 4 sign = ‘+’
