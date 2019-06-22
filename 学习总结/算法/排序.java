@@ -16,6 +16,69 @@ public class Main {
      */
 
     /**
+     * 75
+     * 荷兰国旗问题
+     * 利用三个指针
+     * begin end cur
+     * when cur == 0, swap begin cur, begin++ cur++
+     * when cur == 1, cur++
+     * when cur == 2, swap end cur, end--
+     */
+    public static void threePartition(int[] nums) {
+        int cur = 0, begin = 0, end = nums.length - 1;
+        while (cur <= end) {
+            if (nums[cur] == 0) {
+                swap(nums, cur, begin);
+                begin++;
+                cur++;
+            } else if (nums[cur] == 1) {
+                cur++;
+            } else if (nums[cur] == 2) {
+                swap(nums, cur, end);
+                end--;
+            }
+        }
+    }
+
+    /**
+     * 179 最大数
+     * 比如 2 10 能组成的最大数为210
+     * 比如 9 5 30 3 34 能组成的最大数为9533430
+     * 先将int转为String， 再new一个Comparator使
+     * String a = o1 + o2
+     * String b = o2 + o1
+     * 比如 a = 210 b = 102
+     * 然后利用b.compareTo(a)将组合后比较大的开头放到前边
+     */
+
+    class Solution {
+        public String largestNumber(int[] nums) {
+            List<String> list = new ArrayList<>(nums.length);
+            for (int i : nums) {
+                list.add(String.valueOf(i));
+            }
+            Collections.sort(list, new Comparator<String>() {
+                @Override
+                public int compare(String o1, String o2) {
+                    String a = o1 + o2;
+                    String b = o2 + o1;
+                    return b.compareTo(a);
+                }
+            });
+            if (list.get(0).equals("0")) {
+                return "0";
+            }
+            StringBuilder sb = new StringBuilder();
+            for (String s : list) {
+                sb.append(s);
+            }
+            return sb.toString();
+        }
+    }
+
+
+
+    /**
      * Binary Search
      */
 

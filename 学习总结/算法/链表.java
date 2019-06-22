@@ -156,6 +156,38 @@ public class Main {
     }
 
     /**
+     * 142 链表是否有环，并找到环的入口
+     * 通过双指针，第一遍找到相遇的listnode
+     * 然后fast从head开始遍历，当再相遇时，即为入口
+     */
+
+    public class Solution {
+        public ListNode detectCycle(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast != null) {
+                slow = slow.next;
+                if (fast.next == null) {
+                    return null;
+                }
+                fast = fast.next.next;
+                if (slow == fast) {
+                    break;
+                }
+            }
+            if (fast == null) {
+                return null;
+            }
+            fast = head;
+            while (fast != slow) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+            return fast;
+        }
+    }
+
+    /**
      * 148 排序链表
      * 类似归并的思想
      * 注意刚开始判断head以及head.next是否为null

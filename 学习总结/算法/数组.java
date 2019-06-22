@@ -214,6 +214,31 @@ public class Main {
     }
 
     /**
+     * 162 找峰值
+     * 通过二分法
+     * 如果nums[mid] > nums[mid + 1] 则 left，mid
+     * 如果nums[mid] < nums[mid + 1] 则 mid + 1，right
+     */
+
+    class Solution {
+        public int findPeakElement(int[] nums) {
+            return binarySearch(nums, 0, nums.length - 1);
+        }
+
+        public int binarySearch(int[] nums, int left, int right) {
+            while (left != right) {
+                int mid = (left + right) / 2;
+                if (nums[mid] < nums[mid + 1]) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            return left;
+        }
+    }
+
+    /**
      * 167 有序数组中的两数之和
      */
 
@@ -376,6 +401,28 @@ public class Main {
                 nums[j] = 0;
                 j++;
             }
+        }
+    }
+
+    /**
+     * 287 寻找重复数
+     * 与链表中的环类似
+     */
+    class Solution {
+        public int findDuplicate(int[] nums) {
+            int slow = nums[0];
+            int fast = nums[0];
+            do {
+                slow = nums[slow];
+                fast = nums[nums[fast]];
+            } while (slow != fast);
+
+            fast = nums[0];
+            while (slow != fast) {
+                slow = nums[slow];
+                fast = nums[fast];
+            }
+            return slow;
         }
     }
 
