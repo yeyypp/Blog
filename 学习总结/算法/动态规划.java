@@ -1,6 +1,35 @@
 public class Main {
 
+    /**
+     * 最长公共子序列
+     * 注意是子序列
+     * https://www.youtube.com/watch?v=ASoaQq66foQ
+     * 找到子问题是什么，当有aab azb时，lcs(aab, azb) = 1 + lcs(aa, az)因为最后一个b一样
+     * 从后往前看，此时我们求lcs(aa, az)因为最后一个不一样，所以lcs(aa,az) = max(lcs(aa,a), lcs(a,az));
+     * 如果出现了lcs（"", aa)则等于0，因为空串与其他串没有共同
+     * 我们用一个矩阵表示
+     */
 
+    public static int lcs(String a, String b) {
+        int[][] matrix = new int[a.length() + 1][b.length() + 1];
+        for (int i = 0, j = 0; j < matrix[0].length; j++) {
+            matrix[i][j] = 0;
+        }
+        for (int i = 0, j = 0; i < matrix.length; i++) {
+            matrix[i][j] = 0;
+        }
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                //注意这里的坐标要减1，因为我们在建矩阵时多建了一个位置
+                if (a.charAt(i - 1) == b.charAt(j - 1)) {
+                    matrix[i][j] = 1 + matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.max(matrix[i - 1][j], matrix[i][j - 1]);
+                }
+            }
+        }
+        return matrix[a.length()][b.length()];
+    }
 
     /**
      * 53 最大子数组和
@@ -157,7 +186,7 @@ public class Main {
 
     /**
      * 139 单词拆分
-     * dp[i] 表示以i结尾的字符串是否可以拆分
+     * dp[i] 表示以i之前的字符串是否可以拆分
      * j从0开始到i，只要在中间有一个0-j的字符串以及j-i都出现在字典里，则dp[i]为true，可拆分
      */
 
@@ -180,6 +209,8 @@ public class Main {
     /**
      * 140 单词拆分2
      * 注意先判断单词是否可拆，否则可能出现超时
+     * dp[i] 代表i之前的元素是否可分，所以dp的长度为s.length() + 1，
+     * dp[s.length()]即代表这个单词是否可分
      */
 
     public class Solution {
@@ -333,6 +364,45 @@ public class Main {
         }
     }
 
+    /**
+     * 213 house robber II
+     * 与上边的类似，但这次房子是环状排列，
+     * 可以把环拆开，环状意味着开头和最后的房子，只能rob某一个
+     * 因此加入由int[] nums
+     * 我们可以看成
+     * 一个 从 0 - nums.length - 2
+     * 一个 从 1 - nums.length - 1
+     * 两种rob
+     * 然后求出两者最大的就可以
+     */
+
+    class Solution {
+        public int rob(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            if (nums.length < 2) {
+                return nums[0];
+            }
+            if (nums.length == 2) {
+                return Math.max(nums[0], nums[1]);
+            }
+            int[] dp1 = new int[nums.length - 1];
+            int[] dp2 = new int[nums.length - 1];
+            dp1[0] = nums[0];
+            dp1[1] = Math.max(nums[0], nums[1]);
+            dp2[0] = nums[1];
+            dp2[1] = Math.max(nums[1], nums[2]);
+            for (int i = 2; i < nums.length - 1; i++) {
+                dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + nums[i]);
+            }
+            for (int i = 3; i < nums.length; i++) {
+                dp2[i - 1] = Math.max(dp2[i - 2], dp2[i - 3] + nums[i]);
+            }
+            return Math.max(dp1[nums.length - 2], dp2[nums.length - 2]);
+        }
+    }
+
 
 
 
@@ -383,6 +453,9 @@ public class Main {
      * }
      * 最后dp[i] = 前边最长的序列maxval + 自己本身 1；
      * 在从所有dp元素中选出最大的，即为LIS
+     *
+     * 可以用二分搜索
+     * https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf
      */
 
     class Solution {
@@ -406,6 +479,35 @@ public class Main {
             return ans;
         }
     }
+
+    //二分
+    class Solution {
+        public int LIS(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+            int size = 0;
+            int[] array = new int[nums.length];
+            for (int i : nums) {
+                int left = 0, right = size;
+                while (left != right) {
+                    int mid = (left + right) / 2;
+                    if (i > array[mid]) {
+                        left = mid + 1;
+                    } else {
+                        right = mid;
+                    }
+                }
+                array[left] = i;
+                if (left == size) {
+                    size++;
+                }
+            }
+            return size;
+        }
+    }
+
+
 
     /**
      * 303. Range Sum Query - Immutable
@@ -497,6 +599,7 @@ public class Main {
     class Solution {
         public int coinChange(int[] coins, int amount) {
             int[] dp = new int[amount + 1];
+            //注意这里必须fill amount + 1,否则可能会出现 1 [1] return -1的情况
             Arrays.fill(dp, amount + 1);
             //保证dp[i - c] + 1， i = c时 得1
             dp[0] = 0;
@@ -617,6 +720,30 @@ public class Main {
             }
             dp[k][n] = result;
             return dp[k][n];
+        }
+    }
+
+    /**
+     * 1025 Divisor Game
+     *
+     */
+
+    class Solution {
+        public boolean divisorGame(int N) {
+            boolean[] dp = new boolean[N + 1];
+            dp[0] = false;
+            dp[1] = false;
+            for (int i = 2; i <= N; i++) {
+                for (int j = 1; j < i; j++) {
+                    if (i % j == 0) {
+                        if (dp[i - j] == false) {
+                            dp[i] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return dp[N];
         }
     }
 

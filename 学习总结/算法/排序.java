@@ -111,6 +111,7 @@ public class Main {
     }
 
     private void split(int[] nums, int low, int high) {
+        //注意这里必须是low > high不能是 =;
         if (low > high) {
             return;
         }
@@ -155,7 +156,7 @@ public class Main {
             return;
         }
         int M = (L + R) / 2;
-        //拆分左右
+        //拆分左右,注意,此处必须是L, M
         split(nums, L, M);
         split(nums, M + 1, R);
         //合并

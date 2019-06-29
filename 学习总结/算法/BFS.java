@@ -36,6 +36,7 @@ public class Main {
         }
     }
 
+
     /**
      * 559 Maximum Depth of N-ary Tree
      */
@@ -56,6 +57,8 @@ public class Main {
             return 1 + ans;
         }
     }
+
+
 
     /**
      * 863 All Nodes Distance K in Binary Tree

@@ -25,6 +25,8 @@ public class Main {
      Jmeter
      skiplist
 
+     页面置换算法
+
 
      python
      go
@@ -47,5 +49,11 @@ public class Main {
 
      push away app
      波波赞
+
+
+     jdbc.driver=com.mysql.cj.jdbc.Driver
+     jdbc.url=jdbc:mysql://192.168.56.101:3306/shuai
+     jdbc.username=root
+     jdbc.password=Yeshuai1117
      */
 }

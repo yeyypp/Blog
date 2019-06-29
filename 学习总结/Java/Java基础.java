@@ -6,6 +6,10 @@ public class Main {
      */
 
     /**
+     * java整形缓存了 -128 - 127的值，超过这个范围的值就是两个不同的对象了
+     */
+
+    /**
      * static
      * inner class cannot have static declarations
      * 静态变量是放在方法区中，但方法区是否在堆中要根据jvm实现判断
