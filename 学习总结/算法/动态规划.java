@@ -90,21 +90,27 @@ public class Main {
 
     /**
      * 70 climbing stairs
+     * 爬到第i层的方法等于爬到i - 1以及i - 2层的和
+     * 就是斐波那契数列，可以只用两个int存前两项
      */
 
     class Solution {
         public int climbStairs(int n) {
-            if (n == 1) {
-                return 1;
+            if (n < 1) {
+                return 0;
             }
+            if (n < 3) {
+                return n;
+            }
+            int first = 1;
+            int second = 2;
 
-            int[] dp = new int[n + 1];
-            dp[1] = 1;
-            dp[2] = 2;
             for (int i = 3; i <= n; i++) {
-                dp[i] = dp[i - 1] + dp[i - 2];
+                int third = first + second;
+                first = second;
+                second = third;
             }
-            return dp[n];
+            return second;
         }
     }
 
@@ -164,7 +170,9 @@ public class Main {
     /**
      * 121 买股票最佳时机
      * 只能买卖一次
-     * profit[i]代表到这个元素能获得的最多利润
+     *
+     * 用两个int分别存到这个位置的最小价格，以及最大profit
+     * 循环时，先计算profit再计算此位置价格是否比最小价格小
      */
 
     class Solution {
@@ -172,15 +180,14 @@ public class Main {
             if (prices == null || prices.length == 0) {
                 return 0;
             }
-            int[] profit = new int[prices.length];
-            profit[0] = 0;
-            int min = prices[0];
-            for (int i = 1; i < prices.length; i++) {
-                // 每一次都获得之前的最小值，然后用当下元素减最小值得到profit[i]，在与之前的profit[i - 1]相比
-                min = Math.min(min, prices[i]);
-                profit[i] = prices[i] - min > profit[i - 1] ? prices[i] - min : profit[i - 1];
+            int minPrice = prices[0];
+            int maxProfit = 0;
+            for (int i = 0; i < prices.length; i++) {
+                int curProfit = prices[i] - minPrice;
+                maxProfit = curProfit > maxProfit ? curProfit : maxProfit;
+                minPrice = prices[i] < minPrice ? prices[i] : minPrice;
             }
-            return profit[prices.length - 1];
+            return maxProfit;
         }
     }
 
@@ -515,27 +522,26 @@ public class Main {
      * 可以用数组把前n项合存起来，用的时候再拿出来
      */
     class NumArray {
-        private int[] nums;
         private int[] sum;
+        private int[] nums;
 
         public NumArray(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return;
-            }
             this.nums = nums;
-            sum = new int[nums.length];
-            sum[0] = nums[0];
-            for (int i = 1; i < nums.length; i++) {
-                sum[i] = sum[i - 1] + nums[i];
+            this.sum = new int[nums.length];
+            for (int i = 0; i < nums.length; i++) {
+                if (i == 0) {
+                    sum[i] = nums[i];
+                } else {
+                    sum[i] = sum[i - 1] + nums[i];
+                }
             }
         }
 
         public int sumRange(int i, int j) {
             if (i == 0) {
                 return sum[j];
-            } else {
-                return sum[j] - sum[i - 1];
             }
+            return sum[j] - sum[i - 1];
         }
     }
 
@@ -615,6 +621,28 @@ public class Main {
     }
 
     /**
+     * 338 比特位计数
+     * 找规律得到
+     * dp[i] = dp[i - offset] + 1
+     * 初始offset = 1， 当offset * 2 == i时 offset = offset * 2
+     */
+
+    class Solution {
+        public int[] countBits(int num) {
+            int offset = 1;
+            int[] dp = new int[num + 1];
+            dp[0] = 0;
+            for (int i = 1; i < dp.length; i++) {
+                if (2 * offset == i) {
+                    offset *= 2;
+                }
+                dp[i] = dp[i - offset] + 1;
+            }
+            return dp;
+        }
+    }
+
+    /**
      * 387 字符串中第一个无重复字符
      * 用一个大小为26的数组记录字符出现次数
      * 然后遍历单词字符，找到第一个次数为1的
@@ -647,19 +675,45 @@ public class Main {
      * or the step with index 1.
      *
      * dp[i]表示到第i层的最少花费 = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
-     * 所以到达顶层的花费等于Math.min(dp[cost.length - 1] + cost[cost.length - 1], dp[cost.length - 2] + cost[cost.length - 2])
+     * 因为可以选择从0 或者 1 开始
+     * 所以例如 （10， 15 ， 20） dp[0] dp[1] 都等于0 则 dp[2] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
+     * 顶层为dp[3]
+     * 所以设dp数组时，大小比cost多一个
      */
 
     class Solution {
         public int minCostClimbingStairs(int[] cost) {
-            int[] dp = new int[cost.length];
+            int[] dp = new int[cost.length + 1];
             dp[0] = 0;
             dp[1] = 0;
             for (int i = 2; i < dp.length; i++) {
-                dp[i] = Math.min(dp[i - 2] + cost[i - 2], dp[i - 1] + cost[i - 1]);
+                dp[i] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
             }
-            int ans = Math.min(dp[cost.length - 1] + cost[cost.length - 1], dp[cost.length - 2] + cost[cost.length - 2]);
-            return ans;
+            return dp[cost.length];
+        }
+    }
+    /**
+     * 877 石头游戏
+     * dp[i][j] 代表选择从piles[i] ......piles[j]先选的情况下与后选的差
+     * https://www.youtube.com/watch?v=WxpIHvsu1RI
+     *
+     * 2 1 3 4
+     * 把dp[i][j] = p[i] - dp[i + 1][j]拆开就是
+     * 1 - 2 + 3 - 4，上边的公式相当于对这个的一个总结
+     */
+
+    class Solution {
+        public boolean stoneGame(int[] piles) {
+            int[][] dp = new int[piles.length][piles.length];
+            for (int i = 0; i < piles.length; i++) {
+                dp[i][i] = piles[i];
+            }
+            for (int d = 1; d < piles.length; d++) {
+                for (int i = 0; i + d < piles.length; i++) {
+                    dp[i][i + d] = Math.max(piles[i] - dp[i + 1][i + d], piles[i + d] - dp[i][i + d - 1]);
+                }
+            }
+            return dp[0][piles.length - 1] > 0;
         }
     }
 

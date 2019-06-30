@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/学习总结/Go/基础.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/Go/流程控制语句.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/学习总结/算法/动态规划.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/动态规划.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,14 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/学习总结/Go/流程控制语句.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="621">
-                <caret line="27" selection-start-line="27" selection-end-line="27" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="701" column="37" selection-start-line="701" selection-start-column="37" selection-end-line="701" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -78,7 +83,6 @@
         <option value="$PROJECT_DIR$/学习总结/算法/数组.java" />
         <option value="$PROJECT_DIR$/学习总结/Linux/常用命令.java" />
         <option value="$PROJECT_DIR$/学习总结/Java/Java基础.java" />
-        <option value="$PROJECT_DIR$/学习总结/算法/动态规划.java" />
         <option value="$PROJECT_DIR$/学习总结/数据结构/树.java" />
         <option value="$PROJECT_DIR$/学习总结/操作系统/内存管理.java" />
         <option value="$PROJECT_DIR$/学习总结/算法/BFS.java" />
@@ -88,6 +92,7 @@
         <option value="$PROJECT_DIR$/学习总结/算法/排序.java" />
         <option value="$PROJECT_DIR$/学习总结/Go/Basic.md" />
         <option value="$PROJECT_DIR$/学习总结/Go/流程控制语句.md" />
+        <option value="$PROJECT_DIR$/学习总结/算法/动态规划.java" />
       </list>
     </option>
   </component>
@@ -104,6 +109,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,20 +126,19 @@
               <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
               <item name="学习总结" type="462c0819:PsiDirectoryNode" />
-              <item name="Go" type="462c0819:PsiDirectoryNode" />
+              <item name="算法" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -180,7 +185,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07569297" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14072494" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -391,13 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="168" column="23" lean-forward="true" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/Java/线程池.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -415,13 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="403" column="5" selection-start-line="403" selection-start-column="5" selection-end-line="403" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -521,6 +512,20 @@
             <caret line="27" selection-start-line="27" selection-end-line="27" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/Java/多线程.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/算法/动态规划.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="701" column="37" selection-start-line="701" selection-start-column="37" selection-end-line="701" selection-end-column="37" />
         </state>
       </provider>
     </entry>
