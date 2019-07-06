@@ -506,6 +506,50 @@ public class Main {
     }
 
     /**
+     * 559 N叉树最大深度
+     *
+     */
+
+    class Solution {
+        public int maxDepth(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int max = 0;
+            if (root.children != null) {
+                for (Node n : root.children) {
+                    max = Math.max(max, maxDepth(n));
+                }
+            }
+            return 1 + max;
+        }
+    }
+
+    class Solution {
+        public int maxDepth(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            Queue<Node> queue = new LinkedList<>();
+            queue.offer(root);
+            int depth = 0;
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    Node tem = queue.poll();
+                    if (tem.children != null) {
+                        for (Node n : tem.children) {
+                            queue.offer(n);
+                        }
+                    }
+                }
+                depth++;
+            }
+            return depth;
+        }
+    }
+
+    /**
      * 563 binary tree tilt
      * 左数的和等于left.val + left.left + left.right
      * 所以 traverse(node) = left + right + node.val
@@ -527,6 +571,35 @@ public class Main {
             int right = traverse(node.right);
             tilt += Math.abs(left - right);
             return left + right + node.val;
+        }
+    }
+
+    /**
+     * 590 后序遍历N叉树
+     *  前序遍历时 顺序 root left right
+     *  后序遍历时 顺序 left right root
+     *  所以我们可以把后续看作是一种root right left 遍历的翻转
+     *  用LinkedList的addFirst，可以直接得到翻转后的结果
+     */
+
+    class Solution {
+        public List<Integer> postorder(Node root) {
+            LinkedList<Integer> ans = new LinkedList<>();
+            if (root == null) {
+                return ans;
+            }
+            Stack<Node> stack = new Stack<>();
+            stack.push(root);
+            while (!stack.isEmpty()) {
+                Node node = stack.pop();
+                ans.addFirst(node.val);
+                if (node.children != null) {
+                    for (Node n : node.children) {
+                        stack.push(n);
+                    }
+                }
+            }
+            return ans;
         }
     }
 
@@ -633,6 +706,59 @@ public class Main {
     }
 
     /**
+     * 872 叶子相似树
+     */
+
+    class Solution {
+        public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+            List<Integer> list1 = new LinkedList<>();
+            List<Integer> list2 = new LinkedList<>();
+            formTree(root1, list1);
+            formTree(root2, list2);
+            return list1.equals(list2);
+        }
+
+        private void formTree(TreeNode node, List<Integer> list) {
+            if (node == null) {
+                return;
+            }
+            if (node.left == null && node.right == null) {
+                list.add(node.val);
+                return;
+            }
+            formTree(node.left, list);
+            formTree(node.right, list);
+        }
+    }
+
+    /**
+     * 897 BST变为全部向右的递增树
+     */
+    class Solution {
+        public TreeNode increasingBST(TreeNode root) {
+            LinkedList<TreeNode> stack = new LinkedList<>();
+            if (root == null) {
+                return null;
+            }
+            TreeNode head = new TreeNode(0);
+            TreeNode cur = head;
+            while (root != null || !stack.isEmpty()) {
+                if (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                } else {
+                    TreeNode tem = stack.pop();
+                    cur.right = tem;
+                    cur = cur.right;
+                    tem.left = null;
+                    root = tem.right;
+                }
+            }
+            return head.right;
+        }
+    }
+
+    /**
      * 938 BST搜索范围
      * 递归
      */
@@ -681,6 +807,15 @@ public class Main {
                 }
             }
             return true;
+        }
+    }
+
+    //递归
+    class Solution {
+        public boolean isUnivalTree(TreeNode root) {
+            boolean left = (root.left == null || (root.val == root.left.val && isUnivalTree(root.left)));
+            boolean right = (root.right == null || (root.val == root.right.val && isUnivalTree(root.right)));
+            return left && right;
         }
     }
 

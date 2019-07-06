@@ -700,6 +700,7 @@ public class Main {
      * 2 1 3 4
      * 把dp[i][j] = p[i] - dp[i + 1][j]拆开就是
      * 1 - 2 + 3 - 4，上边的公式相当于对这个的一个总结
+     *
      */
 
     class Solution {
