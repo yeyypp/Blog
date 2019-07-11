@@ -1,10 +1,17 @@
 public class Main {
     /**
+     * 单例模式确保某一个类在系统中只有一个实例，并且自身创建这个实例
+     * 只能有一个实例，自行创建这个实例，
+     */
+
+    /**
      * 饿汉
      * 写法简单，线程安全
      * 但无法延迟加载
      * 因为在加载类时，就会在方法区内创建相应的静态变量
      */
+
+
 
     public class Singleton {
         private static Singleton singleton = new Singleton();

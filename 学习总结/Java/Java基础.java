@@ -10,6 +10,13 @@ public class Main {
      */
 
     /**
+     * hash function
+     * 可以将任意大小的元素存储在固定大小的数据中
+     * 链表发
+     * 再哈希
+     */
+
+    /**
      * static
      * inner class cannot have static declarations
      * 静态变量是放在方法区中，但方法区是否在堆中要根据jvm实现判断

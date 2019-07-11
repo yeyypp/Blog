@@ -40,6 +40,7 @@ public class Main {
         }
     }
 
+
     /**
      * 179 最大数
      * 比如 2 10 能组成的最大数为210
@@ -73,6 +74,87 @@ public class Main {
                 sb.append(s);
             }
             return sb.toString();
+        }
+    }
+
+    /**
+     * 324 摆动排序II
+     * 想把0，1，2，3对应到1，3，5怎么做
+     * (1 + 2 * index) % n n为数组长度
+     * 但如果想把剩下一半对应2，4，6
+     * (1 + 2 * index) % (n|1)
+     * n|1 if n = 6 for example 110 | 1 = 111 = 7
+     *     if n = 7 for example 111 | 1 = 111 = 7
+     *
+     *     奇数%奇数还是奇数
+     *
+     *     注意使用findKth时，参数target需要转换为 target = nums.length - target使用
+     *
+     *     时间N，空间1
+     */
+
+    class Solution {
+        public void wiggleSort(int[] nums) {
+            int length = nums.length;
+            int mid = findKthLargest(nums, (nums.length + 1) / 2);
+            int left = 0, right = nums.length - 1, cur = 0;
+            while (cur <= right) {
+                if (nums[mapIndex(cur, length)] > mid) {
+                    swap(nums, mapIndex(left, length), mapIndex(cur, length));
+                    left++;
+                    cur++;
+                } else if (nums[mapIndex(cur, length)] == mid) {
+                    cur++;
+                } else {
+                    swap(nums, mapIndex(cur, length), mapIndex(right, length));
+                    right--;
+                }
+            }
+        }
+
+        private int mapIndex(int index, int length) {
+            return (1 + 2 * index) % (length | 1);
+        }
+
+        private void swap(int[] nums, int i, int j) {
+            int tem = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tem;
+        }
+
+        private int findKthLargest(int[] nums, int k) {
+            int target = nums.length - k;
+            int left = 0, right = nums.length - 1;
+            while (left < right) {
+                int pivot = findPivot(nums, left, right);
+                if (pivot == target) {
+                    break;
+                }
+                if (pivot < target) {
+                    left = pivot + 1;
+                } else {
+                    right = pivot - 1;
+                }
+            }
+            return nums[target];
+        }
+
+
+
+        private int findPivot(int[] nums, int left, int right) {
+            int key = nums[left];
+            while (left < right) {
+                while (left < right && nums[right] >= key) {
+                    right--;
+                }
+                nums[left] = nums[right];
+                while (left < right && nums[left] <= key) {
+                    left++;
+                }
+                nums[right] = nums[left];
+            }
+            nums[left] = key;
+            return left;
         }
     }
 

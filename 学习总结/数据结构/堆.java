@@ -2,11 +2,16 @@ public class Main {
     /**
      * MinHeap MaxHeap
      * 建堆的复杂度为n
+     * 是一个完全二叉树，missing item only at the bottom level(if any),all nodes are as far left as possible
      * top k 问题
      * 最大的几个数用最小堆，反之最大堆
      * 每次在头节点插入
      * 如最大堆，头节点为当前最大值，当新值比头节点小时，更换头节点为新值，再重新heapify化，最后得到的就是最小的k个数
      * 或者用类似快排的方法，找到K
+     *
+     * add() logN
+     * removeSmallest() logN
+     * getSmallest() 1
      */
 
     class MinHeap {
