@@ -17,6 +17,21 @@ public class Main {
      */
 
     /**
+     * equals override
+     *
+     * @Override
+     * public boolean equals(Object o) {
+     *     if (o == this) {
+     *         return true;
+     *     }
+     *     if (!(o instanceOf ...)) {
+     *         return false;
+     *     }
+     *     return ......
+     * }
+     */
+
+    /**
      * static
      * inner class cannot have static declarations
      * 静态变量是放在方法区中，但方法区是否在堆中要根据jvm实现判断
