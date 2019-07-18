@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/学习总结/Go/type关键字.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/数据结构/图.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/算法/Dynamic.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/算法/Array.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,20 +15,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/学习总结/数据结构/图.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="46">
-                <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +23,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/学习总结/算法/堆.java" />
         <option value="$PROJECT_DIR$/学习总结/数据库/索引.java" />
         <option value="$PROJECT_DIR$/学习总结/操作系统/进程间通信.java" />
         <option value="$PROJECT_DIR$/学习总结/Java/JMM.java" />
@@ -89,6 +73,7 @@
         <option value="$PROJECT_DIR$/学习总结/Go/type关键字.md" />
         <option value="$PROJECT_DIR$/学习总结/算法/Dynamic.md" />
         <option value="$PROJECT_DIR$/学习总结/数据结构/图.md" />
+        <option value="$PROJECT_DIR$/学习总结/算法/Array.md" />
       </list>
     </option>
   </component>
@@ -105,7 +90,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,13 +113,13 @@
               <item name="Blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
               <item name="学习总结" type="462c0819:PsiDirectoryNode" />
-              <item name="数据结构" type="462c0819:PsiDirectoryNode" />
+              <item name="算法" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,7 +172,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17110874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17430703" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -244,17 +229,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/学习总结/算法/设计问题.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="415" column="50" selection-start-line="415" selection-start-column="50" selection-end-line="415" selection-end-column="50" />
-          <folding>
-            <element signature="e#12839#12840#0" expanded="true" />
-            <element signature="e#12873#12874#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/学习总结/面试/多线程.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
@@ -287,15 +261,15 @@
     <entry file="file://$PROJECT_DIR$/学习总结/数据结构/二叉树.java" />
     <entry file="file://$PROJECT_DIR$/index.md" />
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -533,6 +507,16 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="46">
             <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/学习总结/算法/Array.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1150">
+            <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
