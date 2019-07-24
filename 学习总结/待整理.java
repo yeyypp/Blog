@@ -27,9 +27,15 @@ public class Main {
 
      页面置换算法
 
+     工厂模式、适配器模式、策略模式、模板方法模式、观察者模式、外观模式、代理模式
 
+     cookie被禁用，如何实现session
+
+     用Java写一个简单的静态文件的HTTP服务器
      python
      go
+
+     netty
 
 
 
