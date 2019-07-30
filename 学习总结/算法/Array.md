@@ -1,7 +1,7 @@
 # Array
 - 4 [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
-[Tushar Explaination](https://www.youtube.com/watch?v=LPFhl65R7ww&t=442s)
+    [Tushar Explaination](https://www.youtube.com/watch?v=LPFhl65R7ww&t=442s)
 ```
 Java
 
@@ -65,6 +65,112 @@ class Solution {
             }
         }
         return -1;
+    }
+}
+```
+- 42 [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+每一个bar能存的水量，是Math.min(leftMax, rightMax) - height[i]，依次遍历即可，用两个数组
+记录每一个位置的left，right，max值
+```
+Java
+
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        
+        int length = height.length;
+        int[] leftMax = new int[length];
+        int[] rightMax = new int[length];
+        leftMax[0] = height[0];
+        rightMax[length - 1] = height[length - 1];
+        
+        for (int i = 1; i < length; i++) {
+            leftMax[i] = Math.max(leftMax[i - 1], height[i]);
+        }
+        
+        for (int i = length - 2; i >= 0; i--) {
+            rightMax[i] = Math.max(rightMax[i + 1], height[i]);
+        }
+        
+        int ans = 0;
+        for (int i = 0; i < length; i++) {
+            ans += Math.min(leftMax[i], rightMax[i]) - height[i];
+        }
+        return ans;
+    }
+}
+```
+- 84 [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+    
+    [leetcode discuss](https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/28902/5ms-O(n)-Java-solution-explained-(beats-96))
+```
+Java
+
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        if (heights == null || heights.length == 0) {
+            return 0;
+        }
+        int length = heights.length;
+        int[] leftFirstLess = new int[length];
+        int[] rightFirstLess = new int[length];
+        leftFirstLess[0] = -1;
+        rightFirstLess[length - 1] = length;
+        
+        for (int i = 1; i < length; i++) {
+            int leftPoint = i - 1;
+            while (leftPoint >= 0 && heights[leftPoint] >= heights[i]) {
+                leftPoint = leftFirstLess[leftPoint];
+            }
+            leftFirstLess[i] = leftPoint;
+        }
+        
+        for (int i = length - 2; i >= 0; i--) {
+            int rightPoint = i + 1;
+            while (rightPoint < length && heights[rightPoint] >= heights[i]) {
+                rightPoint = rightFirstLess[rightPoint];
+            }
+            rightFirstLess[i] = rightPoint;
+        }
+        
+        int max = 0;
+        for (int i = 0; i < length; i++) {
+            max = Math.max(max, heights[i] * (rightFirstLess[i] - leftFirstLess[i] - 1));
+        }
+        return max;
+    }
+}
+```
+- 128 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+```
+Java
+
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            set.add(i);
+        }
+        
+        int max = 1;
+        
+        for (int num : nums) {
+            if (!set.contains(num - 1)) {
+                int curNum = num;
+                int curMax = 1;
+                while (set.contains(curNum + 1)) {
+                    curNum++;
+                    curMax++;
+                }
+                max = Math.max(max, curMax);
+            }
+        }
+        return max;
     }
 }
 ```
