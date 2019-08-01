@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/学习总结/Java/IO/FileIO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/Java/IO/IOStreams.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/Linux/linuxIO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Go/ATourOfGoPractice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Go/defer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Go/更多类型.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Go/流程控制语句.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Java/CountWord.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/Java/Java8.9.10.11新特性.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/学习总结/算法/HashTable.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Java/Java基础.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/学习总结/算法/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/Array.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
