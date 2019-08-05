@@ -273,8 +273,7 @@ class Solution {
         return ans;
     }
 }
-```
-```
+
 Go
 
 func findDisappearedNumbers(nums []int) []int {
@@ -300,3 +299,42 @@ func abs(a int) int {
     return a
 }
 ```
+- 581 [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
+从头遍历，从第一个小于前一个的元素开始一直到尾，记录最小值
+从尾遍历，从第一个大于前一个的元素开始一直到头，记录最大值
+然后找到最小值，最大值应该在的位置，长度即为答案
+```
+Java
+
+class Solution {
+    public int findUnsortedSubarray(int[] nums) {
+        if (nums == null || nums.length == 0 || nums.length == 1) {
+            return 0;
+        }
+        int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
+                min = Math.min(min, nums[i]);
+            }
+        }
+        for (int j = nums.length - 2; j >= 0; j--) {
+            if (nums[j] > nums[j + 1]) {
+                max = Math.max(max, nums[j]);
+            }
+        }
+        
+        int l, r;
+        for (l = 0; l < nums.length; l++) {
+            if (min < nums[l]) {
+                break;
+            }
+        }
+        for (r = nums.length - 1; r >= 0; r--) {
+            if (max > nums[r]) {
+                break;
+            }
+        }
+        
+        return r < l ? 0 : r - l + 1;
+    }
+}

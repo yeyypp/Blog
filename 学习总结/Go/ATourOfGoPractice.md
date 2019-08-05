@@ -71,3 +71,40 @@ func main() {
 	}
 }
 ```
+### rot13Reader
+```
+package main
+
+import (
+	"io"
+	"os"
+	"strings"
+)
+
+type rot13Reader struct {
+	r io.Reader
+}
+
+func (rotR rot13Reader) Read(b []byte) (int, error) {
+	n, e := rotR.r.Read(b)
+	for i, _ := range b {
+		switch {
+			case b[i] >= 'A' && b[i] <= 'M':
+			b[i] += 13
+			case b[i] >= 'a' && b[i] <= 'm':
+			b[i] += 13
+			case b[i] >= 'N' && b[i] <= 'Z':
+			b[i] -= 13
+			case b[i] >= 'n' && b[i] <= 'z':
+			b[i] -= 13
+		}
+	}
+	return n, e
+}
+
+func main() {
+	s := strings.NewReader("Lbh penpxrq gur pbqr!")
+	r := rot13Reader{s}
+	io.Copy(os.Stdout, &r)
+}
+```
