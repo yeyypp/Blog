@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/学习总结/Go/并发.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/Go/方法和接口.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/数据库/MYSQL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/学习总结/算法/Math.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/ATourOfGoPractice.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Go/ATourOfGoPractice.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/interface.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/AQS.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Java/多线程/AQS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/ReentrantLock.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Java/多线程/ReentrantLock.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/Array.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/算法/String.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/TCP.UDP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/TCP.UDP.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/网络/TCP.UDP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/http.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/网络.java" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/网络/网络.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/synchronize.md" beforeDir="false" afterPath="$PROJECT_DIR$/学习总结/Java/多线程/synchronize.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skeleton-sp18/proj3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
