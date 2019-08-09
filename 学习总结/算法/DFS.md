@@ -51,3 +51,66 @@ class Solution {
     }
 }
 ```
+
+- 417 [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+反过来想，海水能流过的坐标，这样就不用多使用一个boolean[][] visited
+```
+Java
+
+class Solution {
+    public List<List<Integer>> pacificAtlantic(int[][] matrix) {
+        List<List<Integer>> ans = new LinkedList<>();
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return ans;
+        }
+        
+        int m = matrix.length, n = matrix[0].length;
+        boolean[][] toPacific = new boolean[m][n];
+        boolean[][] toAtlantic = new boolean[m][n];
+        int[][] dir = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};        
+       
+        for (int i = 0; i < m; i++) {
+            dfs(matrix, toPacific, dir, i, 0);
+            dfs(matrix, toAtlantic, dir, i, n - 1);
+        }
+        
+        for (int j = 0; j < n; j++) {
+            dfs(matrix, toPacific, dir, 0, j);
+            dfs(matrix, toAtlantic, dir, m - 1, j);
+        }
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (toPacific[i][j] && toAtlantic[i][j]) {
+                    List<Integer> tem = new ArrayList<>(2);
+                    tem.add(i);
+                    tem.add(j);
+                    ans.add(tem);
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private boolean validate(int i, int j, int[][] matrix) {
+        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length) {
+            return false;
+        }
+        return true;
+    }
+    
+    private void dfs(int[][] matrix, boolean[][] ocean, int[][] dir, int i, int j) {
+        ocean[i][j] = true;
+        for (int[] coor : dir) {
+            int a = i + coor[0];
+            int b = j + coor[1];
+            if (!validate(a, b, matrix)) {
+                continue;
+            } else if (ocean[a][b] == false && matrix[a][b] >= matrix[i][j]) {
+                dfs(matrix, ocean, dir, a, b);
+            }
+        }
+    }
+}
+```
