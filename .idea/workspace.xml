@@ -2,102 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Notes/Log/2019-08-13-Don't.be.afraid.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2019-07-26-How.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/2019-07-26-How.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Lesson.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/ATourOfGoPractice.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/ATourOfGoPractice.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/Stringer.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/Stringer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/defer.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/defer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/type关键字.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/type关键字.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/并发.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/并发.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/方法和接口.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/方法和接口.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/更多类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/更多类型.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Go/流程控制语句.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Go/流程控制语句.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/CompareComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/CompareComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/CountWord.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/CountWord.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/IO/FileIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/IO/FileIO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/IO/IOStreams.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/IO/IOStreams.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JMM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JMM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java8.9.10.11新特性.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/Java8.9.10.11新特性.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java8新特性.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/Java8新特性.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JavaIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JavaIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JavaNIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JavaNIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/JavaSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/JavaSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java基础.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/Java基础.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Java基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/Java基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/java集合类.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/java集合类.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/servlet.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/servlet.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/临时.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/临时.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/反射.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/反射.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/AQS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/AQS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/ReentrantLock.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/ReentrantLock.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/interrupted.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/interrupted.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/synchronize.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/synchronize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/synchronize.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/synchronize.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/多线程/volatile.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/多线程/volatile.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/异常.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/异常.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/生产者消费者.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/生产者消费者.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Java/线程池.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Java/线程池.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Linux/Vim.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Linux/Vim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Linux/linuxIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Linux/linuxIO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Linux/常用命令.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Linux/常用命令.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Linux/文件权限.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Linux/文件权限.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Spring/Spring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Spring/Spring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Spring/SpringBoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Spring/SpringBoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Spring/SpringMVC" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Spring/SpringMVC" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/Spring/Spring中设计模式.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Spring/Spring中设计模式.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/待整理.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/待整理.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/操作系统/内存管理.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/OperatingSystem/内存管理.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/操作系统/操作系统.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/OperatingSystem/操作系统.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/操作系统/进程间通信.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/OperatingSystem/进程间通信.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据库/MYSQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataBase/MYSQL.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据库/SQL" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataBase/SQL" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据库/数据库.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataBase/数据库.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据库/索引.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataBase/索引.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/Heap.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataStructure/Heap.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/图.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataStructure/图.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/堆.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataStructure/堆.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/树.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataStructure/树.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/数据结构/红黑树.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DataStructure/红黑树.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Array.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/DFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/DFS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Dynamic.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Dynamic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Graph.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Graph.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/HashTable.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/HashTable.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Math.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Math.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/String.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/Tree.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/位运算.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/位运算.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/分治.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/分治.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/动态规划.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/动态规划.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/回溯算法.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/回溯算法.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/堆,栈,列.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/堆,栈,列.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/字符串.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/字符串.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/排序.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/排序.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/数学.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/数学.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/数组.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/数组.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/树.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/树.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/海量数据.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/海量数据.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/算法复杂度.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/算法复杂度.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/设计问题.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/设计问题.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/贪心.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/贪心.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/算法/链表.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Algorithm/链表.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/TCP.UDP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Network/TCP.UDP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/网络/网络.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Network/网络.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/设计模式/代理模式.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DesignPattern/代理模式.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/设计模式/单例模式.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DesignPattern/单例模式.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/设计模式/装饰器.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DesignPattern/装饰器.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/设计模式/设计模式.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/DesignPattern/设计模式.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/面试/多线程.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Interview/多线程.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/面试/异常.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Interview/异常.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学习总结/面试/网络.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Interview/网络.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2019-08-12-Sleep.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Log/2019-08-12-Sleep.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes/2019-07-26-How.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Log/2019-07-26-How.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes/Lesson.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Log/Lesson.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,23 +27,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skeleton-sp18/proj3" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\_post" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\Java" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\设计模式" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\操作系统" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">
