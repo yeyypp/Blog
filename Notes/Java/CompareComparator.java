@@ -9,7 +9,7 @@ public class ComparableComparator {
         /**
          * Item i1, Item i2
          * i2 为比较的那个元素
-         * return -1 代表第一个元素放在前面
+         * return -1 代表i1放在前面
          * @param item
          * @return
          */

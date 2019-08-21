@@ -49,3 +49,46 @@ func countPrimes(n int) int {
     return ans;
 }
 ```
+
+- 76 [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+```
+Java
+
+class Solution {
+    public String minWindow(String s, String t) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        int[] map = new int[128];
+        for (char c : t.toCharArray()) {
+            map[c]++;
+        }
+        
+        int left = 0, right = 0, min = Integer.MAX_VALUE, start = 0, count = t.length();
+        
+        while (right < s.length()) {
+            char c1 = s.charAt(right);
+            if (map[c1] > 0) {
+                count--;
+            }
+            map[c1]--;
+            right++;
+            
+            while (count == 0) {
+                if (min > right - left) {
+                    min = right - left;
+                    start = left;
+                }
+                char c2 = s.charAt(left);
+                map[c2]++;
+                if (map[c2] > 0) {
+                    count++;
+                }
+                left++;
+            }
+        }
+        
+        return min == Integer.MAX_VALUE ? "" : s.substring(start, start + min);
+    }
+}
+```
