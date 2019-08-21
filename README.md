@@ -1,4 +1,7 @@
-# A personal blog
-- [ ] 3w生活费
-- [ ] 30W学费
-- [ ] 日本旅行
+# My Blog
+
+Current Life Goals
+- [ ] Be a programmer
+- [ ] 35,000 living expenses
+- [ ] 300,000 tuition fees
+- [ ] A trip to Japan which I promised to my girl
