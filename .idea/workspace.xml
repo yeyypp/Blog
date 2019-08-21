@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Notes/Resume.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +28,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\_post" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\Java" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\学习总结\设计模式" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\SomeThingElse" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\_post" />
     </key>
   </component>
   <component name="RunDashboard">
