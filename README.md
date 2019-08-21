@@ -1,7 +1,7 @@
-# A personal blog
+# My Blog
 
 Current Life Goals
-- [ ] 做一个程序员
-- [ ] 3w生活费
-- [ ] 30W学费
-- [ ] 日本旅行
+- [ ] Be a programmer
+- [ ] 35,000 living expenses
+- [ ] 300,000 tuition fees
+- [ ] A trip to Japan which I promise to my girl
