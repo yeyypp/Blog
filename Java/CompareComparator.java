@@ -9,7 +9,11 @@ public class ComparableComparator {
         /**
          * Item i1, Item i2
          * i2 为比较的那个元素
-         * return -1 代表i1放在前面
+         * 返回-1 代表 i1放在前，返回1 代表 i1放在后
+         * 当希望较大元素放在前边时，因为移动的是i1
+         * 则 return i2 - i1
+         *
+         * 反之 return i1 - i2
          * @param item
          * @return
          */
