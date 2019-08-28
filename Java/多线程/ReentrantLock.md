@@ -41,7 +41,7 @@ ReentrantLock可实现公平锁或者非公平锁
 用来阻塞唤醒线程
 
 >一个线程获取锁后，通过调用 Condition 的 #await() 方法，
-会将当前线程先加入到条件队列中，
+会将当前线程先加入到当前条件的队列中，
 然后释放锁，最后通过 #isOnSyncQueue(Node node) 方法，
 不断自检看节点是否已经在 CLH 同步队列了，
 如果是则尝试获取锁，否则一直挂起。
@@ -145,4 +145,6 @@ public class Consumer implements Runnable {
         }
     }
 }
-```
+
+
+### Reentreadwritelock

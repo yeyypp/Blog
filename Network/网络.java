@@ -126,5 +126,7 @@ public class Main {
      *
      * 5.浏览器解析html css文件，进行渲染，最后将页面展示出来。
      *
+     *
+     * http forward 请求转发
      */
 }
