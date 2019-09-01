@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Backtracking.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/DynamicAndString.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/多线程/CAS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/多线程/CyclicBarrier.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/多线程/PrintABC.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Network/输入了url后发生了什么.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/Annotation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/CompileTimeAndRuntime.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/Concurrency/ConcurrentHashMap.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/Concurrency/Semaphore.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/JVM/Run-timeArea.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/多线程/ReentrantLock.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/多线程/ReentrantLock.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/AQS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/AQS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/CAS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/CAS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/CyclicBarrier.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/CyclicBarrier.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/PrintABC.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/PrintABC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/ReentrantLock.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/ReentrantLock.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/interrupted.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/interrupted.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/synchronize.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/synchronize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/synchronize.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/synchronize.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/多线程/volatile.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/volatile.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Network/TCP.UDP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Network/TCP.UDP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network/网络.java" beforeDir="false" afterPath="$PROJECT_DIR$/Network/网络.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SomeThingElse/待整理.java" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/待整理.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/Annotation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/Annotation.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

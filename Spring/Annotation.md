@@ -20,3 +20,22 @@
 - @PathVariable
     
     also can extract data from URI and it is used for dynamic values(pattern)
+
+- @SpringBootApplication
+    
+   @SpringBootApplication is a convenience annotation that adds all of the following:
+
+    @Configuration tags the class as a source of bean definitions for the application context.
+
+    @EnableAutoConfiguration tells Spring Boot to start adding beans based on classpath settings, 
+    other beans, and various property settings. For example, 
+    if spring-webmvc is on the classpath this flags the application as a web application 
+    and activates key behaviors such as setting up a DispatcherServlet.
+
+    @ComponentScan tells Spring to look for other components, configurations, 
+    and services in the package, allowing it to find the controllers. 
+    
+- @ModelAttribute
+    
+    indicates the argument should be retrieved from the model
+    @ModelAttribute(name = "object") Greeting greeting

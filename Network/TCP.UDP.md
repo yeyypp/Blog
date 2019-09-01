@@ -171,6 +171,11 @@
 
 
 [TCP心跳](https://www.cnkirito.moe/tcp-talk/)
+
+- 转发 重定向
+    
+    转发会将当前request转发到新的页面
+    重定向会返回给客户端一个新的url，然后客户端会发送一个新的request到这个url
     
 
 
