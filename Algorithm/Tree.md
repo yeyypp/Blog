@@ -1,4 +1,31 @@
 # Tree
+- 94 [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+```
+Java
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
+        
+        Deque<TreeNode> stack = new LinkedList<>();
+        
+        while (root != null || !stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                ans.add(root.val);
+                root = root.right;
+            }
+        }
+        return ans;
+    }
+}
+```
+
 - 98 [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 ```
 Java
@@ -55,6 +82,47 @@ class Solution {
     }
 }
 
+```
+
+- 103 [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+```
+Java
+class Solution {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean toLeft = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+                if (cur.left != null) {
+                    queue.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.offer(cur.right);
+                }
+                if (toLeft) {
+                    list.add(cur.val);
+                } else {
+                    list.add(0, cur.val);
+                }
+            }
+            if (toLeft) {
+                toLeft = false;
+            } else {
+                toLeft = true;
+            }
+            ans.add(list);
+        }
+        return ans;
+    }
+}
 ```
 
 - 107 [Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
