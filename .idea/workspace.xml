@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm/Heap.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/Concurrency/Threadlocal.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Network/HTTP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringSecurity.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/Backtracking.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Backtracking.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Tree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/HashTable.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/HashTable.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Stack.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network/HTTP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Network/HTTP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringSecurity.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringSecurity.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

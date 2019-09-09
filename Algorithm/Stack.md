@@ -37,3 +37,34 @@ class MinStack {
     }
 }
 ```
+
+- 388 [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)
+```
+Java
+
+class Solution {
+    public int lengthLongestPath(String input) {
+        String[] dir = input.split("\n");
+        int max = 0;
+        Deque<Integer> stack = new LinkedList<>();
+        stack.push(0);
+        for (String s : dir) {
+            // if there is no \t in the string, the lastIndexOf will
+            // return -1
+            int numberOfTab = s.lastIndexOf("\t") + 1;
+            int level = numberOfTab + 1;
+            while (level < stack.size()) {
+                stack.pop();
+            }
+            // the curLen has to add the last "\"
+            int curLen = stack.peek() + s.length() - numberOfTab + 1;
+            stack.push(curLen);
+            if (s.contains(".")) {
+                // the curLen has to reduce the last "\"
+                max = Math.max(max, curLen - 1);
+            }
+        }
+        return max;
+    }
+}
+```

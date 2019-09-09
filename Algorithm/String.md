@@ -145,3 +145,20 @@ class Solution {
     }
 }
 ```
+
+- 482 [License Key Formatting](https://leetcode.com/problems/license-key-formatting/)
+```
+Java
+
+class Solution {
+    public String licenseKeyFormatting(String S, int K) {
+        String s = S.replaceAll("-", "").toUpperCase();
+        StringBuilder sb = new StringBuilder(s).reverse();
+        // i should be equals i += K + 1 because of the insert methods.
+        for (int i = K; i < sb.length(); i += K + 1) {
+            sb.insert(i, "-");
+        }
+        return sb.reverse().toString();
+    }
+}
+```
