@@ -2,6 +2,13 @@
 - http status
     
     [http status](https://httpstatuses.com/)  
+    - 200 OK
+    - 201 Created
+    - 301 Moved Permanently
+    - 400 Bad Request
+    - 401 Unauthorized
+    - 403 Forbidden
+    - 404 Not Found
     
     
     - 403 forbidden

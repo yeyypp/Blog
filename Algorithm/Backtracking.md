@@ -1,5 +1,33 @@
 # Backtracking
 
+- 39 [Combination Sum](https://leetcode.com/problems/combination-sum/)
+```
+Java
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> ans = new LinkedList<>();
+        Arrays.sort(candidates);
+        dfs(ans, new LinkedList<Integer>(), candidates, target, 0, 0);
+        return ans;
+    }
+    
+    private void dfs(List<List<Integer>> ans, List<Integer> list, int[] candidates, int target, int cur, int start) {
+        if (cur == target) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        if (cur > target) {
+            return;
+        }
+        for (int i = start; i < candidates.length; i++) {
+            list.add(candidates[i]);
+            dfs(ans, list, candidates, target, cur + candidates[i], i);
+            list.remove(list.size() - 1);
+        }
+    }
+}
+```
+
 - 46 [Permutation](https://leetcode.com/problems/permutations/)
 ```
 Java
