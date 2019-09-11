@@ -39,3 +39,9 @@
     
     indicates the argument should be retrieved from the model
     @ModelAttribute(name = "object") Greeting greeting
+
+- @Scope
+    
+    [Bean scope](https://docs.spring.io/spring/docs/3.0.0.M3/reference/html/ch04s04.html)  
+    [The difference between singleton and prototype](https://stackoverflow.com/questions/16058365/what-is-difference-between-singleton-and-prototype-bean)
+    

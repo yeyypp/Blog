@@ -146,6 +146,30 @@ class Solution {
 }
 ```
 
+- 409 [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
+```
+Java
+
+class Solution {
+    public int longestPalindrome(String s) {
+        Set<Character> set = new HashSet<>();
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (set.contains(s.charAt(i))) {
+                set.remove(s.charAt(i));
+                count++;
+            } else {
+                set.add(s.charAt(i));
+            }
+        }
+        if (set.size() != 0) {
+            return count * 2 + 1;
+        }
+        return count * 2;
+    }
+}
+```
+
 - 482 [License Key Formatting](https://leetcode.com/problems/license-key-formatting/)
 ```
 Java
@@ -159,6 +183,26 @@ class Solution {
             sb.insert(i, "-");
         }
         return sb.reverse().toString();
+    }
+}
+```
+
+- 819 [Most Common Word](https://leetcode.com/problems/most-common-word/)
+```
+Java
+class Solution {
+    public String mostCommonWord(String paragraph, String[] banned) {
+        Map<String, Integer> map = new HashMap<>();
+        Set<String> set = new HashSet<>(Arrays.asList(banned));
+        String[] words = paragraph.replaceAll("\\W+", " ").toLowerCase().split(" ");
+        for (String word : words) {
+            if (!set.contains(word)) {
+                map.put(word, map.getOrDefault(word, 0) + 1);
+            }
+        }
+        PriorityQueue<String> maxHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+        map.keySet().forEach(key -> maxHeap.offer(key));
+        return maxHeap.poll();
     }
 }
 ```
