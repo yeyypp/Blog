@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OperatingSystem/InterprocessCommunication.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OperatingSystem/KernelThreadAndUserThread.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OperatingSystem/进程间通信.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring/Annotation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/Annotation.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

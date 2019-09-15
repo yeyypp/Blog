@@ -45,3 +45,10 @@
     [Bean scope](https://docs.spring.io/spring/docs/3.0.0.M3/reference/html/ch04s04.html)  
     [The difference between singleton and prototype](https://stackoverflow.com/questions/16058365/what-is-difference-between-singleton-and-prototype-bean)
     
+- Spring Boot Jpa
+    
+    - @JoinColumn
+        
+        It is used to create foreign key in the entity.
+        [JoinColumn](https://www.baeldung.com/jpa-join-column)
+        [mappedBy](https://www.baeldung.com/jpa-joincolumn-vs-mappedby)
