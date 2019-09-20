@@ -52,6 +52,43 @@ class Solution {
 }
 ```
 
+- 200 [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+```
+Java
+
+class Solution {
+    int[] dr = new int[]{1, 0, -1, 0};
+    int[] dc = new int[]{0, 1, 0, -1};
+    
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        int ans = 0;
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1' && !visited[i][j]) {
+                    dfs(grid, i, j, visited);
+                    ans++;
+                }
+            }
+        }
+        return ans;
+    }
+    
+    private void dfs(char[][] grid, int i, int j, boolean[][] visited) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0' || visited[i][j]) {
+            return;
+        }
+        visited[i][j] = true;
+        for (int a = 0; a < 4; a++) {
+            dfs(grid, i + dr[a], j + dc[a], visited);
+        }
+    }
+}
+```
+
 - 417 [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
 反过来想，海水能流过的坐标，这样就不用多使用一个boolean[][] visited
 ```

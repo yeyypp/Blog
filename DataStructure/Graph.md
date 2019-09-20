@@ -163,3 +163,6 @@ public static List<Long> Astar(Graph g, long startID, long destID) {
     }
 }
 ```
+
+Detect Cycle By Kahn Algorithm
+- 207 [Course Schedule](https://leetcode.com/problems/course-schedule/)
