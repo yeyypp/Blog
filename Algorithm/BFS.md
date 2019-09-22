@@ -128,6 +128,65 @@ class Solution {
 }
 ```
 
+- 127 [World Ladder](https://leetcode.com/problems/word-ladder/)
+```
+Java
+
+class Solution {
+    
+    class Pair {
+        private String word;
+        private int level;
+        
+        public Pair(String word, int level) {
+            this.word = word;
+            this.level = level;
+        }
+    }
+    
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Map<String, List<String>> map = new HashMap<>();
+        for (String word : wordList) {
+            for (int i = 0; i < word.length(); i++) {
+                String newWord = word.substring(0, i) + "*" + word.substring(i + 1, word.length());
+                List<String> list = map.getOrDefault(newWord, new LinkedList<String>());
+                list.add(word);
+                map.put(newWord, list);
+            }
+        }
+        
+        Set<String> visited = new HashSet<>();
+        Queue<Pair> queue = new LinkedList<>();
+        
+        queue.offer(new Pair(beginWord, 1));
+        
+        while (!queue.isEmpty()) {
+            Pair cur = queue.poll();
+            String word = cur.word;
+            int level = cur.level;
+            visited.add(word);
+            for (int i = 0; i < word.length(); i++) {
+                String newWord = word.substring(0, i) + "*" + word.substring(i + 1, word.length());
+                List<String> list = map.getOrDefault(newWord, null);
+                if (list == null) {
+                    continue;
+                }
+                for (String s : list) {
+                    if (s.equals(endWord)) {
+                        return level + 1;
+                    }
+                    if (!visited.contains(s)) {
+                        queue.offer(new Pair(s, level + 1));
+                    }
+                }
+            }
+        }
+        
+        return 0;
+    }
+}
+```
+
 - 207 [Course Schedule](https://leetcode.com/problems/course-schedule/)
 ```
 Java
