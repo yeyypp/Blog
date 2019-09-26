@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Algorithm/Design.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern/Proxy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/Reflection.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/Bean.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringAOP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringIoC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringJPA.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringMVC.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/BFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/BFS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/DFS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DFS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/DynamicAndString.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DynamicAndString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/Observer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringBoot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringMVC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/Spring中设计模式.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,23 +35,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skeleton-sp18/proj3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\DesignPattern" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\SomeThingElse" />
       <recent name="C:\ShuaiYe\MyProjects\Blog" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\_post" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">
