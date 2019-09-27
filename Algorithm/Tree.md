@@ -257,6 +257,66 @@ class Solution {
 }
 ```
 
+- 530 [Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/)
+```
+Java
+
+class Solution {
+    public int getMinimumDifference(TreeNode root) {
+        TreeNode cur = root, pre = null;
+        int min = Integer.MAX_VALUE;
+        Deque<TreeNode> stack = new LinkedList<>();
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                if (pre != null) {
+                    min = Math.min(min, Math.abs(cur.val - pre.val));
+                }
+                pre = cur;
+                cur = cur.right;
+            }
+        }
+        return min;
+    }
+}
+```
+
+- 637 [Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
+```
+Java
+
+class Solution {
+    public List<Double> averageOfLevels(TreeNode root) {
+        List<Double> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            double tem = 0;
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+                tem += cur.val;
+                if (cur.left != null) {
+                    queue.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.offer(cur.right);
+                }
+            }
+            ans.add(tem / size);
+        }
+        return ans;
+    }
+}
+```
+
 
 - 863 [All Nodes Distance K in Binary Tree](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/)
 ```

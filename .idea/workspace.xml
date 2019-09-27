@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm/Design.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPattern/Proxy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/Reflection.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/Bean.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringAOP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringIoC.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringJPA.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringMVC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/IO/NIO.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/Observer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringBoot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringMVC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/Spring中设计模式.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Tree.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
