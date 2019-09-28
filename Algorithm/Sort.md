@@ -110,3 +110,34 @@ class Solution {
     }
 }
 ```
+
+- 1122 [Relative Sort Array](https://leetcode.com/problems/relative-sort-array/)
+```
+Java
+
+class Solution {
+    public int[] relativeSortArray(int[] arr1, int[] arr2) {
+        int[] tem = new int[1001];
+        for (int num : arr1) {
+            tem[num]++;
+        }
+        
+        int[] ans = new int[arr1.length];
+        int index = 0;
+        
+        for (int num : arr2) {
+            while (tem[num]-- > 0) {
+                ans[index++] = num;
+            }
+        }
+        
+        for (int i = 0; i < tem.length; i++) {
+            while (tem[i]-- > 0) {
+                ans[index++] = i;
+            }
+        }
+        
+        return ans;
+    }
+}
+```

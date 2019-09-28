@@ -106,6 +106,26 @@ public static void writeFile(String outTxt) {
     }
 ```
 
+Copy text
+```
+public static void copyText(String path1, String path2) {
+
+        try (
+                BufferedReader br = new BufferedReader(new FileReader(path1));
+                BufferedWriter bw = new BufferedWriter(new FileWriter(path2));
+                ) {
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                System.out.println("success");
+                System.out.println(line);
+                bw.write(line);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+```
+
 ### Object Streams
 
 用于读写实现了序列化的对象
