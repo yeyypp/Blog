@@ -68,3 +68,63 @@ class Solution {
     }
 }
 ```
+
+- 1047 [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+```
+Java
+
+class Solution {
+    public String removeDuplicates(String S) {
+        StringBuilder sb = new StringBuilder();
+        
+        for (int i = 0; i < S.length(); i++) {
+            int size = sb.length();
+            if (size > 0 && sb.charAt(size - 1) == S.charAt(i)) {
+                sb.deleteCharAt(size - 1);
+            } else {
+                sb.append(S.charAt(i));
+            }
+        }
+        
+        return sb.toString();
+    }
+}
+```
+
+- 1209 [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/)
+```
+Java
+
+class Solution {
+    public String removeDuplicates(String s, int k) {
+        Deque<Integer> countStack = new LinkedList<>();
+        Deque<Character> charStack = new LinkedList<>();
+        
+        for (char c : s.toCharArray()) {
+            if (!charStack.isEmpty() && charStack.peek() == c) {
+                countStack.push(countStack.peek() + 1);
+            } else {
+                countStack.push(1);
+            }
+            charStack.push(c);
+            
+            if (countStack.peek() == k) {
+                for (int i = 0; i < k; i++) {
+                    charStack.pop();
+                    countStack.pop();
+                }
+            }
+        }
+        
+        return convert(charStack);
+    }
+    
+    private String convert(Deque<Character> stack) {
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+        return sb.reverse().toString();
+    }
+}
+```
