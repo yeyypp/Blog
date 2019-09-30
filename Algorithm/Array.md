@@ -218,6 +218,30 @@ class Solution {
     }
 }
 ```
+
+- 121 [Best time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+```
+Java
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int minPrice = prices[0];
+        int curProfit = 0;
+        int maxProfit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            minPrice = minPrice < prices[i] ? minPrice : prices[i];
+            curProfit = prices[i] - minPrice;
+            maxProfit = maxProfit > curProfit ? maxProfit : curProfit;
+        }
+        return maxProfit;
+    }
+}
+```
+
+
 - 128 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 ```
 Java

@@ -169,6 +169,30 @@ class Solution {
     }
 }
 ```
+- 412 [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
+```
+Java
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> ans = new LinkedList<>();
+        if (n == 0) {
+            return ans;
+        }
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                ans.add("FizzBuzz");
+            } else if (i % 3 == 0) {
+                ans.add("Fizz");
+            } else if (i % 5 == 0) {
+                ans.add("Buzz");
+            } else {
+                ans.add(Integer.toString(i));
+            }
+        }
+        return ans;
+    }
+}
+```
 
 - 482 [License Key Formatting](https://leetcode.com/problems/license-key-formatting/)
 ```

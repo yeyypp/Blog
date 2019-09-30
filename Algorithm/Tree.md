@@ -157,6 +157,32 @@ class Solution {
 }
 ```
 
+- 108 [Convert sorted array to BST](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+```
+Java
+// Using binary search find the mid val, then recur
+
+class Solution {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        return helper(nums, 0, nums.length - 1);
+    }
+    
+    private TreeNode helper(int[] nums, int low, int high) {
+        if (low <= high) {
+            int mid = low + (high - low) / 2;
+            TreeNode node = new TreeNode(nums[mid]);
+            node.left = helper(nums, low, mid - 1);
+            node.right = helper(nums, mid + 1, high);
+            return node;
+        }
+        return null;
+    }
+}
+```
+
 - 144 [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 ```
 Java
