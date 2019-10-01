@@ -219,6 +219,32 @@ class Solution {
 }
 ```
 
+- 88 [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+```
+Java
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1, j = n - 1, k = m + n - 1;
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+        
+        while (i >= 0) {
+            nums1[k--] = nums1[i--];
+        }
+        
+        while (j >= 0) {
+            nums1[k--] = nums2[j--];
+        }
+    }
+}
+```
+
 - 121 [Best time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 ```
 Java
@@ -270,6 +296,33 @@ class Solution {
             }
         }
         return max;
+    }
+}
+```
+
+- 189 [Rotate Array](https://leetcode.com/problems/rotate-array/)
+```
+Java
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+        
+    }
+    
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            swap(nums, start++, end--);
+        }
+    }
+    
+    private void swap(int[] nums, int a, int b) {
+        int tem = nums[a];
+        nums[a] = nums[b];
+        nums[b] = tem;
     }
 }
 ```

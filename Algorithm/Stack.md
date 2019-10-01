@@ -1,4 +1,39 @@
 # Stack
+
+- 20 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+```
+Java
+
+class Solution {
+    public boolean isValid(String s) {
+        Deque<Character> stack = new LinkedList<>();
+        for (int i = 0; i < s.length(); i++) {
+            char cur = s.charAt(i);
+            
+            if (stack.isEmpty()) {
+                stack.push(cur);
+            } else if (match(cur, stack.peek())) {
+                stack.pop();
+            } else {
+                stack.push(cur);
+            }
+        }
+        return stack.isEmpty();
+    }
+    
+    private boolean match(Character left, Character right) {
+        switch (left) {
+            case ')' :
+                return right == '(';
+            case '}' :
+                return right == '{';
+            case ']' :
+                return right == '[';
+        }
+        return false;
+    }
+}
+```
 - 155 [Min Stack](https://leetcode.com/problems/min-stack/)
 ```
 Java

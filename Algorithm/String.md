@@ -80,6 +80,36 @@ class Solution {
 }
 ```
 
+- 38 [Count and Say](https://leetcode.com/problems/count-and-say/)
+```
+Java
+
+class Solution {
+    public String countAndSay(int n) {
+        if (n == 1) {
+            return "1";
+        }
+        
+        String tem = countAndSay(n - 1);
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
+        
+        for (int i = 1; i <= tem.length(); i++) {
+            char c = tem.charAt(i  -1);
+            if (i == tem.length()) {
+                sb.append(count).append(c);
+            } else if (tem.charAt(i) != c) {
+                sb.append(count).append(c);
+                count = 1;
+            } else {
+                count++;
+            }
+        }
+        return sb.toString();
+    }
+}
+```
+
 - 76 [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 ```
 Java

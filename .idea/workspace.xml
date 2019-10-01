@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm/BitManipulation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Greedy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java/Concurrency/ThreadPool.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/TwoPointers.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Array.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/HashTable.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/HashTable.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/Math.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Math.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Stack.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Tree.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/IO/Networking.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/IO/Networking.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/IO/NIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/IO/NIO.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,16 +36,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ShuaiYe\MyProjects\Blog\DesignPattern" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\SomeThingElse" />
       <recent name="C:\ShuaiYe\MyProjects\Blog" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -82,3 +82,33 @@ class Solution {
     }
 }
 ```
+
+- 172 [Factorizl Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes/)
+```
+Java
+
+class Solution {
+    public int trailingZeroes(int n) {
+        return n == 0 ? 0 : n / 5 + trailingZeroes(n / 5);
+    }
+}
+```
+
+- 326 [Power of Three](https://leetcode.com/problems/power-of-three/)
+```
+Java
+
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if (n < 1) {
+            return false;
+        }
+        
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+        
+        return n == 1;
+    }
+}
+```
