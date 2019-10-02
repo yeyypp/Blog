@@ -22,7 +22,7 @@ Java中线程中断一般有三个方法
 
     判断目标线程是否中断，会清楚中断标记
     
-一般在使用时需要线虫中有处理中断的逻辑，才能中断线程
+一般在使用时需要线程中有处理中断的逻辑，才能中断线程
 ```
 public void run() {
     if (Thread.isInterrupted()) {
@@ -40,4 +40,66 @@ try {
                 Thread.currentThread().interrupt();
             }
      }
+```
+
+- join
+```
+Thread t  = new Thread();
+t.join()
+```
+
+t.join() 将会先等待t执行完
+
+- Simple Threads
+```
+/**
+ * @author Java Tutorials
+ * @date 2019/10/2 11:23
+ */
+public class SimpleThreads {
+
+    public static void threadMessage(String message) {
+        String threadName = Thread.currentThread().getName();
+        System.out.println(threadName + " : " + message);
+    }
+
+    private static class MessageLoop implements Runnable {
+
+        @Override
+        public void run() {
+            String[] info = {"hello", "shuai", "you", "are", "the", "best"};
+
+            try {
+                for (int i = 0; i < info.length; i++) {
+                    Thread.sleep(4 * 1000);
+                    threadMessage(info[i]);
+                }
+            } catch (InterruptedException e) {
+                threadMessage("I wasn't done!");
+            }
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        long patience = 60 * 60 * 1000;
+
+        threadMessage("Starting MessageLoop thread");
+        long startTime = System.currentTimeMillis();
+        Thread t = new Thread(new MessageLoop());
+        t.start();
+
+        threadMessage("Waiting for MessageLoop to finish");
+
+        while (t.isAlive()) {
+            threadMessage("Still waiting....");
+            t.join(1000);
+            if ((System.currentTimeMillis() - startTime) > patience && t.isAlive()) {
+                threadMessage("Tired of waiting!");
+                t.interrupt();
+                t.join();
+            }
+        }
+        threadMessage("Finally!");
+    }
+}
 ```

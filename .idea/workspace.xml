@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm/TwoPointers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interview/性能.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Array.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Math.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Math.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Stack.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/IO/NIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/IO/NIO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Concurrency/interrupted.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/interrupted.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network/输入了url后发生了什么.md" beforeDir="false" afterPath="$PROJECT_DIR$/Network/输入了url后发生了什么.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

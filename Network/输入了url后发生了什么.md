@@ -1,7 +1,10 @@
-# [输入url后发生了什么](https://zhuanlan.zhihu.com/p/43369093)
+# 输入url后发生了什么
+[输入url后发生了什么](https://zhuanlan.zhihu.com/p/43369093)
+[网络协议](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
 
 1. 先查找DNS Cache中是否有地址，没有则查找本地host文件中，没有则会发送一个
-DNS query message 到DNS服务器。DNS会通过迭代查询或者递归查询获得地址。
+DNS query message 到DNS服务器。DNS会通过迭代查询或者递归查询获得地址。当在一个
+子网中时，可以通过ARP协议获得相应的MAC地址,否则则发送到网关。ARP，IP均为网络层协议
 
 2. 获得地址后，浏览器通过系统调用Socket接口与服务器建立连接，进行TCP三次握手
 建立连接前，服务器必须已经绑定并监听端口。
