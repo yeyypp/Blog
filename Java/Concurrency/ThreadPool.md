@@ -56,4 +56,25 @@
         discard
         }
     ```
+- how big should the thread pool be
+    
+    - CPU n(cpu) + 1
+    - IO 2 * n(cpu)
+
+- 4 kinds of ThreadPool
+    - newFixThreadPool : at point, at most n threads will active, the new task will
+    wait in the unbound queue if the number of threads reached n. The threads will
+    exist until shutdown.
+    - newWorkStealingPool : Creates a work-stealing thread pool using the number of
+     {@linkplain Runtime#availableProcessors available processors} 
+     as its target parallelism level.
+    - newSingleThreadExecutor : Creates an Executor that uses a single worker thread operating
+    off an unbounded queue.
+    - newCachedThreadPool : it coreSize is 0, maxSize is Integer.MAX_VALUE. it suitable
+    for executing multiple short asynchronous task
+    - newScheduledThreadPool : It can run task after a short delay.
+
+- ExecutorService methods
+    - execute and submit : the difference is submit can return a future object.
+    - invokeAll and invokeAny : former return a list of Future object
     

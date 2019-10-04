@@ -146,6 +146,59 @@ class Solution {
 }
 ```
 
+- 138 [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+```
+Java
+
+// first: create copy after each origin node
+// second: copy random
+// third: separate copy list from origin list
+
+class Solution {
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return null;
+        }
+        
+        Node cur = head, next = null;
+        
+        while (cur != null) {
+            next = cur.next;
+            
+            Node tem = new Node(cur.val, null, null);
+            tem.next = next;
+            cur.next = tem;
+            cur = next;
+        }
+        
+        cur = head;
+        
+        while (cur != null) {
+            if (cur.random != null) {
+                cur.next.random = cur.random.next;
+            }
+            cur = cur.next.next;
+        }
+        
+        cur = head;
+        Node copyHead = head.next, copy = copyHead;
+        
+        while (cur != null) {
+            next = cur.next.next;
+            cur.next = next;
+            cur = cur.next;
+            
+            if (cur != null) {
+                copy.next = cur.next;
+                copy = copy.next;
+            }
+        }
+        
+        return copyHead;
+    }
+}
+```
+
 - 141 [LinkedList Cycle](https://leetcode.com/problems/linked-list-cycle/)
 ```
 Java
