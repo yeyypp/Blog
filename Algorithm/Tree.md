@@ -8,20 +8,42 @@ class Solution {
         if (root == null) {
             return ans;
         }
-        
         Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode curNode = root;
         
-        while (root != null || !stack.isEmpty()) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
+        while (!stack.isEmpty() || curNode != null) {
+            if (curNode != null) {
+                stack.push(curNode);
+                curNode = curNode.left;
             } else {
-                root = stack.pop();
-                ans.add(root.val);
-                root = root.right;
+                curNode = stack.pop();
+                ans.add(curNode.val);
+                curNode = curNode.right;
             }
         }
         return ans;
+    }
+    
+    
+}
+
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
+        inorder(root, ans);
+        return ans;
+    }
+    
+    private void inorder(TreeNode node, List<Integer> ans) {
+        if (node == null) {
+            return;
+        }
+        inorder(node.left, ans);
+        ans.add(node.val);
+        inorder(node.right, ans);
     }
 }
 ```
@@ -47,6 +69,28 @@ class Solution {
             return false;
         }
         return helper(node.left, low, val) && helper(node.right, val, up);
+    }
+}
+```
+
+- 101 [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
+```
+Java
+
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return helper(root, root);
+    }
+    
+    private boolean helper(TreeNode a, TreeNode b) {
+        if (a == null && b == null) {
+            return true;
+        } else if (a == null || b == null) {
+            return false;
+        } else if (a.val != b.val) {
+            return false;
+        }
+        return helper(a.left, b.right) && helper(a.right, b.left);
     }
 }
 ```
@@ -125,6 +169,52 @@ class Solution {
 }
 ```
 
+- 104 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+```
+Java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(maxDepth(root.right), maxDepth(root.left)) + 1;
+    }
+}
+```
+
+- 105 [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+```
+Java
+
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+        return findRoot(preorder, inorder, 0, 0, inorder.length - 1);
+    }
+    
+    private TreeNode findRoot(int[] preorder, int[] inorder, int preStart, int inStart, int inEnd) {
+        if (preStart >= preorder.length || inStart > inEnd) {
+            return null;
+        }
+        
+        TreeNode root = new TreeNode(preorder[preStart]);
+        
+        int pos = 0;
+        for (int j = 0; j < inorder.length; j++) {
+            if (inorder[j] == preorder[preStart]) {
+                pos = j;
+            }
+        }
+        
+        root.left = findRoot(preorder, inorder, preStart + 1, inStart, pos - 1);
+        root.right = findRoot(preorder, inorder, preStart + pos - inStart + 1, pos + 1, inEnd);
+        return root;
+    }
+}
+```
+
 - 107 [Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
 ```
 Java
@@ -193,16 +283,18 @@ class Solution {
         if (root == null) {
             return ans;
         }
-        Deque<TreeNode> deque = new LinkedList<>();
-        deque.push(root);
-        while (!deque.isEmpty()) {
-            root = deque.pop();
-            ans.add(root.val);
-            if (root.right != null) {
-                deque.push(root.right);
+        
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode curNode = root;
+        stack.push(curNode);
+        while (!stack.isEmpty()) {
+            curNode = stack.pop();
+            ans.add(curNode.val);
+            if (curNode.right != null) {
+                stack.push(curNode.right);
             }
-            if (root.left != null) {
-                deque.push(root.left);
+            if (curNode.left != null) {
+                stack.push(curNode.left);
             }
         }
         return ans;
@@ -226,6 +318,67 @@ class Solution {
     }
 }
 
+```
+
+- 145 [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+```
+Java
+
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
+        
+        Deque<TreeNode> stack = new LinkedList<>();
+        
+        TreeNode curNode = root;
+        stack.push(curNode);
+        while (!stack.isEmpty()) {
+            curNode = stack.pop();
+            ans.add(0, curNode.val);
+            if (curNode.left != null) {
+                stack.push(curNode.left);
+            }
+            if (curNode.right != null) {
+                stack.push(curNode.right);
+            }
+        }
+        
+        return ans;
+    }
+}
+```
+
+- 230 [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+```
+Java
+
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        if (root == null || k < 1) {
+            return 0;
+        }
+        Deque<TreeNode> stack = new LinkedList<>();
+        
+        TreeNode cur = root;
+        
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                if (--k == 0) {
+                    return cur.val;
+                }
+                cur = cur.right;
+            }
+        }
+        return 0;
+    }
+}
 ```
 
 - 235 [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
@@ -337,6 +490,37 @@ class Solution {
                 }
             }
             ans.add(tem / size);
+        }
+        return ans;
+    }
+}
+```
+
+- 783 [Minimum Distance Between BST Nodes](https://leetcode.com/problems/minimum-distance-between-bst-nodes/)
+```
+Java
+
+class Solution {
+    public int minDiffInBST(TreeNode root) {
+        int ans = Integer.MAX_VALUE;
+        if (root == null) {
+            return 0;
+        }
+        TreeNode cur = root, pre = null;
+        Deque<TreeNode> stack = new LinkedList<>();
+        
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                if (pre != null) {
+                    ans = Math.min(ans, cur.val - pre.val);
+                }
+                pre = cur;
+                cur = cur.right;
+            }
         }
         return ans;
     }
