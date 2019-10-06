@@ -273,6 +273,32 @@ class Solution {
 }
 ```
 
+- 124 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+**maxPathDown**:代表过这个节点后是选择从左侧往下走还是右侧往下走，得到得最大值，是一条边
+**max**:代表过这个节点，再加上左右两条边的最大值
+```
+Java
+class Solution {
+    
+    private int max = Integer.MIN_VALUE;
+    
+    public int maxPathSum(TreeNode root) {
+        maxPathDown(root);
+        return max;
+    }
+    
+    private int maxPathDown(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        int left = Math.max(0, maxPathDown(node.left));
+        int right = Math.max(0, maxPathDown(node.right));
+        max = Math.max(max, left + right + node.val);
+        return Math.max(left, right) + node.val;
+    }
+}
+```
+
 - 144 [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 ```
 Java
@@ -432,6 +458,54 @@ class Solution {
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
         return left == null ? right : right == null ? left : root;
+    }
+}
+```
+
+- 297 [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+```
+Java
+
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        preorder(root, sb);
+        return sb.toString().trim();
+    }
+    
+    private void preorder(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append("n").append(" ");
+        } else {
+            sb.append(node.val).append(" ");
+            preorder(node.left, sb);
+            preorder(node.right, sb);
+        }
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        Queue<String> queue = new LinkedList<>();
+        String[] nums = data.split(" ");
+        for (String s : nums) {
+            queue.offer(s);
+        }
+        
+        return des(queue);
+    }
+    
+    private TreeNode des(Queue<String> queue) {
+        String cur = queue.poll();
+        if (cur.equals("n")) {
+            return null;
+        } else {
+            TreeNode node = new TreeNode(Integer.valueOf(cur));
+            node.left = des(queue);
+            node.right = des(queue);
+            return node;
+        }
     }
 }
 ```
