@@ -273,6 +273,23 @@ class Solution {
 }
 ```
 
+- 112 [Path Sum](https://leetcode.com/problems/path-sum/)
+```
+Java
+
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null) {
+            return root.val == sum;
+        }
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+    }
+}
+```
+
 - 124 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 **maxPathDown**:代表过这个节点后是选择从左侧往下走还是右侧往下走，得到得最大值，是一条边
 **max**:代表过这个节点，再加上左右两条边的最大值
