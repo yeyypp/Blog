@@ -218,6 +218,29 @@ public class Client {
     }
 }
 ```
+
+- The difference between NIO and BIO
+[https://dzone.com/articles/java-nio-vs-io](https://dzone.com/articles/java-nio-vs-io)
+
+    - Stream Oriented and Buffer oriented
+        
+        BIO is stream oriented, it read data straight from stream.
+        NIO is buffer oriented, it read data to the buffer, then manipulated the
+        buffer to get data.
+    - Blocking and Non-blocking
+        
+        BIO is blocking io, it get blocked when it try to read from the stream 
+        if there is no data yet.
+        
+        NIO is non-blocking (except file nio), it get can register different 
+        channel to the Selector, and it get blocked if none of them is ready,
+        whenever one channel is ready, it will return.
+        
+        It means in BIO per thread per task, if the thread try to read or write,
+        it will get blocked.  
+        
+        In NIO, it choose the channel which is ready to read or write, so there is 
+        no blocking in the process.
     
     
     

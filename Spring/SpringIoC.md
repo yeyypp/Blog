@@ -6,6 +6,7 @@
 - DI
     Dependency Injection 依赖注入，是实现控制反转的一种方式。  
     Set注入，构造器注入
+    
 - The container
     
     The beans and context package are the basis container.  
