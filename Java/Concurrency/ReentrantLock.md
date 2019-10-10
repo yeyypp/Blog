@@ -4,16 +4,18 @@ ReentrantLock为可重入锁，实现了Lock接口，内部的具体实现是通
 同步，sync通过继承队列同步器，实现同步。
 
 ReentrantLock可实现公平锁或者非公平锁
+公平锁在获取锁时会先检查阻塞队列中是否有节点等待，
+非公平锁会直接采用CAS尝试获取锁
 
 ### 方法
     
 - void lock();
         
-    获取锁，若没有获得锁则会阻塞
+    获取锁，若没有获得锁则会阻塞，当被中断时，不会有任何处理
         
 - void lockInterruptibly() throws InterruptedException;
     
-    在锁的获取中可以中断
+    在锁的获取中可以中断，会处理中断，会抛出异常
         
 - boolean tryLock();
         

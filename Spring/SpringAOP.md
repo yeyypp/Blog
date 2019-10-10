@@ -12,4 +12,9 @@
     
     当被代理的对象实现接口时，SpringAOP会通过JDK动态代理实现代理类，当没有实现接口时
     会通过cglib实现代理类
+- 术语
+    
+    - Advice：具体执行的逻辑
+    - Pointcut：插入逻辑的位置
+    - @Aspect：用来修饰AOP配置类
     
