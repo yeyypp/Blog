@@ -1,4 +1,5 @@
 # HTTP
+- [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 - http status
     
     [http status](https://httpstatuses.com/)  
@@ -24,4 +25,19 @@
     禁用，则session失效，但可以通过其他方式实现如重写url  
     3. 服务端会创建一个session对象，并赋予一个session ID 发送给客户端
     在客户端请求其他资源时会在请求头添加session ID
+
+- HTTP/2
+    
+    [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2)
+    
+- HTTP Request
+    
+    - Request Line
+        
+        Methods URL The version of the protocol
+    
+    - Request Header
+        
+    - Request Body
+- HTTP 
     

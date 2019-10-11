@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPattern/Decorator.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPattern/Singleton.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern/Factory.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern/Strategy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/Basic.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPattern/单例模式.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/Concurrency/AQS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/AQS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/Concurrency/ReentrantLock.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/ReentrantLock.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/Bean.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/Bean.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringAOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringAOP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringIoC.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringIoC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/MYSQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructure/BinaryTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/Decorator.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/Decorator.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/Observer.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/Observer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/PubSub.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/Singleton.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/Singleton.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/装饰器.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/异常.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/网络.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Java8.9.10.11新特性.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/临时.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network/HTTP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Network/HTTP.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

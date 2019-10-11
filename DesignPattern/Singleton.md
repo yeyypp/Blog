@@ -1,4 +1,5 @@
 # Singleton
+- >Ensure a class only has one instance,and provide a global entry of it.
 - Eager initialization
 the drawback is the singleton will be created at the time
 the class get loaded even the object won't be use.
