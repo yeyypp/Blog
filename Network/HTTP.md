@@ -39,5 +39,10 @@
     - Request Header
         
     - Request Body
-- HTTP 
+- Difference between HTTP 1.0 and 1.1
+    
+    - 1.1 allows to have a persistent connection, client can send more than one
+    request on one connection. 1.0 need to open a new connection for a new request
+
+    
     
