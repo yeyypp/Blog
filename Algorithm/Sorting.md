@@ -1,5 +1,41 @@
 # Sort
 
+- SelectionSort
+稳定 n2  
+The running time is insensitive to input.
+It takes as long to run on an ordered array equal
+as it does to run on an randomly-ordered array.
+```
+public static void Selection(Comparable[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < a.length; j++) {
+                if (less(a[j], a[min])) {
+                    min = j;
+                }
+            }
+            exch(a, i, min);
+        }
+    }
+
+
+```
+
+- InsertionSort
+>Unlike selection sort, the running time of insertion sort depends on
+>the initial order of the items in the input. It would be much faster
+>than sorting a randomly-ordered array.
+```
+public static void Insertion(Comparable[] a) {
+        for (int i = 1; i < a.length; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                exch(a, j, j - 1);
+            }
+        }
+    }
+```
+    
+
 - QuickSort
 
 不稳定 nlogn

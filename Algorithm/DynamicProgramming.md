@@ -1,5 +1,39 @@
 # Dynamic Programming
 
+- factorial
+```
+public static int factorial(int n) {
+        int cur = 0;
+        int pre = 2;
+
+        for (int i = 3; i <= n; i++) {
+            cur = i * pre;
+            pre = cur;
+        }
+        return cur;
+    }
+```
+
+- fib
+```
+public static int fib(int n) {
+        if (n == 1) {
+            return 0;
+        }
+
+        if (n == 2) {
+            return 1;
+        }
+        int pre = 0, next = 1, cur = 0;
+        for (int i = 3; i <= n; i++) {
+            cur = pre + next;
+            pre = next;
+            next = cur;
+        }
+        return cur;
+    }
+```
+
 - 62 [Unique Paths](https://leetcode.com/problems/unique-paths/)
 ```
 Java
