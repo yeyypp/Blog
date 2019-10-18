@@ -199,6 +199,33 @@ class Solution {
     }
 }
 ```
+
+- 409 [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
+```
+class Solution {
+    public int longestPalindrome(String s) {
+        Set<Character> set = new HashSet<>();
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int ans = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!set.contains(c)) {
+                set.add(c);
+            } else {
+                set.remove(c);
+                ans += 2;
+            }
+        }
+        
+        if (set.size() == 0) {
+            return ans;
+        }
+        return ans + 1;
+    }
+}
+```
 - 412 [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
 ```
 Java

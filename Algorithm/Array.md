@@ -41,30 +41,141 @@ class Solution {
 }
 ```
 
-- 41 [Find Missing Positive](https://leetcode.com/problems/first-missing-positive/)
-
-missing number 一定在给出的数组大小加一的范围内，即nums.length = 4 则missing number 在
-[1, 5]中
+- 15 [3Sum](https://leetcode.com/problems/3sum/)
 ```
-Java
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> ans = new LinkedList<>();
+        if (nums == null || nums.length == 0) {
+            return ans;
+        }
+        
+        Arrays.sort(nums);
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i != 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            
+            int target = 0 - nums[i];
+            int low = i + 1, high = nums.length - 1;
+            
+            while (low < high) {
+                int sum = nums[low] + nums[high];
+                if (sum == target) {
+                    List<Integer> list = new ArrayList<>(3);
+                    list.add(nums[i]);
+                    list.add(nums[low]);
+                    list.add(nums[high]);
+                    ans.add(list);
+                    
+                    low++;
+                    high--;
+                    
+                    while (low < high && nums[low] == nums[low - 1]) {
+                        low++;
+                    }
+                    
+                    while (low < high && nums[high] == nums[high + 1]) {
+                        high--;
+                    }
+                    
+                } else if (sum < target) {
+                    low++;
+                } else {
+                    high--;
+                }
+                
+                
+            }
+        }
+        
+        return ans;
+    }
+}
+```
 
+- 33 [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+```
+class Solution {
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        int min = findMin(nums);
+        if (nums[min] == target) {
+            return min;
+        }
+        
+        int start = target >= nums[0] ? 0 : min;
+        int end = target <= nums[nums.length - 1] ? nums.length - 1 : min;
+        
+        return binarySearch(nums, target, start, end);
+    }
+    
+    private int findMin(int[] nums) {
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] > nums[end]) {
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+        return start;
+    }
+    
+    private int binarySearch(int[] nums, int target, int start, int end) {
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+- 41 [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+Consider the [1], the missing number would be 2.
+If all number is at the correct position, the value in nums[i] should be i + 1.
+```
 class Solution {
     public int firstMissingPositive(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 1;
         }
-        int[] array = new int[nums.length + 2];
-        for (int i : nums) {
-            if (i > 0 && i <= nums.length + 1) {
-                array[i] = 1;
+        
+        int n = nums.length;
+        
+        for (int i = 0; i < n; i++) {
+            while (nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1]) {
+                swap(nums, i, nums[i] - 1);
             }
         }
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] == 0) {
-                return i;
+        
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != i + 1) {
+                return i + 1;
             }
         }
-        return -1;
+        
+        return n + 1;
+        
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
 }
 ```
@@ -115,31 +226,39 @@ class Solution {
         List<Integer> ans = new LinkedList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return ans;
-        } 
-        int R = matrix.length, C = matrix[0].length;
+        }
         
-        boolean[][] seen = new boolean[R][C];
+        int m = matrix.length, n = matrix[0].length;
         int[] dr = new int[]{0, 1, 0, -1};
         int[] dc = new int[]{1, 0, -1, 0};
-        int r = 0, c = 0, di = 0;
+        int di = 0, dj = 0, pos = 0;
+        boolean[][] visited = new boolean[m][n];
         
-        for (int i = 0; i < R * C; i++) {
-            ans.add(matrix[r][c]);
-            seen[r][c] = true;
+        for (int count = 0; count < m * n; count++) {
+            ans.add(matrix[di][dj]);
+            visited[di][dj] = true;
             
-            int newDr = r + dr[di];
-            int newDc = c + dc[di];
+            int ndi = di + dr[pos];
+            int ndj = dj + dc[pos];
             
-            if (newDr >= 0 && newDr < R && newDc >= 0 && newDc < C && !seen[newDr][newDc]) {
-                r = newDr;
-                c = newDc;
+            if (isValid(m, n, ndi, ndj) && !visited[ndi][ndj]) {
+                di = ndi;
+                dj = ndj;
             } else {
-                di = (di + 1) % 4;
-                r += dr[di];
-                c += dc[di];
+                pos = (pos + 1) % 4;
+                di = di + dr[pos];
+                dj = dj + dc[pos];
             }
         }
+        
         return ans;
+    }
+    
+    private boolean isValid(int m, int n, int i, int j) {
+        if (i < 0 || i >= m || j < 0 || j >= n) {
+            return false;
+        }
+        return true;
     }
 }
 
@@ -175,6 +294,22 @@ func spiralOrder(matrix [][]int) []int {
         }
     }
     return ans
+}
+```
+
+- 55 [Jump Game](https://leetcode.com/problems/jump-game/)
+```
+class Solution {
+    public boolean canJump(int[] nums) {
+        int good = nums.length - 1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (i + nums[i] >= good) {
+                good = i;
+            }
+        }
+        
+        return good == 0;
+    }
 }
 ```
 - 84 [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
@@ -269,6 +404,9 @@ class Solution {
 
 
 - 128 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+First use the set to store all the value in the nums.
+Then iterate each one nums[i] to check if the nums[i] - 1 exists in the set.
+If not, it means we can take current number as the start to count max sequence.
 ```
 Java
 
@@ -300,7 +438,41 @@ class Solution {
 }
 ```
 
+- 152 [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+```
+class Solution {
+    public int maxProduct(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int[] maxDp = new int[nums.length];
+        int[] minDp = new int[nums.length];
+        
+        maxDp[0] = nums[0];
+        minDp[0] = nums[0];
+        
+        int ans = maxDp[0];
+        
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                maxDp[i] = Math.max(nums[i], nums[i] * maxDp[i - 1]);
+                minDp[i] = Math.min(nums[i], nums[i] * minDp[i - 1]);
+            } else {
+                maxDp[i] = Math.max(nums[i], nums[i] * minDp[i - 1]);
+                minDp[i] = Math.min(nums[i], nums[i] * maxDp[i - 1]);
+            }
+            
+            ans = Math.max(ans, maxDp[i]);
+        }
+        
+        return ans;
+    }
+}
+```
+
 - 189 [Rotate Array](https://leetcode.com/problems/rotate-array/)
+Must reverse the whole array first.
 ```
 Java
 
