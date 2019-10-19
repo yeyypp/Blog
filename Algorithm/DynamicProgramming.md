@@ -34,6 +34,39 @@ public static int fib(int n) {
     }
 ```
 
+- 42 [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+```
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int length = height.length;
+        int[] left = new int[length];
+        int[] right = new int[length];
+        
+        left[0] = height[0];
+        right[length - 1] = height[length - 1];
+        
+        for (int i = 1; i < length; i++) {
+            left[i] = Math.max(left[i - 1], height[i]);
+        }
+        
+        for (int j = length - 2; j >= 0; j--) {
+            right[j] = Math.max(right[j + 1], height[j]);
+        }
+        
+        int ans = 0;
+        
+        for (int i = 0; i < length; i++) {
+            ans += (Math.min(left[i], right[i]) - height[i]);
+        }
+        
+        return ans;
+    }
+}
+```
+
 - 62 [Unique Paths](https://leetcode.com/problems/unique-paths/)
 ```
 Java
@@ -57,6 +90,25 @@ class Solution {
             }
         }
         return dp[n - 1][m - 1];
+    }
+}
+```
+- 70 [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+```
+class Solution {
+    public int climbStairs(int n) {
+        if (n < 3) {
+            return n;
+        }
+        int first = 1, second = 2;
+        int ans = 0;
+        for (int i = 3; i <= n; i++) {
+            ans = first + second;
+            first = second;
+            second = ans;
+        }
+        
+        return ans;
     }
 }
 ```
@@ -88,6 +140,50 @@ class Solution {
 }
 ```
 
+- 121 [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+```
+class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        
+        int minPrice = prices[0];
+        int ans = 0;
+        
+        for (int i = 1; i < prices.length; i++) {
+            minPrice = Math.min(minPrice, prices[i]);
+            ans = Math.max(ans, prices[i] - minPrice);
+        }
+        
+        return ans;
+    }
+}
+```
+
+- 122 [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+```
+class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        
+        int ans = 0;
+        
+        int curPrice = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > curPrice) {
+                ans += prices[i] - curPrice;
+            }
+            curPrice = prices[i];
+        }
+        
+        return ans;
+    }
+}
+```
+
 - 152 [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 ```
 Java
@@ -114,6 +210,29 @@ class Solution {
 }
 ```
 
+- 198 [House Robber](https://leetcode.com/problems/house-robber/)
+```
+class Solution {
+    public int rob(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        
+        for (int i = 2; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        
+        return dp[nums.length - 1];
+    }
+}
+```
+
 - 279 [Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 ```
 Java
@@ -130,6 +249,41 @@ class Solution {
             }
         }
         return dp[n];
+    }
+}
+```
+
+- 213 [House Robber II](https://leetcode.com/problems/house-robber-ii/)
+```
+class Solution {
+    public int rob(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        if (nums.length == 2) {
+            return Math.max(nums[0], nums[1]);
+        }
+        
+        int[] dp1 = new int[nums.length - 1];
+        int[] dp2 = new int[nums.length - 1];
+        
+        dp1[0] = nums[0];
+        dp1[1] = Math.max(nums[0], nums[1]);
+        dp2[0] = nums[1];
+        dp2[1] = Math.max(nums[1], nums[2]);
+        
+        for (int i = 2; i < nums.length - 1; i++) {
+            dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + nums[i]);
+        }
+        // pay attention to the length of dp1 and dp2
+        for (int i = 3; i < nums.length; i++) {
+            dp2[i - 1] = Math.max(dp2[i - 2], dp2[i - 3] + nums[i]);
+        }
+        
+        return Math.max(dp1[dp1.length - 1], dp2[dp2.length - 1]);
     }
 }
 ```
@@ -256,6 +410,49 @@ class Solution {
             ans = Math.max(ans, dp[i]);
         }
         return ans;
+    }
+}
+```
+
+- 746 [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
+```
+class Solution {
+    public int minCostClimbingStairs(int[] cost) {
+        int[] dp = new int[cost.length + 1];
+        
+        for (int i = 2; i < dp.length; i++) {
+            dp[i] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
+        }
+        
+        return dp[cost.length];
+    }
+}
+```
+
+- 1025 [Divisor Game](https://leetcode.com/problems/divisor-game/)
+The dp[i] means if the first person can win at the number i;
+clearly, dp[0] == false, dp[1] == false;
+From i = 2, check every number from 1 to i, if the i % j == 0, and 
+dp[i - j] == false, it means the number that the first person picked can
+be divided and second person will lose at the situation pick number from
+i - j.
+```
+class Solution {
+    public boolean divisorGame(int N) {
+        boolean[] dp = new boolean[N + 1];
+        dp[0] = false;
+        dp[1] = false;
+        
+        for (int i = 2; i <= N; i++) {
+            for (int j = 1; j < i; j++) {
+                if (i % j == 0 && !dp[i - j]) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        
+        return dp[N];
     }
 }
 ```

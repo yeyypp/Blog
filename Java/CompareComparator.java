@@ -51,6 +51,7 @@ public class ComparableComparator {
      * Collections.sort(list, new Comparator() {
      * @Override
      * public int compare(Item i1, Item i2) {
+     *  移动的是i1
      *  return i2 - i1 逆序
      *  return i1 - i2 正序
      * }};
