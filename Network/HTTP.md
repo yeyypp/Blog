@@ -25,6 +25,17 @@
     禁用，则session失效，但可以通过其他方式实现如重写url  
     3. 服务端会创建一个session对象，并赋予一个session ID 发送给客户端
     在客户端请求其他资源时会在请求头添加session ID
+    
+    - session
+        
+        Session can be achieved by
+            
+            1. Cookies
+            2. URL Rewriting
+            3. HttpSession
+        Usually the session is stored in the server memory. By using 
+        Spring session, we can store it in the MySQL database, which
+        make it 
 
 - HTTP/2
     
