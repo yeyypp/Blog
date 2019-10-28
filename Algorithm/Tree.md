@@ -273,6 +273,32 @@ class Solution {
 }
 ```
 
+- 109 [convert Sorted List to BST](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
+```
+class Solution {
+    public TreeNode sortedListToBST(ListNode head) {
+        List<Integer> array = new ArrayList<>();
+        while (head != null) {
+            array.add(head.val);
+            head = head.next;
+        }
+        return helper(array, 0, array.size() - 1);
+        
+    }
+    
+    private TreeNode helper(List<Integer> array, int low, int high) {
+        if (low > high) {
+            return null;
+        }
+        int mid = (low + high) / 2;
+        TreeNode node = new TreeNode(array.get(mid));
+        node.left = helper(array, low, mid - 1);
+        node.right = helper(array, mid + 1, high);
+        return node;
+    }
+}
+```
+
 - 112 [Path Sum](https://leetcode.com/problems/path-sum/)
 ```
 Java
@@ -550,6 +576,37 @@ class Solution {
             }
         }
         return min;
+    }
+}
+```
+- 538 [Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/)
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode convertBST(TreeNode root) {
+        Deque<TreeNode> stack = new LinkedList<>();
+        int sum = 0;
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.right;
+            } else {
+                cur = stack.pop();
+                sum += cur.val;
+                cur.val = sum;
+                cur = cur.left;
+            }
+        }
+        return root;
     }
 }
 ```
