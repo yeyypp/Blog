@@ -1,5 +1,5 @@
-# Java
-## Collection
+#Interview
+## Java
 - HashMap
     
     - 1.7
@@ -63,7 +63,70 @@
 - ReenTrantLock
     - 与synchronized相比
         - 可实现公平锁，syn是非公平
-        - 需要主动释放，syn不需要
-    
+        - 需要主动释放，syn不需要 
+        - 内部实现为队列同步器
+- AQS
+    - 维持一个队列，当当前线程未能获得锁，则加在队列后
+- Java 8 9 10 11 12 13
+    - Java 8
+        - Lambda表达式，通过lambda简化函数式接口
+        - 接口添加default方法，可以直接使用，不用实现类实现
+        - 集合流式操作
+        - HashMap实现加入红黑树，concurrenthashmap实现变为数组链表加红黑树
+    - Java 9
+        - 模块化
+        - 集合上增加了List.of(), Set.of()工厂方法，创建不可变集合
+        - Stream增加dropWhile, takeWhile
+        - 添加反应式流
+    - Java 10
+        - 局部变量类型推断 var
+        - 为G1引入多线程并行GC
+    - Java 11
+        - ZGC
+    - Java 12
+- JVM
+    - JMM
+        - Java内存模型，每个线程有自己的本地内存，所有共享变量存于主内存中，volatile
+        使得每次读写变量都直接从主内存读取，使用。
+        - happens before：表示a的执行结果对b可见
+## Spring
+- Spring ioc
+    - ioc 为控制反转，将设计好的对象交给容器控制，由容器负责控制，销毁
+    - spring中容器是BeanFactory ApplicationContext
+    - 通过ClassPathXmlApplicationContext加载配置文件
+    - 通过依赖注入实现，set方法注入，构造其注入
+    - 流程，初始化Beanactory，解析xml，得到BeanDefinition，BeanName
+    注册到map中
+    - 默认情况下允许循环引用，可以用set注入方法，不能用构造器注入
+- Bean
+    - Scope：singleton, prototype, request, session, global session
+- Spring AOP
+    - 使用jdk动态代理，cglib代理，一个需要目标类实现接口，一个不需要 
+## Design Pattern
+- Singleton
+    - 为什么用volatile:保证内存可见性，禁止重排序，instance = new Singleton
+    会先申请内存空间，执行构造方法，赋值引用，这两步可能发生重排序，此时，instance就
+    不为null。
+```
+public class Singleton {
+    private static volatile Singleton instance;
+
+    public Singleton() {
+
+    }
+
+    public Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+```
     
         
