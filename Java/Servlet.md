@@ -1,6 +1,6 @@
 # Servlet
 
-- Life Cycle
+### Life Cycle
 
     1. Load Servlet Class.
     2. Create Instance of Servlet.
@@ -21,13 +21,34 @@
 - request中信息获取
 request.getHeader() request.getUrl()
 
-- Listener
+### Listener
 [Listener](https://www.journaldev.com/1945/servletcontextlistener-servlet-listener-example)
 The Listener is implemented with Observer pattern.
 
-- Filter
+### Filter
 a filter is not a servlet and it has to implements the methods in the 
 javax.servlet.Filter
     1. init()
     2. doFilter()
     3. destroy()
+    
+### Session
+- Cookies
+    
+    - 2 types of cookies
+        - Non-persistent: It is valid for single session. It is
+        removed when user closed the browser.
+        - Persistent: It is valid for multiple session.
+    - Advantage of cookies
+        - Simplest to maintain the state.
+        - Stored on client side.
+    - Disadvantage
+        - It will not work if the browser disable the cookie
+- Hidden Form Field
+- URL Rewriting
+- HttpSession
+    the container creates a session id for each user. An object of HttpSession
+    can be used to perform two tasks.
+    
+    - bind objects
+    - view and manipulate information about a session.

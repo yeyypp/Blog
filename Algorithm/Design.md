@@ -1,4 +1,96 @@
 # Design
+- 146 [LRU](https://leetcode.com/problems/lru-cache/)
+```
+public class LRUCache {
+
+    private class Node {
+        private int key, value;
+        private Node pre, next;
+
+        private Node() {
+            this.key = 0;
+            this.value = 0;
+        }
+
+        private Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private int size, capacity;
+    private Node head, tail;
+    private Map<Integer, Node> map;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        this.size = 0;
+        this.head = new Node();
+        this.tail = new Node();
+        head.next = tail;
+        tail.pre = head;
+        this.map = new HashMap<>();
+    }
+
+    private void add(Node node) {
+        node.next = head.next;
+        node.pre = head;
+
+        head.next.pre = node;
+        head.next = node;
+    }
+
+    private void remove(Node node) {
+        Node pre = node.pre;
+        Node next = node.next;
+
+        pre.next = next;
+        next.pre = pre;
+    }
+
+    private void moveToHead(Node node) {
+        remove(node);
+        add(node);
+    }
+
+    private void update(Node node, int value) {
+        node.value = value;
+        moveToHead(node);
+    }
+
+    public int get(int key) {
+        Node node = map.get(key);
+
+        if (node == null) {
+            return -1;
+        }
+
+        moveToHead(node);
+        return node.value;
+    }
+
+    public void put(int key, int value) {
+        Node node = map.get(key);
+
+        if (node == null) {
+            Node cur = new Node(key, value);
+            map.put(key, cur);
+            add(cur);
+            size += 1;
+
+            if (size > capacity) {
+                Node end = tail.pre;
+                remove(end);
+                map.remove(end.key);
+                size -= 1;
+            }
+        } else {
+            update(node, value);
+        }
+    }
+}
+
+```
 - 208 [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 ```
 Java
