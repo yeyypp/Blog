@@ -1,4 +1,52 @@
 # String
+- KMP
+```
+public static int kmp(String src, String pat) {
+        int[] table = createTable(pat);
+        int i = 0, j = 0, length = pat.length();
+        while (i < src.length() && j < length) {
+            char charI = src.charAt(i);
+            char charJ = pat.charAt(j);
+            if (charI == charJ) {
+                i++;
+                j++;
+                if (j == length) {
+                    return i - length;
+                }
+            } else {
+                if (j == 0) {
+                    i++;
+                } else {
+                    j = table[j - 1];
+                }
+            }
+        }
+        return -1;
+    }
+
+    private static int[] createTable(String pat) {
+        int length = pat.length();
+        int[] table = new int[length];
+        int i = 0, j = 1;
+        while (j < length) {
+            char charI = pat.charAt(i);
+            char charJ = pat.charAt(j);
+            if (charI == charJ) {
+                table[j] = i + 1;
+                i++;
+                j++;
+            } else {
+                if (i == 0) {
+                    table[j] = 0;
+                    j++;
+                } else {
+                    i = table[i - 1];
+                }
+            }
+        }
+        return table;
+    }
+```
 - 3 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 ```
 Java

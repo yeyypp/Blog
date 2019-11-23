@@ -90,6 +90,12 @@
         使得每次读写变量都直接从主内存读取，使用。
         - happens before：表示a的执行结果对b可见
 ## Spring
+- Spring framework vs Spring Boot
+    - Spring is a framework which provides comprehensive infrastructure
+     suppot for developing.
+    - Spring Boot is an extension of Spring which eliminated the messive
+    configurations. Provides spring-boot-starter-... to simplify build and
+    configuration. Embedded server.
 - Spring ioc
     - ioc 为控制反转，将设计好的对象交给容器控制，由容器负责控制，销毁
     - spring中容器是BeanFactory ApplicationContext
@@ -99,7 +105,11 @@
     注册到map中
     - 默认情况下允许循环引用，可以用set注入方法，不能用构造器注入
 - Bean
+    - 配置bean的方式：xml, 注解，java configuration（@Configuration）
+    - 注入方式：构造起，setter
     - Scope：singleton, prototype, request, session, global session
+    - 生命周期：
+    - 循环依赖：
 - Spring AOP
     - 使用jdk动态代理，cglib代理，一个需要目标类实现接口，一个不需要 
 ## Design Pattern

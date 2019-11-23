@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Design.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Design.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/Servlet.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Servlet.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SomeThingElse/Interview.md" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/Interview.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringIoC.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringIoC.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
