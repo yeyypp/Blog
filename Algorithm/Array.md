@@ -214,6 +214,46 @@ class Solution {
 }
 ```
 
+- 48 [Rotate Matrix](https://leetcode.com/problems/rotate-image/)
+先以左顶点，将边对换，再将左右两边的列，依次对换
+```
+class Solution {
+    public void rotate(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return;
+        }
+        change(matrix);
+        flip(matrix);
+    }
+    
+    private void change(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix.length; j++) {
+                swap(matrix, i, j, j, i);
+            }
+        }
+    }
+    
+    private void flip(int[][] matrix) {
+        int i = 0, j = matrix.length - 1;
+        while (i < j) {
+            for (int a = 0; a < matrix.length; a++) {
+                swap(matrix, a, i, a, j);
+            }
+            i++;
+            j--;
+        }
+    }
+    
+    private void swap(int[][] matrix, int i, int j, int a, int b) {
+            int tem = matrix[i][j];
+            matrix[i][j] = matrix[a][b];
+            matrix[a][b] = tem;
+    }
+    
+}
+```
+
 - 54 [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 
 用两个数组记录横纵坐标的变化，当超出范围时改变横纵坐标
@@ -312,6 +352,53 @@ class Solution {
     }
 }
 ```
+
+- 56 [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+```
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        if (intervals == null || intervals.length == 0 || intervals[0].length == 0) {
+            return new int[0][0];
+        }
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                if (a[0] == b[0]) {
+                    return b[1] - a[1];
+                }
+                return a[0] - b[0];
+            }
+        });
+        
+        List<int[]> tem = new LinkedList<>();
+        int[] cur = null;
+        for (int[] interval : intervals) {
+            if (cur == null || cur[1] >= interval[0]) {
+                cur = merge(cur, interval);
+            } else {
+                tem.add(cur);
+                cur = interval;
+            }
+        }
+        tem.add(cur);
+        
+        int[][] ans = new int[tem.size()][2];
+        for (int i = 0; i < tem.size(); i++) {
+            ans[i] = tem.get(i);
+        }
+        return ans;
+    }
+    
+    private int[] merge(int[] a, int[] b) {
+        if (a == null) {
+            return b;
+        } else if (b == null) {
+            return a;
+        }
+        return new int[]{Math.min(a[0], b[0]), Math.max(a[1],b[1])};
+    }
+}
+```
 - 84 [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
     
     [leetcode discuss](https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/28902/5ms-O(n)-Java-solution-explained-(beats-96))
@@ -350,6 +437,40 @@ class Solution {
             max = Math.max(max, heights[i] * (rightFirstLess[i] - leftFirstLess[i] - 1));
         }
         return max;
+    }
+}
+```
+
+- 75 [Sort Colors](https://leetcode.com/problems/sort-colors/)
+```
+class Solution {
+    public void sortColors(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int start = 0, end = nums.length - 1, cur = 0;
+        while (cur <= end) {
+            switch(nums[cur]) {
+                case 0:
+                    swap(nums, start, cur);
+                    start++;
+                    cur++;
+                    break;
+                case 1:
+                    cur++;
+                    break;
+                case 2:
+                    swap(nums, cur, end);
+                    end--;
+                    break;
+            }
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int tem = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tem;
     }
 }
 ```

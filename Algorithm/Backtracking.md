@@ -1,5 +1,29 @@
 # Backtracking
-
+- 17 [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+```
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        List<String> ans = new LinkedList<>();
+        if (digits == null || digits.equals("")) {
+            return ans;
+        }
+        String[] KEYS = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        dfs("", digits, 0, ans, KEYS);
+        return ans;
+    }
+    
+    private void dfs(String s, String digits, int start, List<String> ans, String[] KEYS) {
+        if (start == digits.length()) {
+            ans.add(s);
+            return;
+        }
+        String letter = KEYS[digits.charAt(start) - '0'];
+        for (int i = 0; i < letter.length(); i++) {
+            dfs(s + letter.charAt(i), digits, start + 1, ans, KEYS);
+        }
+    }
+}
+```
 - 39 [Combination Sum](https://leetcode.com/problems/combination-sum/)
 ```
 Java

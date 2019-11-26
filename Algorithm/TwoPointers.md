@@ -1,4 +1,29 @@
 # Two Pointers
+- 11 [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+the area of the container is decided by the shortest line, so we moved the shortest line to
+get a new area that may be bigger than the current one.
+```
+class Solution {
+    public int maxArea(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int ans = 0;
+        int start = 0, end = height.length - 1;
+        while (start < end) {
+            int left = height[start];
+            int right = height[end];
+            ans = Math.max(Math.min(left, right) * (end - start), ans);
+            if (left < right) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+        return ans;
+    }
+}
+```
 - 26 [Remove Duplicate from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 ```
 Java

@@ -1,5 +1,19 @@
 #Interview
 ## Java
+- Order of Initialization
+    - static variables and static initializer
+    - instance variables and instance initializer
+    - constructors
+    - 先new，申请空间，分配内存，赋予零值，然后根据上边的顺序，赋予相应的值
+    有父类，则先实例化父
+```
+father static initializer
+son static initializer
+father initializer
+father constructor
+son initializer
+son constructor
+```
 - HashMap
     
     - 1.7
@@ -109,7 +123,10 @@
     - 注入方式：构造起，setter
     - Scope：singleton, prototype, request, session, global session
     - 生命周期：
-    - 循环依赖：
+    - 循环依赖：只有在bean范围为单例时，才能解决，否则会抛出BeanCurrentlyInCreationException
+        通过三层缓存解决循环依赖，l1存有实例化的bean，l2存有实例化但还没有初始化的bean，l3存有生产单例bean的工厂
+        expose first，use later
+        Cyclic Dependency(https://programming.vip/docs/loading-bean-s-for-spring-ioc-source-analysis-cyclic-dependency-processing.html)
 - Spring AOP
     - 使用jdk动态代理，cglib代理，一个需要目标类实现接口，一个不需要 
 ## Design Pattern
@@ -138,5 +155,10 @@ public class Singleton {
 }
 
 ```
+##Network
+- Forward Redirect
+    - Forward happens in the server, it sends the same request to the target url
+    - Redirect sets the response status code 302 and set a new url in the response to the browser,
+    then the browser make a new request to the new url.
     
         
