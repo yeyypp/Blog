@@ -108,3 +108,32 @@ class Solution {
     }
 }
 ```
+
+- 240 [Search 2D matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)
+```
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0) {
+            return false;
+        }
+        int i = 0, j = matrix[0].length - 1;
+        while (valid(matrix, i, j)) {
+            if (target > matrix[i][j]) {
+                i++;
+            } else if (target < matrix[i][j]) {
+                j--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean valid(int[][] matrix, int i, int j) {
+        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length) {
+            return false;
+        }
+        return true;
+    }
+}
+```

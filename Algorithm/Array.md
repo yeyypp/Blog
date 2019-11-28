@@ -619,6 +619,69 @@ class Solution {
     }
 }
 ```
+
+- 289 [Game of Life](https://leetcode.com/problems/game-of-life/)
+```
+class Solution {
+    private int[] dire = new int[]{0, 1, -1};
+    
+    public void gameOfLife(int[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                detect(board, i, j);
+            }
+        }
+        
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                int cur = board[i][j];
+                if (cur == -1) {
+                    board[i][j] = 0;
+                } else if (cur == 2) {
+                    board[i][j] = 1;
+                }
+            }
+        }
+    }
+    
+    private void detect(int[][] board, int i, int j) {
+        int cur = board[i][j];
+        int live = 0, dead = 0;
+        
+        for (int a = 0; a < 3; a++) {
+            for (int b = 0; b < 3; b++) {
+                if (a == 0 && b == 0) {
+                    continue;
+                }
+                int newI = i + dire[a];
+                int newJ = j + dire[b];
+                if (valid(board, newI, newJ)) {
+                    live = (board[newI][newJ] == 1 || board[newI][newJ] == -1) ? live + 1 : live;
+                    dead = (board[newI][newJ] == 0 || board[newI][newJ] == 2) ? dead + 1 : dead;
+                }
+            }
+        }
+        
+        if (cur == 0) {
+            if (live == 3) {
+                board[i][j] = 2;
+            }
+        } else {
+            if (live < 2 || live > 3) {
+                board[i][j] = -1;
+            }
+        }
+        
+    }
+    
+    private boolean valid(int[][] board, int i, int j) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
+            return false;
+        }
+        return true;
+    }
+}
+```
 - 448 [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 ```
 Java

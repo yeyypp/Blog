@@ -1,4 +1,29 @@
 # HashTable
+- 36 [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
+```
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        if (board == null || board.length == 0) {
+            return false;
+        }
+        
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char c = board[i][j];
+                if (c != '.') {
+                    if (!set.add(c + "row:" + i) ||
+                       !set.add(c + "col:" + j) ||
+                       !set.add(c + "block:" + i/3 + "-" + j/3)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
+```
 - 76 [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 ```
 Java
