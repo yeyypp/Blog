@@ -45,3 +45,8 @@
     3
     ```
     The --a will execute first, then the finally will use current a to return
+- Reference
+    - strong:It is an ordinary Java reference
+    - weak:It isn't strong enough to remain in memory
+    - sort: It is a stronger level of weak reference
+    - phantom:

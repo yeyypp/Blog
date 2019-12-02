@@ -17,4 +17,5 @@
     - Advice：具体执行的逻辑
     - Pointcut：插入逻辑的位置
     - @Aspect：用来修饰AOP配置类
+- filter（https://stackoverflow.com/questions/35856454/difference-between-interceptor-and-filter-in-spring-mvc）
     
