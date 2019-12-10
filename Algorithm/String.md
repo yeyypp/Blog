@@ -224,6 +224,62 @@ class Solution {
 }
 ```
 
+- 395 [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+```
+class Solution {
+    public int longestSubstring(String s, int k) {
+        int ans = 0;
+        for (int i = 1; i <= 26; i++) {
+            ans = Math.max(ans, maxLength(s, k, i));
+        }
+        return ans;
+    }
+    
+    private int maxLength(String s, int k, int targetNum) {
+        int start = 0, end = 0;
+        int uniqueNum = 0, noLessThanK = 0;
+        int[] count = new int[26];
+        int ans = 0;
+        
+        while (end < s.length()) {
+            int curEnd = s.charAt(end) - 'a';
+            
+            count[curEnd]++;
+            
+            if (count[curEnd] == 1) {
+                uniqueNum++;
+            }
+            
+            if (count[curEnd] == k) {
+                noLessThanK++;
+            }
+            
+            end++;
+            
+            while (uniqueNum > targetNum) {
+                int curStart = s.charAt(start) - 'a';
+                
+                if (count[curStart] == k) {
+                    noLessThanK--;
+                }
+                
+                if (count[curStart] == 1) {
+                    uniqueNum--;
+                }
+                
+                count[curStart]--;
+                start++;
+            }
+            
+            if (noLessThanK == targetNum) {
+                ans = Math.max(ans, end - start);
+            }
+        }
+        return ans;
+    }
+}
+```
+
 - 409 [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
 ```
 Java

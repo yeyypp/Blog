@@ -399,6 +399,63 @@ class Solution {
     }
 }
 ```
+
+- 73 [Set Matrix Zero](https://leetcode.com/problems/set-matrix-zeroes/)
+```
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return;
+        }
+        
+        boolean setColumn = false, setRow = false;
+        
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][0] == 0) {
+                setColumn = true;
+                break;
+            }
+        }
+        
+        for (int j = 0; j < matrix[0].length; j++) {
+            if (matrix[0][j] == 0) {
+                setRow = true;
+                break;
+            }
+        }
+        
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+        
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        
+        if (setColumn) {
+            for (int i = 0; i < matrix.length; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+        
+        if (setRow) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+        
+    }
+}
+```
 - 84 [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
     
     [leetcode discuss](https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/28902/5ms-O(n)-Java-solution-explained-(beats-96))
@@ -616,6 +673,68 @@ class Solution {
         int tem = nums[a];
         nums[a] = nums[b];
         nums[b] = tem;
+    }
+}
+```
+
+- 238 [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+```
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[0];
+        }
+        int length = nums.length;
+        int[] ans = new int[length];
+        int[] left = new int[length];
+        int[] right = new int[length];
+        
+        
+        for (int i = 0; i < length; i++) {
+            if (i == 0) {
+                left[i] = nums[i];
+            } else {
+                left[i] = left[i - 1] * nums[i];
+            }
+        }
+        
+        for (int j = length - 1; j >= 0; j--) {
+            if (j == length - 1) {
+                right[j] = nums[j];
+            } else {
+                right[j] = right[j + 1] * nums[j];
+            }
+        }
+        
+        for (int i = 0; i < length; i++) {
+            if (i == 0) {
+                ans[i] = right[i + 1];
+            } else if (i == length - 1) {
+                ans[i] = left[i - 1];
+            } else {
+                ans[i] = left[i - 1] * right[i + 1];
+            }
+        }
+        return ans;
+    }
+}
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] ans = new int[nums.length];
+        
+        ans[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            ans[i] = nums[i - 1] * ans[i - 1];
+        }
+        
+        int right = 1;
+        for (int j = nums.length - 1; j >= 0; j--) {
+            ans[j] = ans[j] * right;
+            right *= nums[j];
+        }
+        
+        return ans;
     }
 }
 ```

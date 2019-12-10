@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/Basic.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Basic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringAOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringAOP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringJPA.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringJPA.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Array.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/HashTable.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/HashTable.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Concurrency/Interview.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Concurrency/Interview.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SomeThingElse/Go.md" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/Go.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,23 +27,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
+      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ShuaiYe\MyProjects\Blog\DesignPattern" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\SomeThingElse" />
       <recent name="C:\ShuaiYe\MyProjects\Blog" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ShuaiYe\MyProjects\Blog\面试" />
-      <recent name="C:\ShuaiYe\MyProjects\Blog\Algorithm\DFSandBFS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -82,79 +83,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Blog</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

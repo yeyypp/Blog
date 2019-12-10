@@ -1,5 +1,8 @@
 # Interview
+- waiting/blocked
+(https://stackoverflow.com/questions/28378592/java-thread-state-transition-waiting-to-blocked-or-runnable)
 
+- 
 - Print Odd and Even
 Design a class as the flag
 ```
@@ -33,7 +36,7 @@ public class Odd implements Runnable {
         try {
             while (start <= 99) {
                 synchronized (flag) {
-                    if (!flag.getIsOdd()) {
+                    while (!flag.getIsOdd()) {
                         flag.wait();
                     }
                     System.out.println(start);
@@ -62,7 +65,7 @@ public class Even implements Runnable {
         try {
             while (start <= 100) {
                 synchronized (flag) {
-                    if (flag.getIsOdd()) {
+                    while (flag.getIsOdd()) {
                         flag.wait();
                     }
                     System.out.println(start);
@@ -193,50 +196,60 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2019/10/22
  */
 
+mport java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+/**
+ * @author shuai
+ * @date 2019/12/9
+ */
+
 public class Buffer {
-    private Lock lock;
-    private Condition isFull;
-    private Condition isEmpty;
-    private List<String> list;
+    private static final int CAPACITY = 10;
+    private ReentrantLock lock;
+    private Queue<Integer> queue;
+    private Condition notFull;
+    private Condition notEmpty;
 
     public Buffer() {
         this.lock = new ReentrantLock();
-        this.isFull = lock.newCondition();
-        this.isEmpty = lock.newCondition();
-        this.list = new LinkedList<>();
+        this.queue = new LinkedList<>();
+        notFull = lock.newCondition();
+        notEmpty = lock.newCondition();
     }
 
     public void put() {
         try {
-            while (true) {
-                Thread.sleep(1000);
-                lock.lock();
-                while (list.size() == 5) {
-                    isEmpty.signalAll();
-                    isFull.await();
-                }
-                System.out.println(Thread.currentThread().getName() + " add 1");
-                list.add("e");
+            lock.lock();
+            while (queue.size() >= CAPACITY) {
+                System.out.println("it is full");
+                notEmpty.await();
             }
+            System.out.println("put 1" + " the current size is " + queue.size());
+            queue.offer(1);
+            notFull.signalAll();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            lock.unlock();
         }
     }
 
     public void take() {
         try {
-            while (true) {
-                Thread.sleep(1000);
-                lock.lock();
-                while (list.size() == 0) {
-                    isFull.signalAll();
-                    isEmpty.await();
-                }
-                System.out.println(Thread.currentThread().getName() + " take 1");
-                list.remove(0);
+            lock.lock();
+            while (queue.size() == 0) {
+                System.out.println("it is empty");
+                notFull.await();
             }
+            System.out.println("take " + queue.poll() + " the current size is " + queue.size());
+            notEmpty.signalAll();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            lock.unlock();
         }
     }
 }
