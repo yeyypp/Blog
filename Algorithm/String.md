@@ -376,7 +376,7 @@ class Solution {
 ```
 Java
 class Solution {
-    public String mostCommonWord(String paragraph, String[] banned) {
+    public String m]ostCommonWord(String paragraph, String[] banned) {
         Map<String, Integer> map = new HashMap<>();
         Set<String> set = new HashSet<>(Arrays.asList(banned));
         String[] words = paragraph.replaceAll("\\W+", " ").toLowerCase().split(" ");
@@ -388,6 +388,73 @@ class Solution {
         PriorityQueue<String> maxHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
         map.keySet().forEach(key -> maxHeap.offer(key));
         return maxHeap.poll();
+    }
+}
+```
+
+## SubString Problem
+
+- 392 [https://leetcode.com/problems/is-subsequence/](Is Subsequence)
+```
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        if (s.length() > t.length()) {
+            return false;
+        }
+        
+        int poiS = 0, poiT = 0;
+        while (poiS < s.length() && poiT < t.length()) {
+            if (s.charAt(poiS) == t.charAt(poiT)) {
+                poiS++;
+                poiT++;
+            } else {
+                poiT++;
+            }
+        }
+        return poiS == s.length();
+    }
+}
+```
+- 594 [Longest Harmonious Subsequence](https://leetcode.com/problems/longest-harmonious-subsequence/)
+```
+class Solution {
+    public int findLHS(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+        int ans = 0;
+        
+        for (int i : nums) {
+            if (map.containsKey(i - 1)) {
+                ans = Math.max(ans, map.get(i - 1) + map.get(i));
+            }
+        }
+        return ans;
+    }
+}
+```
+
+- 696 [Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/)
+```
+class Solution {
+    public int countBinarySubstrings(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        int ans = 0, cur = 1, pre = 0;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                cur++;
+            } else {
+                ans += Math.min(pre, cur);
+                pre = cur;
+                cur = 1;
+            }
+        }
+        ans += Math.min(pre, cur);
+        return ans;
     }
 }
 ```

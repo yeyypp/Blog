@@ -12,3 +12,5 @@ for i, v := range list {
     map[i] = &num
 }
 ```
+
+- range channel 默认会自动获取新的元素，如果没有设置channel大小，且没有元素发送到channel，则可能会产生死锁
