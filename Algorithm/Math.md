@@ -135,3 +135,35 @@ class Solution {
     }
 }
 ```
+- [Count primes](https://91mjw.com/vplay/Mjk5Ni0xLTA=.html)
+```
+Java
+
+class Solution {
+    public int countPrimes(int n) {
+        if (n < 2) {
+            return 0;
+        }
+        
+        int[] nums = new int[n];
+        
+        nums[0] = -1;
+        nums[1] = -1;
+        
+        for (int i = 2; i * i < nums.length; i++) {
+            if (nums[i] != -1) {
+                for (int j = i * i; j < nums.length; j += i) {
+                    nums[j] = -1;
+                }
+            }
+        }
+        
+        int ans = 0;
+        for (int i = 0; i < nums.length; i++) {
+            ans += nums[i] == -1 ? 0 : 1;
+        }
+        
+        return ans;
+    }
+}
+```

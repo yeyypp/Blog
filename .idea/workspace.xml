@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/BitManipulation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/BitManipulation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Math.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Math.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Stack.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SomeThingElse/Go.md" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/Go.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../taco-cloud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />

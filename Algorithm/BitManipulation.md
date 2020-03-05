@@ -29,6 +29,18 @@ public class Solution {
         return count;
     }
 }
+
+public class Solution {
+    
+    public int hammingWeight(int n) {
+        int ans = 0;
+        while (n != 0) {
+            ans++;
+            n &= n - 1;
+        }
+        return ans;
+    }
+}
 ```
 - 371 [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
 ```
@@ -47,3 +59,45 @@ class Solution {
     }
 }
 ```
+
+- [Hamming Distance](https://leetcode.com/explore/interview/card/top-interview-questions-easy/99/others/648/)
+```
+class Solution {
+    public int hammingDistance(int x, int y) {
+        int n = x ^ y;
+        return hammingWeight(n);
+    }
+    
+    private int hammingWeight(int n) {
+        int ans = 0;
+        
+        while (n != 0) {
+            ans++;
+            n &= n - 1;
+        }
+        
+        return ans;
+    }
+}
+```
+
+- [Reverse Bits](https://leetcode.com/explore/interview/card/top-interview-questions-easy/99/others/648)
+```
+public class Solution {
+    // you need treat n as an unsigned value
+    public int reverseBits(int n) {
+        int ans = 0, end = 0;
+        for (int i = 0; i < 32; i++) {
+            end = n & 1;
+            n >>= 1;
+            ans <<= 1;
+            ans |= end;
+        }
+        return ans;
+    }
+}
+```
+
+
+
+

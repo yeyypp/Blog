@@ -1,37 +1,40 @@
 # String
 - KMP
+Implement strStr()
+[KMP explanation](http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/)
 ```
-public static int kmp(String src, String pat) {
-        int[] table = createTable(pat);
-        int i = 0, j = 0, length = pat.length();
-        while (i < src.length() && j < length) {
-            char charI = src.charAt(i);
-            char charJ = pat.charAt(j);
-            if (charI == charJ) {
-                i++;
-                j++;
-                if (j == length) {
-                    return i - length;
-                }
-            } else {
-                if (j == 0) {
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if (needle.length() == 0) {
+            return 0;
+        }
+        
+        if (needle.length() <= haystack.length()) {
+            int[] table = createTable(needle);
+            int i = 0, j = 0;
+            while (i < haystack.length()) {
+                if (haystack.charAt(i) == needle.charAt(j)) {
+                    i++;
+                    j++;
+                    if (j == needle.length()) {
+                        return i - j;
+                    }
+                } else if (j == 0) {
                     i++;
                 } else {
                     j = table[j - 1];
                 }
             }
         }
+        
         return -1;
     }
-
-    private static int[] createTable(String pat) {
-        int length = pat.length();
-        int[] table = new int[length];
+    
+    private int[] createTable(String pattern) {
+        int[] table = new int[pattern.length()];
         int i = 0, j = 1;
-        while (j < length) {
-            char charI = pat.charAt(i);
-            char charJ = pat.charAt(j);
-            if (charI == charJ) {
+        while (j < table.length) {
+            if (pattern.charAt(i) == pattern.charAt(j)) {
                 table[j] = i + 1;
                 i++;
                 j++;
@@ -46,6 +49,7 @@ public static int kmp(String src, String pat) {
         }
         return table;
     }
+}
 ```
 - 3 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 ```

@@ -474,3 +474,36 @@ class Solution {
 }
 ```
 
+- [Pascal's Triangle](https://leetcode.com/explore/interview/card/top-interview-questions-easy/99/others/601/)
+```
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new LinkedList<>();
+        
+        if (numRows < 1) {
+            return ans;
+        }
+        
+        ans.add(new ArrayList<>(1));
+        ans.get(0).add(1);
+        
+        for (int i = 2; i <= numRows; i++) {
+            List<Integer> preList = ans.get(i - 2);
+            List<Integer> curList = new ArrayList<>(i);
+            
+            curList.add(1);
+            
+            for (int j = 1; j < i - 1; j++) {
+                curList.add(preList.get(j - 1) + preList.get(j));
+            }
+            
+            curList.add(1);
+            
+            ans.add(new ArrayList<>(curList));
+        }
+        
+        return ans;
+    }
+}
+```
+

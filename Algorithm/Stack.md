@@ -6,31 +6,27 @@ Java
 
 class Solution {
     public boolean isValid(String s) {
+        Map<Character, Character> map = new HashMap<>();
+        map.put(')', '(');
+        map.put(']','[');
+        map.put('}', '{');
+        
         Deque<Character> stack = new LinkedList<>();
-        for (int i = 0; i < s.length(); i++) {
-            char cur = s.charAt(i);
             
-            if (stack.isEmpty()) {
-                stack.push(cur);
-            } else if (match(cur, stack.peek())) {
-                stack.pop();
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c)) {
+                char top = stack.isEmpty() ? '#' : stack.pop();
+                if (map.get(c) == top) {
+                    continue;
+                } else {
+                    return false;
+                }
             } else {
-                stack.push(cur);
+                stack.push(c);
             }
         }
+        
         return stack.isEmpty();
-    }
-    
-    private boolean match(Character left, Character right) {
-        switch (left) {
-            case ')' :
-                return right == '(';
-            case '}' :
-                return right == '{';
-            case ']' :
-                return right == '[';
-        }
-        return false;
     }
 }
 ```
