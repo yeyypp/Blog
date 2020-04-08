@@ -336,7 +336,8 @@ public class Solution {
         return null;
     }
 }
-
+// the key is if there is no intersection, 
+// when the second iteration end, both of the pointer would be null
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode a = headA, b = headB;
@@ -350,6 +351,7 @@ public class Solution {
     }
 }
 ```
+
 
 - 206 [Reverse LinkedList](https://leetcode.com/problems/reverse-linked-list/)
 ```

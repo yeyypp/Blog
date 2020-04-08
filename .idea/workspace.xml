@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/BitManipulation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/BitManipulation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/DynamicProgramming.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Math.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Math.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Stack.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Stack.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Array.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/LinkedList.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/LinkedList.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/SlidingWindow.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/SlidingWindow.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/String.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,10 +23,16 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553859985720" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skeleton-su19/proj2" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -46,18 +50,6 @@
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes\Log" />
       <recent name="C:\ShuaiYe\MyProjects\Blog\Notes" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -84,5 +76,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="790" y="125" width="800" height="677" key="#Plugins" timestamp="1583746728884">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="790" y="125" width="800" height="677" key="#Plugins/0.27.1600.873@0.27.1600.873" timestamp="1583746728884" />
+    <state x="973" y="221" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584365943548">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="973" y="221" width="424" height="484" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1584365943548" />
+    <state x="448" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1584365931079">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="448" y="291" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1584365931079" />
   </component>
 </project>

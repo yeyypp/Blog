@@ -462,3 +462,24 @@ class Solution {
     }
 }
 ```
+
+- [Increasing Triplet Subsequence](https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/781)
+```
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+        int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
+        
+        for (int i : nums) {
+            if (i <= first) {
+                first = i;
+            } else if (i <= second) {
+                second = i;
+            } else {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
+```

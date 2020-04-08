@@ -53,3 +53,39 @@ class Solution {
     }
 }
 ```
+
+- [Longest Substring Without Repeating Characters](https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/779/)
+```
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        if (s.length() == 1) {
+            return 1;
+        }
+        
+        Map<Character, Integer> map = new HashMap<>();
+        int ans = 0;
+        
+        for (int i = 0, j = 0; j < s.length(); j++) {
+            char c = s.charAt(j);
+            
+            if (map.containsKey(c)) {
+                int newI = map.get(c);
+                if (newI == i) {
+                    i += 1;
+                } else if (newI > i) {
+                    i = newI + 1;
+                }
+            }
+            
+            ans = Math.max(ans, j - i + 1);
+            map.put(c, j);
+        }
+        
+        return ans;
+    }
+}
+```
