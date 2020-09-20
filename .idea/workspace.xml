@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3ec64f-33ad-43dc-93e4-f303da211856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SomeThingElse/Docker.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/LinkedList.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/LinkedList.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/JVM/GarbageCollection.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/JVM/GarbageCollection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/JVM/Run-timeArea.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java/JVM/Run-timeArea.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SomeThingElse/Docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/Docker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SomeThingElse/简历.md" beforeDir="false" afterPath="$PROJECT_DIR$/SomeThingElse/简历.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +82,17 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="790" y="125" width="800" height="677" key="#Plugins/0.27.1600.873@0.27.1600.873" timestamp="1583746728884" />
-    <state x="973" y="221" width="416" height="484" key="FileChooserDialogImpl" timestamp="1588572839718">
+    <state x="973" y="221" width="416" height="484" key="FileChooserDialogImpl" timestamp="1591775603204">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="973" y="221" width="416" height="484" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1588572839718" />
-    <state x="448" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1588572735443">
+    <state x="973" y="221" width="416" height="484" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1591775603204" />
+    <state x="448" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1591775590718">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="448" y="291" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1588572735443" />
+    <state x="448" y="291" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1591775590718" />
+    <state x="525" y="375" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1590759712690">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="525" y="375" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1600.873@0.27.1600.873" timestamp="1590759712690" />
   </component>
 </project>

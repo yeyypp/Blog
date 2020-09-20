@@ -68,7 +68,10 @@
         
         It stored per-class structures(类型信息，常量，静态变量，类中的方法等)
         
-        - Run-Time Constant Pool
+        - Run-Time Constant Pool  
+        A run-time constant pool is a per-class or per-interface run-time
+        representation of constant_pool table in a class file
+    
         
         
         

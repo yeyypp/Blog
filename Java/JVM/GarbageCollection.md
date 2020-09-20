@@ -7,6 +7,7 @@ memory allocation requests.
     - Hands out that memory to the application as it requests it
     - Determines which parts of that memory is still in use by the application
     - Reclaims the unused memory for reuse by the application
+    - An object is considered garbage when it can no longer reached from any reference.
 
 - Generations
 The memory is managed in generations because if we don't use this strategy, the GC

@@ -21,3 +21,4 @@ run image with a different name
 run a container
 - **docker run -dit image**
 run a container and call the bash in case it exit immediately
+- **docker run --name test-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -dit mysql**  
